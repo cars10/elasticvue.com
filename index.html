@@ -18,25 +18,17 @@
 
         <nav class="pull-right">
             <ul class="navigation">
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="#usage">Usage</a>
-                </li>
-                <li>
-                    <a href="#screenshots">Screenshots</a>
-                </li>
-                <li>
-                    <a href="#why_not">Why not ..?</a>
-                </li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#why_not">Why not ..?</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <main class="main">
-    <section class="content" id="main_content">
+    <section class="content content--lead" id="main_content">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -85,7 +77,7 @@
             <a name="usage"></a>
             <h1 class="mb-2 text-center">Usage</h1>
 
-            <h2 class="text-center mb-1">1. Chose how you want to run elasticvue</h2>
+            <h2 class="text-center mb-2 subheading">Chose how you want to run elasticvue</h2>
 
             <div class="row">
                 <div class="col">
@@ -125,7 +117,7 @@
                 </div>
             </div>
 
-            <div class="text-center mb-6">
+            <div class="text-center mb-4">
                 <small class="text-muted">Checkout the
                     <a href="https://github.com/cars10/elasticvue" target="_blank" rel="nofollow">github
                         repository</a> if you want to build
@@ -134,17 +126,40 @@
             </div>
 
             <div class="text-center">
-                <h2 class="mb-2">2. Configure your elasticsearch server</h2>
-                <p>You have to enable CORS for your elasticsearch server to allow access
-                    from
-                    external domains.</p>
-                <p class="mb-2">Add the following to your <a
-                        href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
-                        target="_blank" rel="nofollow">elasticsearch configuration</a>:
-                </p>
+                <h2 class="mb-1">
+                    <a class="pb-1" href="#configuration">Then procced to the configuration</a>
+                </h2>
 
-                <pre class="inline-block mb-2"><code><span class="comment"># see https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-http.html</span>
-<span class="comment"># Enable 'Access-Control-Allow-Origin' header</span>
+                <svg style="width:60px; height: 36px;" class="svg--clickable">
+                    <a href="#configuration">
+                        <rect x="0" y="0" width="60" height="36" fill="transparent"/>
+                        <polyline points="2,2 30,30 58,2"
+                                  style="fill:transparent;stroke:#222;stroke-width:4px;padding:4px;"/>
+                    </a>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <a name="configuration"></a>
+            <div class="row">
+                <div class="col">
+                    <h1 class="mb-1 text-center1">Configuration</h1>
+                    <h2 class="mb-2 text-center1 subheading">Configure your elasticsearch server</h2>
+                    <div class="text--lead">
+                        <p class="mb-1">You have to enable CORS for your elasticsearch server to allow access
+                            from external domains.</p>
+                        <p class="mb-1">Add the following to your <a
+                                href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
+                                target="_blank" rel="nofollow">elasticsearch configuration</a>, based on how you run
+                            elasticvue:
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+<pre class="inline-block mb-2"><code><span class="comment"># Enable 'Access-Control-Allow-Origin' header</span>
 http.cors.enabled: true
 
 <span class="comment"># Then set the allowed origins based on how you run elasticvue:</span>
@@ -156,12 +171,13 @@ http.cors.allow-origin: /https?:\/\/elasticvue.cars10k.de/
 <span class="comment"># chrome extension</span>
 http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
 
-                <p>Now simply restart elasticsearch and you should be able to connect.</p>
+                    <p>Now simply restart elasticsearch and you should be able to connect.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="content content--lead">
+    <div class="content content--grey">
         <div class="container">
             <h1 class="mb-2 text-center">
                 <a name="screenshots"></a>

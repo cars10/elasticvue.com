@@ -130,16 +130,19 @@ footer {
 }
 
 .content {
-    min-height: 800px;
     color: #fff;
     padding-top: 90px;
     padding-bottom: 90px;
     height: 100%;
 }
 
+.content--lead {
+    min-height: 800px;
+}
+
 .content--grey {
-    background-color: #323641;
-    color: #fff;
+    background-color: #fff;
+    color: #222;
     box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.24);
 }
 
@@ -270,18 +273,17 @@ small > a, small > a:visited {
     color: #82a3c2;
 }
 
-a[target="_blank"]:after {
-    content: '\2197';
-    position: relative;
-    top: -6px;
-    left: 2px;
-    font-size: 0.8rem;
-    margin-right: 4px;
-}
+/*a[target="_blank"]:after {*/
+/*content: '\2197';*/
+/*position: relative;*/
+/*top: -6px;*/
+/*left: 2px;*/
+/*font-size: 0.8rem;*/
+/*margin-right: 4px;*/
+/*}*/
 
 .svg--clickable > a {
     cursor: pointer;
-
 }
 
 :target {
@@ -292,11 +294,12 @@ a[target="_blank"]:after {
 }
 
 pre {
-    background-color: #333;
+    background-color: #444;
     padding: 8px;
     border: 2px solid #222;
     word-break: break-all;
     text-align: left;
+    color: #fff;
 }
 
 pre .comment {
@@ -304,10 +307,17 @@ pre .comment {
 }
 
 .feature {
-    background-color: #454a5a;
+    /*background-color: #454a5a;*/
     text-align: center;
     margin: 10px;
     /*border: 1px solid #ddd;*/
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.feature:hover {
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25);
 }
 
 .feature__title {
@@ -318,4 +328,20 @@ pre .comment {
 
 .feature__body {
     padding: 16px;
+}
+
+.text--lead {
+    font-size: 1.2em;
+}
+
+.subheading {
+    font-weight: normal;
+}
+
+.content .subheading {
+    color: #cdcdcd;
+}
+
+.content--grey .subheading {
+    color: #666
 }
