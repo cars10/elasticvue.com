@@ -1,0 +1,32 @@
+.title, .title > a:visited {
+  font-size: 36px;
+  color: #222;
+  font-weight: normal;
+  display: inline-block;
+}
+
+.title > a:hover {
+  color: #1e91ff;
+}
+
+.navigation {
+  display: inline-block;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.navigation > li {
+  float: left;
+  margin-left: 40px;
+}
+
+.navigation > li > a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  /* text-transform: uppercase; */
+}
+
+.navigation > li > a:hover {
+  color: #1e91ff;
+}

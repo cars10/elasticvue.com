@@ -1,0 +1,21 @@
+
+.button, .button:visited {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #222;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: #ddd;
+}
+
+.button:hover, .button:focus {
+  background-color: #ccc;
+}
+
+.button--success {
+  background-color: #4caf50;
+}
+
+.button--big {
+  font-size: 1.25rem;
+}
