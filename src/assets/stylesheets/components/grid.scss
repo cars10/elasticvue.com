@@ -1,17 +1,17 @@
 .main {
-  margin-top: 80px;
+  margin-top: $navbar-height;
 }
 
 .row {
   display: flex;
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -$grid-padding;
+  margin-right: -$grid-padding;
   flex-flow: wrap;
 }
 
 .col {
   flex: 1;
-  padding: 15px;
+  padding: $grid-padding;
 }
 
 .col > img {

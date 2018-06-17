@@ -1,12 +1,12 @@
 .title, .title > a:visited {
   font-size: 36px;
-  color: #222;
+  color: $default-color;
   font-weight: normal;
   display: inline-block;
 }
 
 .title > a:hover {
-  color: #1e91ff;
+  color: $link-hover-color;
 }
 
 .navigation {
@@ -28,5 +28,5 @@
 }
 
 .navigation > li > a:hover {
-  color: #1e91ff;
+  color: $link-hover-color;
 }

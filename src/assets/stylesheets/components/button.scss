@@ -1,8 +1,7 @@
-
 .button, .button:visited {
   padding: 10px 15px;
   text-decoration: none;
-  color: #222;
+  color: $default-color;
   border-radius: 2px;
   display: inline-block;
   background-color: #ddd;
