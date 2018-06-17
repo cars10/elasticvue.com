@@ -17,10 +17,16 @@
 
         <nav class="pull-right">
             <ul class="navigation">
-                <li><a href="">Home</a></li>
-                <li><a href="#usage">Usage</a></li>
-                <li><a href="#configuration">Configuration</a></li>
-                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a class="navigation__link" href="">Home</a></li>
+                <li><a class="navigation__link" href="#usage">Usage</a></li>
+                <li><a class="navigation__link" href="#configuration">Configuration</a></li>
+                <li><a class="navigation__link" href="#screenshots">Screenshots</a></li>
+                <li>
+                    <a class="navigation__image" href="https://github.com/cars10/elasticvue" target="_blank"
+                       rel="noopener">
+                        <img src="../static/images/github_mark.png" alt="">
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -61,7 +67,7 @@
                 </h2>
 
                 <a href="#usage">
-                    <img src="./assets/icons/caret--white.svg" alt="down" width="50" height="28">
+                    <img src="../static/icons/caret--white.svg" alt="down" width="50" height="28">
                 </a>
             </div>
         </div>
@@ -127,7 +133,7 @@
                 </h2>
 
                 <a href="#configuration">
-                    <img src="./assets/icons/caret--dark.svg" alt="down" width="50" height="28">
+                    <img src="../static/icons/caret--dark.svg" alt="down" width="50" height="28">
                 </a>
             </div>
         </div>
@@ -175,7 +181,7 @@ http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
                 </h2>
 
                 <a href="#screenshots">
-                    <img src="./assets/icons/caret--white.svg" alt="down" width="50" height="28">
+                    <img src="../static/icons/caret--white.svg" alt="down" width="50" height="28">
                 </a>
             </div>
         </div>
@@ -187,6 +193,7 @@ http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
                 <a name="screenshots"></a>
                 Screenshots
             </h1>
+            <h2 class="mb-2 text-center subheading">See elasticvue in action</h2>
 
             <div class="row">
                 <div class="col col-25"><img src="1920.png" alt=""></div>
@@ -204,7 +211,25 @@ http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
 
 <footer class="footer">
     <div class="container">
-        FOOTER
+        <div class="row">
+            <div class="col py-0">
+                <p class="mb-1"><a href="">Legal disclaimer</a></p>
+                <p><a href="">Privacy policy</a></p>
+            </div>
+            <div class="col py-0">
+                <div class="text-center">
+                    <p class="mb-1">&copy; <span id="current_year"></span></p>
+                    <p>Carsten K&ouml;nig</p>
+                </div>
+            </div>
+            <div class="col py-0">
+                <div class="pull-right mt-05">
+                    <a href="https://github.com/cars10/elasticvue" target="_blank" rel="noopener">
+                        <img src="../static/images/github_logo.png" alt="Github">
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 

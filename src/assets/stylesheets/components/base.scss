@@ -28,6 +28,6 @@ h3 {
 :target {
   display: block;
   position: relative;
-  top: -($navbar-height+40px);
+  top: -($navbar-height+$content-padding);
   visibility: hidden;
 }

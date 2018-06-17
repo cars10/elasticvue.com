@@ -2,6 +2,7 @@
   font-size: 36px;
   font-weight: normal;
   display: inline-block;
+  padding: 18px 0;
 }
 
 .title > a, .title > a.visited {
@@ -16,19 +17,34 @@
 .navigation {
   display: inline-block;
   list-style: none;
-  margin-top: 10px;
+  height: $navbar-height;
 }
 
 .navigation > li {
   float: left;
+  height: 100%;
+}
+
+.navigation .navigation__link {
   margin-left: 40px;
 }
 
-.navigation > li > a {
+a.navigation__link {
   font-size: 1.2rem;
   text-decoration: none;
   color: #333;
-  /* text-transform: uppercase; */
+  margin-top: 28px;
+  display: inline-block;
+}
+
+.navigation__image {
+  display: inline-block;
+  padding: 18px 20px;
+  margin-left: 20px;
+}
+
+.navigation__image:hover {
+  background-color: #ddd;
 }
 
 .navigation > li > a:hover {
