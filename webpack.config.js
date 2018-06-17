@@ -1,7 +1,7 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
 
 const dev = process.env.NODE_ENV !== 'production'
@@ -33,7 +33,8 @@ module.exports = {
                     options: {
                         minimize: true,
                         removeComments: true,
-                        collapseWhitespace: true
+                        collapseWhitespace: true,
+                        interpolate: true
                     }
                 }]
             },
@@ -49,7 +50,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/legals.html',
+            filename: 'legals.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/privacy.html',
+            filename: 'privacy.html'
         }),
         new MiniCssExtractPlugin({
             filename: dev ? '[name].css' : 'style.[hash].css',
