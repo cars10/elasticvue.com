@@ -6,10 +6,10 @@
 
 /** https://www.svgbackgrounds.com/#rainbow-vortex **/
 body {
-  color: $default-color;
+  color: $default-text-color;
   /*font-family: "Lucida Console", Monaco, monospace;*/
   font-size: $font-size;
-  background-color: #33447d;
+  background-color: $default-color;
   font-family: sans-serif;
 }
 
@@ -25,18 +25,9 @@ h3 {
   font-size: 1.25rem;
 }
 
-a, a:visited {
-  text-decoration: none;
-  color: #9dcfff;
-}
-
-small > a, small > a:visited {
-  color: #82a3c2;
-}
-
 :target {
   display: block;
   position: relative;
-  top: -120px;
+  top: -($navbar-height+40px);
   visibility: hidden;
 }

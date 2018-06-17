@@ -1,8 +1,12 @@
-.title, .title > a:visited {
+.title {
   font-size: 36px;
-  color: $default-color;
   font-weight: normal;
   display: inline-block;
+}
+
+.title > a, .title > a.visited {
+  color: $default-text-color;
+  text-decoration: none;
 }
 
 .title > a:hover {

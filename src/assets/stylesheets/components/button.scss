@@ -1,10 +1,11 @@
 .button, .button:visited {
   padding: 10px 15px;
   text-decoration: none;
-  color: $default-color;
+  color: $default-text-color;
   border-radius: $default-border-radius;
   display: inline-block;
   background-color: #ddd;
+  box-shadow: $default-box-shadow;
 }
 
 .button:hover, .button:focus {

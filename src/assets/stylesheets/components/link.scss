@@ -1,0 +1,16 @@
+a, a:visited {
+  //text-decoration: none;
+  color: $default-color;
+}
+
+.text--muted > a, .text--muted > a:visited {
+  color: #82a3c2;
+}
+
+a.link--white, a.link--white:visited {
+  color: #fff
+}
+
+a.link--no-decoration {
+  text-decoration: none;
+}

@@ -12,3 +12,7 @@ window.addEventListener('scroll', function() {
         container.style.opacity = '0'
     }
 })
+
+container.addEventListener('click', function() {
+    window.scrollTo(0, 0)
+})

@@ -57,16 +57,12 @@
 
             <div class="text-center mt-8">
                 <h2 class="mb-1">
-                    <a class="pb-1 text--white" href="#usage">View usage</a>
+                    <a class="pb-1 link--white link--no-decoration" href="#usage">View usage</a>
                 </h2>
 
-                <svg style="width:60px; height: 36px;" class="svg--clickable">
-                    <a href="#usage">
-                        <rect x="0" y="0" width="60" height="36" fill="transparent"/>
-                        <polyline points="2,2 30,30 58,2"
-                                  style="fill:transparent;stroke:#fff;stroke-width:4px;padding:4px;"/>
-                    </a>
-                </svg>
+                <a href="#usage">
+                    <img src="./assets/icons/caret--white.svg" alt="down" width="50" height="28">
+                </a>
             </div>
         </div>
     </section>
@@ -94,7 +90,7 @@
                         <h3 class="feature__title">Docker</h3>
                         <div class="feature__body">
                             <p class="mb-1">Download and run the image:</p>
-                            <pre class="inline-block mb-1"><code>docker run -p 8090:8090 \
+                            <pre class="inline-block mb-1 code-block"><code>docker run -p 8090:8090 \
            -d cars10/elasticvue</code></pre>
                             <p>Then open <a href="http://localhost:8090" target="_blank" rel="noopener">http://localhost:8090</a>
                                 in your browser.
@@ -116,8 +112,8 @@
                 </div>
             </div>
 
-            <div class="text-center mb-4">
-                <small class="text-muted">Checkout the
+            <div class="text-center mb-6">
+                <small class="text--muted">Checkout the
                     <a href="https://github.com/cars10/elasticvue" target="_blank" rel="noopener">github
                         repository</a> if you want to build
                     elasticvue by yourself.
@@ -126,16 +122,13 @@
 
             <div class="text-center">
                 <h2 class="mb-1">
-                    <a class="pb-1" href="#configuration">Then procced to the configuration</a>
+                    <a class="pb-1 text--dark link--no-decoration" href="#configuration">Then procced to the
+                        configuration</a>
                 </h2>
 
-                <svg style="width:60px; height: 36px;" class="svg--clickable">
-                    <a href="#configuration">
-                        <rect x="0" y="0" width="60" height="36" fill="transparent"/>
-                        <polyline points="2,2 30,30 58,2"
-                                  style="fill:transparent;stroke:#222;stroke-width:4px;padding:4px;"/>
-                    </a>
-                </svg>
+                <a href="#configuration">
+                    <img src="./assets/icons/caret--dark.svg" alt="down" width="50" height="28">
+                </a>
             </div>
         </div>
     </section>
@@ -143,22 +136,24 @@
     <section class="content">
         <div class="container">
             <a name="configuration"></a>
-            <div class="row">
+            <h1 class="mb-1 text-center1">Configuration</h1>
+            <h2 class="mb-2 text-center1 subheading">Configure your elasticsearch server</h2>
+            <div class="row mb-6">
                 <div class="col">
-                    <h1 class="mb-1 text-center1">Configuration</h1>
-                    <h2 class="mb-2 text-center1 subheading">Configure your elasticsearch server</h2>
                     <div class="text--lead">
                         <p class="mb-1">You have to enable CORS for your elasticsearch server to allow access
                             from external domains.</p>
-                        <p class="mb-1">Add the following to your <a
-                                href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
-                                target="_blank" rel="noopener">elasticsearch configuration</a>, based on how you run
+                        <p class="mb-1">Add the following to your <a class="link--white"
+                                                                     href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
+                                                                     target="_blank" rel="noopener">elasticsearch
+                            configuration</a>, based on how you run
                             elasticvue:
                         </p>
                     </div>
                 </div>
                 <div class="col">
-<pre class="inline-block mb-2"><code><span class="comment"># Enable 'Access-Control-Allow-Origin' header</span>
+<pre class="inline-block mb-2 code-block"><code><span
+        class="comment"># Enable 'Access-Control-Allow-Origin' header</span>
 http.cors.enabled: true
 
 <span class="comment"># Then set the allowed origins based on how you run elasticvue:</span>
@@ -174,18 +169,14 @@ http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
                 </div>
             </div>
 
-            <div class="text-center mt-8">
+            <div class="text-center">
                 <h2 class="mb-1">
-                    <a class="pb-1 text--white" href="#screenshots">Screenshots</a>
+                    <a class="pb-1 link--white link--no-decoration" href="#screenshots">Screenshots</a>
                 </h2>
 
-                <svg style="width:60px; height: 36px;" class="svg--clickable">
-                    <a href="#screenshots">
-                        <rect x="0" y="0" width="60" height="36" fill="transparent"/>
-                        <polyline points="2,2 30,30 58,2"
-                                  style="fill:transparent;stroke:#fff;stroke-width:4px;padding:4px;"/>
-                    </a>
-                </svg>
+                <a href="#screenshots">
+                    <img src="./assets/icons/caret--white.svg" alt="down" width="50" height="28">
+                </a>
             </div>
         </div>
     </section>
@@ -206,11 +197,6 @@ http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
                 <div class="col col-25"><img src="1920.png" alt=""></div>
                 <div class="col col-25"><img src="1920.png" alt=""></div>
                 <div class="col col-25"><img src="1920.png" alt=""></div>
-                <div class="col col-25"><img src="1920.png" alt=""></div>
-                <div class="col col-25"><img src="1920.png" alt=""></div>
-                <div class="col col-25"><img src="1920.png" alt=""></div>
-                <div class="col col-25"><img src="1920.png" alt=""></div>
-                <div class="col col-25"><img src="1920.png" alt=""></div>
             </div>
         </div>
     </div>
@@ -222,7 +208,7 @@ http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
     </div>
 </footer>
 
-<div class="back_to_top" onclick="window.scrollTo(0, 0)">Back to top</div>
+<div class="back_to_top">Back to top</div>
 
 <script>
     const height = window.innerHeight

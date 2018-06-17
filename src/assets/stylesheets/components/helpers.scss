@@ -6,7 +6,11 @@
   color: #fff;
 }
 
-.text-muted {
+.text--dark, a.text--dark, a.text--dark:visited {
+  color: $default-text-color;
+}
+
+.text--muted {
   color: #ababab;
 }
 
