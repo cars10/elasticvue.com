@@ -1,11 +1,12 @@
 var container = document.querySelector('.back_to_top')
 var containerVisible = false
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (window.scrollY > 200 && !containerVisible) {
         containerVisible = true
         container.style.visibility = 'visible'
         container.style.opacity = '1'
+        container.style.transition = 'visibility 0.3s, opacity 0.3s'
     } else if (window.scrollY <= 200 && containerVisible) {
         containerVisible = false
         container.style.visibility = 'hidden'
@@ -13,6 +14,6 @@ window.addEventListener('scroll', function() {
     }
 })
 
-container.addEventListener('click', function() {
+container.addEventListener('click', function () {
     window.scrollTo(0, 0)
 })
