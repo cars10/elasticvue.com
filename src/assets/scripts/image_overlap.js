@@ -4,7 +4,6 @@ const imageOverlapOverlap = 'image_overlap__overlap'
 export default function ImageOverlap(selector) {
     this.base = document.querySelector(selector + ' .image_overlap__base')
     this.overlap = document.querySelector(selector + ' .image_overlap__overlap')
-    console.log(this.overlap)
     this.setup()
 }
 
