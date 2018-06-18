@@ -12,17 +12,19 @@ function getPreviousIndex (length, index) {
     if (newIndex < length && newIndex >= 0) {
         return newIndex
     } else {
-        return length
+        return length - 1
     }
 }
 
 export default function SimpleGallery (galleryId) {
     this.currentImageIndex = 0
     this.gallery = document.querySelector(galleryId)
-    this.images = Array.from(document.querySelectorAll(galleryId + ' .gallery__image'))
+    this.images = Array.from(document.querySelectorAll(galleryId + ' .gallery__thumb'))
     this.galleryModal = null
     this.galleryModalBackdrop = null
     this.galleryImage = null
+    this.prevImageCtrl = null
+    this.nextImageCtrl = null
     this.galleryOpen = false
 
     this.setup()
@@ -32,6 +34,7 @@ SimpleGallery.prototype.setup = function () {
     this.buildGalleryModalHtml()
     this.addImageEventListeners()
     this.addBackdropEventListener()
+    this.addControlEventListeners()
     this.addGalleryModalImgEventListener()
 }
 
@@ -61,16 +64,34 @@ SimpleGallery.prototype.buildGalleryModalHtml = function () {
     this.gallery.appendChild(galleryModalBackdrop)
     this.galleryModalBackdrop = galleryModalBackdrop
 
+    let prevImageCtrl = document.createElement('div')
+    prevImageCtrl.classList.add('gallery__modal__controls__prev')
+    prevImageCtrl.innerHTML = '&#8249;'
+    this.galleryModal.appendChild(prevImageCtrl)
+    this.prevImageCtrl = prevImageCtrl
+
+    let nextImageCtrl = document.createElement('div')
+    nextImageCtrl.classList.add('gallery__modal__controls__next')
+    nextImageCtrl.innerHTML = '&#8250;'
+    this.galleryModal.appendChild(nextImageCtrl)
+    this.nextImageCtrl = nextImageCtrl
+
     let galleryImage = document.createElement('img')
     this.galleryModal.appendChild(galleryImage)
     this.galleryImage = galleryImage
 }
 
-SimpleGallery.prototype.addGalleryModalImgEventListener = function () {
-    this.galleryImage.addEventListener('click', () => {
-        this.loadNextImage()
+SimpleGallery.prototype.addControlEventListeners = function () {
+    this.prevImageCtrl.addEventListener('click', () => {
+        this.loadPreviousImage()
     })
 
+    this.nextImageCtrl.addEventListener('click', () => {
+        this.loadNextImage()
+    })
+}
+
+SimpleGallery.prototype.addGalleryModalImgEventListener = function () {
     document.addEventListener('keydown', (e) => {
         if (this.galleryOpen) {
             if (e.keyCode === 27) { // esc
@@ -96,6 +117,7 @@ SimpleGallery.prototype.loadPreviousImage = function () {
 
 SimpleGallery.prototype.loadImage = function (index) {
     let image = this.images[index]
+    this.currentImageIndex = index
     this.galleryImage.setAttribute('src', image.getAttribute('src'))
 }
 

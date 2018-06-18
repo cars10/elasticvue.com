@@ -1,9 +1,9 @@
-.gallery__image {
+.gallery__thumb {
   box-shadow: $default-box-shadow;
   border-radius: $default-border-radius;
 }
 
-.gallery__image:hover {
+.gallery__thumb:hover {
   cursor: pointer;
   box-shadow: $default-box-shadow-hover;
 }
@@ -11,7 +11,7 @@
 .gallery__modal {
   position: fixed;
   width: 1280px;
-  height: 720px;
+  height: 800px;
   top: 50px;
   left: 0;
   right: 0;
@@ -44,4 +44,34 @@
 .gallery.gallery--visible .gallery__modal, .gallery.gallery--visible .gallery__modal__backdrop {
   visibility: visible;
   opacity: 1;
+}
+
+.gallery__modal__controls__prev, .gallery__modal__controls__next {
+  position: absolute;
+  width: 5%;
+  height: 10%;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: hidden;
+  opacity: 0;
+  top: 45%;
+  bottom: 45%;
+  z-index: 6;
+  transition: 0.3s visibility, 0.3s opacity;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  font-size: 3.8rem;
+}
+
+.gallery__modal:hover .gallery__modal__controls__prev, .gallery__modal:hover .gallery__modal__controls__next {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery__modal__controls__prev {
+  left: 0
+}
+
+.gallery__modal__controls__next {
+  right: 0
 }
