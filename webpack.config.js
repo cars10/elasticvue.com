@@ -1,4 +1,4 @@
-const glob = require('glob');
+const glob = require('glob-all');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
@@ -70,7 +70,11 @@ module.exports = {
         }),
         new PurifyCSSPlugin({
             // Give paths to parse for rules. These should be absolute!
-            paths: glob.sync(path.join(__dirname, 'src/*.html')),
+            paths: glob.sync([
+                path.join(__dirname, 'src/*.html'),
+                path.join(__dirname, 'src/components/*.html'),
+                path.join(__dirname, 'src/assets/scripts/*.js'),
+            ]),
             minimize: true
         }),
         new CompressionPlugin({
