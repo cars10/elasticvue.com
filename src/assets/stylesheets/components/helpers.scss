@@ -2,10 +2,6 @@
   float: right
 }
 
-.text--white, a.text--white, a.text--white:visited {
-  color: #fff;
-}
-
 .text--dark, a.text--dark, a.text--dark:visited {
   color: $default-text-color;
 }
@@ -22,3 +18,8 @@
   text-align: center;
 }
 
+@media only screen and (max-width: $desktop) {
+  .overflow--scroll--tablet {
+    overflow: scroll;
+  }
+}

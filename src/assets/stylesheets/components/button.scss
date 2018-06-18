@@ -12,8 +12,13 @@
   background-color: #ccc;
 }
 
-.button--success {
-  background-color: #4caf50;
+.button--primary, .button--primary:visited {
+  background-color: $default-color;
+  color: #fff;
+}
+
+.button--primary:hover, .button--primary:focus {
+  background-color: lighten($default-color, 10%);
 }
 
 .button--big {

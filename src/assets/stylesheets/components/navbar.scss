@@ -17,7 +17,7 @@
 .navigation {
   display: inline-block;
   list-style: none;
-  height: $navbar-height;
+  height: $header-height;
 }
 
 .navigation > li {
@@ -49,4 +49,36 @@ a.navigation__link {
 
 .navigation > li > a:hover {
   color: $link-hover-color;
+}
+
+@media only screen and (max-width: $tablet) {
+  .title {
+    font-size: 24px;
+    padding: 15px 0;
+  }
+
+  .navigation {
+    display: none // TODO
+  }
+}
+
+@media only screen and (min-width: $tablet) and (max-width: $desktop) {
+  .title {
+    padding: 18px 0;
+    font-size: 28px;
+  }
+
+  .navigation .navigation__link {
+    margin-left: 20px;
+  }
+
+  .navigation__image {
+    padding: 14px 10px;
+    margin-left: 10px;
+  }
+
+  a.navigation__link {
+    font-size: 1rem;
+    margin-top: 26px;
+  }
 }

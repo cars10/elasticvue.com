@@ -6,13 +6,12 @@
 }
 
 .content--lead {
-  min-height: 800px;
+  min-height: 600px;
 }
 
 .content--white {
   background-color: #fff;
   color: $default-text-color;
-  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.24);
 }
 
 .content .subheading {
@@ -21,4 +20,26 @@
 
 .content--white .subheading {
   color: #666
+}
+
+@media only screen and (max-width: $tablet) {
+  .content {
+    padding-top: $content-padding--mobile;
+    padding-bottom: $content-padding--mobile;
+  }
+
+  .content--lead {
+    min-height: 0;
+  }
+}
+
+@media only screen and (min-width: $tablet) and (max-width: $desktop) {
+  .content {
+    padding-top: $content-padding--tablet;
+    padding-bottom: $content-padding--tablet;
+  }
+
+  .content--lead {
+    min-height: 0;
+  }
 }

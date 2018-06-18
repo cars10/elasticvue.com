@@ -1,13 +1,12 @@
 .code-block {
-  background-color: #444;
+  background-color: #eee;
   padding: 8px;
-  border: 2px solid $default-text-color;
   word-break: break-all;
   text-align: left;
-  color: #fff;
+  color: $default-text-color;
   border-radius: $default-border-radius;
 }
 
 .code-block .comment {
-  color: #ababab;
+  color: #888;
 }

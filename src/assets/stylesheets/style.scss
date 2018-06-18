@@ -1,5 +1,8 @@
+@import '~bulma/sass/utilities/initial-variables';
 @import 'variables';
-
+@import '~bulma/sass/utilities/derived-variables';
+@import '~bulma/sass/utilities/mixins';
+@import '~bulma/sass/grid/columns';
 @import 'components/back_to_top';
 @import 'components/base';
 @import 'components/button';
@@ -18,3 +21,13 @@
 @import 'components/svg';
 @import 'components/text';
 @import 'components/list';
+
+/**
+Breakpoints:
+
+mobile:         0 -  768
+tablet:       769 - 1024
+desktop:     1025 - 1215
+widescreen:  1216 - 1407
+fullhd:      1408 - *
+ */
