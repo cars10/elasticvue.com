@@ -1,4 +1,5 @@
 .feature {
+  border-top: 4px solid $default-color;
   text-align: center;
   margin: 10px;
   box-shadow: $default-box-shadow;
@@ -6,12 +7,21 @@
   border-radius: $default-border-radius;
 }
 
+.feature--docker {
+  border-top: 4px solid #099cec;
+}
+
+.feature--chrome {
+  border-top: 4px solid;
+  border-image: linear-gradient(to right, #4285f4 25%, #0f9d58 25%, #0f9d58 50%, #f4b400 50%, #f4b400 75%, #db4437 75%) 4;
+}
+
 .feature:hover {
   box-shadow: $default-box-shadow-hover;
 }
 
 .feature__title {
-  padding: 16px;
+  padding: 24px 16px;
 }
 
 .feature__body {
