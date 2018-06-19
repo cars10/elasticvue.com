@@ -1,13 +1,16 @@
 {
   "name": "elasticvue.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "elasticvue.com website",
   "scripts": {
     "dev": "npx webpack-dev-server --mode development --open",
     "build": "rm -rf dist && NODE_ENV=production npx webpack --mode production"
   },
-  "author": "",
+  "author": "Carsten König <carstenkoenig92@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cars10/elasticvue.com.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "compression-webpack-plugin": "^1.1.11",

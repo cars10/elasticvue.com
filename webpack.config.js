@@ -69,7 +69,6 @@ module.exports = {
             chunkFilename: dev ? '[id].css' : '[id].[hash].css',
         }),
         new PurifyCSSPlugin({
-            // Give paths to parse for rules. These should be absolute!
             paths: glob.sync([
                 path.join(__dirname, 'src/*.html'),
                 path.join(__dirname, 'src/components/*.html'),
