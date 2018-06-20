@@ -20,6 +20,6 @@
 
 @media only screen and (max-width: $desktop) {
   .overflow--scroll--tablet {
-    overflow: scroll;
+    overflow-x: scroll;
   }
 }

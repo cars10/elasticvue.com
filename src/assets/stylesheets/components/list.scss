@@ -1,15 +1,13 @@
-ul.ul--hexagon {
-  padding-left: 30px;
-  list-style: none;
+ul.ul--default {
+  padding-left: 20px;
 }
 
-ul.ul--hexagon > li {
+ul.ul--default > li {
   position: relative;
   margin-bottom: 6px;
 }
 
-ul.ul--hexagon > li:before {
-  content: "\2b21";
+ul.ul--default > li:before {
   margin-left: -25px;
   width: 10px;
   font-size: 16px;

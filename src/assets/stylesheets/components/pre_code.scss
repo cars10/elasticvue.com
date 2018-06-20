@@ -5,8 +5,17 @@
   text-align: left;
   color: $default-text-color;
   border-radius: $default-border-radius;
+  font-size: 0.9em;
 }
 
 .code-block .comment {
   color: #888;
+}
+
+.code-inline {
+  font-size: 0.9em;
+  background-color: #eee;
+  padding: 2px 4px;
+  color: $default-text-color;
+  border-radius: $default-border-radius;
 }

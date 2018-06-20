@@ -23,7 +23,7 @@ ${require('./components/header.html')}
                         </blockquote>
 
                         <h1 class="mb-1">Features</h1>
-                        <ul class="ul--hexagon">
+                        <ul class="ul--default">
                             <li>Cluster overview</li>
                             <li>Index management</li>
                             <li>Search interface</li>
@@ -65,11 +65,13 @@ ${require('./components/header.html')}
     <section class="content content--white">
         <div class="container">
             <a name="usage"></a>
-            <h1 class="mb-2 text-center">Usage</h1>
+            <h1 class="text-center mb-2">Usage</h1>
 
-            <h2 class="text-center mb-2 subheading">Chose how you want to run elasticvue</h2>
+            <div class="text-center subheading">
+                <p>There are several ways of running elasticvue, chose what works best for you:</p>
+            </div>
 
-            <div class="columns is-multiline columns--ordered-tablet">
+            <div class="columns is-multiline columns--ordered-tablet my-2">
                 <div class="column is-one-third-desktop is-half-tablet column--order-tablet-1">
                     <div class="feature">
                         <h3 class="feature__title">Web app</h3>
@@ -113,12 +115,10 @@ ${require('./components/header.html')}
                 </div>
             </div>
 
-            <div class="text-center mb-6">
-                <small class="text--muted">Checkout the
-                    <a href="https://github.com/cars10/elasticvue" target="_blank" rel="noopener">github
-                        repository</a> if you want to build
-                    elasticvue by yourself.
-                </small>
+            <div class="text-center mb-6 subheading">
+                Checkout the
+                <a href="https://github.com/cars10/elasticvue" target="_blank" rel="noopener">github repository</a>
+                if you want to build elasticvue by yourself.
             </div>
 
             <div class="text-center">
@@ -137,22 +137,30 @@ ${require('./components/header.html')}
     <section class="content">
         <div class="container">
             <a name="configuration"></a>
+            <h1 class="mb-2">Configuration</h1>
             <div class="columns mb-6">
                 <div class="column is-half-tablet">
-                    <h1 class="mb-1 text-center1">Configuration</h1>
-                    <h2 class="mb-2 text-center1 subheading">Configure your elasticsearch server</h2>
-                    <div class="text--lead">
-                        <p class="mb-1">You have to enable CORS for your elasticsearch server to allow access
-                            from external domains.</p>
-                        <p class="mb-1">Add the following to your <a class="link--white"
-                                                                     href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
-                                                                     target="_blank" rel="noopener">elasticsearch
-                            configuration</a>, based on how you run
-                            elasticvue:
-                        </p>
-                    </div>
+                    <div class="mb-2 subheading">Configure your elasticsearch server</div>
+                    <p class="mb-1">
+                        To use elasticvue you have to enable CORS in your elasticsearch server. This will allow access
+                        across different origins, otherwise your browser will reject all requests because they are
+                        marked as insecure.
+                    </p>
+                    <p class="mb-1">
+                        To enable CORS add the following to your
+                        <a class="link--white" target="_blank" rel="noopener"
+                           href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html">
+                            elasticsearch configuration
+                        </a>, based on how you run elasticvue:
+                    </p>
+                    <ul class="ul--default mb-1">
+                        <li><code class="code-inline">http.cors.enabled: true</code></li>
+                        <li><code class="code-inline">http.cors.allow-origin: *</code></li>
+                    </ul>
+                    <p>After configuration restart elasticsearch and you should be able to connect.</p>
                 </div>
                 <div class="column is-half-tablet">
+                    <div class="mb-2 subheading">Configuration example</div>
                     <div class="overflow--scroll--tablet mb-2">
 <pre class="inline-block code-block"><code><span
         class="comment"># Enable 'Access-Control-Allow-Origin' header</span>
@@ -167,7 +175,6 @@ http.cors.allow-origin: /https?:\/\/app.elasticvue.com/
 <span class="comment"># chrome extension</span>
 http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
                     </div>
-                    <p>Now simply restart elasticsearch and you should be able to connect.</p>
                 </div>
             </div>
 
