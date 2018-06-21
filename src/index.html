@@ -33,14 +33,7 @@ ${require('./components/header.html')}
                     </div>
 
                     <div class="column">
-                        <div class="image_overlap" id="image_overlap">
-                            <div class="image_overlap__base">
-                                <img src="../static/images/light.png" alt="">
-                            </div>
-                            <div class="image_overlap__overlap">
-                                <img src="../static/images/dark.png" alt="">
-                            </div>
-                        </div>
+                        <div class="gallery image_overlap" id="lead_gallery"></div>
                     </div>
                 </div>
             </div>
@@ -196,43 +189,7 @@ http.cors.allow-origin: /chrome-extension:\\/\\/[a-z]+/</code></pre>
                 Screenshots
             </h1>
             <div class="mb-2 text-center subheading">See elasticvue in action</div>
-
-            <div class="gallery" id="gallery">
-                <div class="columns is-mobile is-multiline">
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_0_connect_white.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_1_home_white.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_2_indices_white.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_3_index_white.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_4_index_dark.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_5_search_dark.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_6_query_dark.png"
-                             alt="">
-                    </div>
-                    <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile">
-                        <img class="gallery__thumb" src="../static/images/screenshots/screenshot_7_utilities_dark.png"
-                             alt="">
-                    </div>
-                </div>
-            </div>
+            <div class="gallery columns is-mobile is-multiline" id="screenshot_gallery"></div>
         </div>
     </section>
 </main>

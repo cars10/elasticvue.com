@@ -1,25 +1,33 @@
 function getNextIndex (length, index) {
     let newIndex = index + 1
-    if (newIndex < length && newIndex >= 0) {
-        return newIndex
-    } else {
-        return 0
-    }
+    return newIndex < length && newIndex >= 0 ? newIndex : 0
 }
 
 function getPreviousIndex (length, index) {
     let newIndex = index - 1
-    if (newIndex < length && newIndex >= 0) {
-        return newIndex
-    } else {
-        return length - 1
-    }
+    return newIndex < length && newIndex >= 0 ? newIndex : length - 1
 }
 
-export default function SimpleGallery (galleryId) {
+/**
+ * SimpleGallery
+ *
+ * @param options:
+ *  gallerySelector: '#some_id'
+ *  images: [
+ *      {
+ *          src: 'path/image.png',
+ *          fullSizeSrc: 'path/image_full.png',
+ *          alt: 'My image',
+ *          classes: ['class1', 'class2'],
+ *          wrapperClasses: ['wrapperClass1', 'wrapperClass2']
+ *      }
+ *  ]
+ * @constructor
+ */
+export default function SimpleGallery (options) {
     this.currentImageIndex = 0
-    this.gallery = document.querySelector(galleryId)
-    this.images = Array.from(document.querySelectorAll(galleryId + ' .gallery__thumb'))
+    this.gallery = document.querySelector(options.gallerySelector)
+    this.images = options.images
     this.galleryModal = null
     this.galleryModalBackdrop = null
     this.galleryImage = null
@@ -31,8 +39,19 @@ export default function SimpleGallery (galleryId) {
 }
 
 SimpleGallery.prototype.setup = function () {
+    this.setupGallery()
+    this.setupModal()
+}
+
+SimpleGallery.prototype.setupGallery = function () {
+    this.images.forEach((image) => {
+        let imgHtml = this.buildImageHtml(image)
+        this.addImageEventListeners(imgHtml)
+    })
+}
+
+SimpleGallery.prototype.setupModal = function () {
     this.buildGalleryModalHtml()
-    this.addImageEventListeners()
     this.addBackdropEventListener()
     this.addControlEventListeners()
     this.addGalleryModalImgEventListener()
@@ -43,14 +62,39 @@ SimpleGallery.prototype.setupGalleryTransitions = function () {
     this.galleryModalBackdrop.style.transition = 'opacity 0.3s, visibility 0.3s'
 }
 
-SimpleGallery.prototype.addImageEventListeners = function () {
-    for (let image of this.images) {
-        image.addEventListener('click', () => {
-            this.openGallery()
-            this.loadImage(this.images.indexOf(image))
-            this.setupGalleryTransitions()
+SimpleGallery.prototype.buildImageHtml = function (image) {
+    let imgHtml = document.createElement('img')
+    if (image.classes) {
+        image.classes.forEach(function (className) {
+            imgHtml.classList.add(className)
         })
     }
+    if (image.src) imgHtml.setAttribute('src', image.src)
+    if (image.alt) imgHtml.setAttribute('alt', image.alt)
+    imgHtml.setAttribute('data-index', this.images.indexOf(image))
+
+    if (image.wrapperClasses) {
+        let wrapper = document.createElement('div')
+        if (image.wrapperClasses) {
+            image.wrapperClasses.forEach(function (className) {
+                wrapper.classList.add(className)
+            })
+        }
+        wrapper.appendChild(imgHtml)
+        this.gallery.appendChild(wrapper)
+    } else {
+        this.gallery.appendChild(imgHtml)
+    }
+    return imgHtml
+}
+
+SimpleGallery.prototype.addImageEventListeners = function (imgHtml) {
+    imgHtml.addEventListener('click', () => {
+        this.openGallery()
+        let index = parseInt(imgHtml.getAttribute('data-index'))
+        this.loadImage(index)
+        this.setupGalleryTransitions()
+    })
 }
 
 SimpleGallery.prototype.buildGalleryModalHtml = function () {
@@ -118,7 +162,8 @@ SimpleGallery.prototype.loadPreviousImage = function () {
 SimpleGallery.prototype.loadImage = function (index) {
     let image = this.images[index]
     this.currentImageIndex = index
-    this.galleryImage.setAttribute('src', image.getAttribute('src'))
+    let src = image.fullSizeSrc || image.src
+    this.galleryImage.setAttribute('src', src)
 }
 
 SimpleGallery.prototype.addBackdropEventListener = function () {

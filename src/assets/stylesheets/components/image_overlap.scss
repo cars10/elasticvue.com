@@ -22,10 +22,4 @@
   width: 100%;
   top: 8%;
   left: 5%;
-  transition: top 0.3s, left 0.3s;
-}
-
-.image_overlap__base img:hover {
-  cursor: pointer;
-  box-shadow: $default-box-shadow-hover;
 }
