@@ -70,6 +70,7 @@ module.exports = {
         }),
         new PurifyCSSPlugin({
             paths: glob.sync([
+                path.join(__dirname, 'src/index.js'),
                 path.join(__dirname, 'src/*.html'),
                 path.join(__dirname, 'src/components/*.html'),
                 path.join(__dirname, 'src/assets/scripts/*.js'),
