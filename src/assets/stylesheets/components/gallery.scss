@@ -62,6 +62,7 @@
   color: #fff;
   text-align: center;
   font-size: 3.8rem;
+  line-height: 3.8rem;
   user-select: none;
 }
 
@@ -83,6 +84,7 @@
 @media only screen and (max-width: $tablet) {
   .gallery__modal__controls__prev, .gallery__modal__controls__next {
     font-size: 2rem;
+    line-height: 2rem;
     width: 10%;
     height: 20%;
     top: 40%;
