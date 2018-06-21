@@ -1,0 +1,31 @@
+.hamburger {
+  display: none;
+  width: 42px;
+  margin-top: 8px;
+  margin-right: 2px;
+  padding: 10px 6px;
+  border-radius: $default-border-radius
+}
+
+.hamburger:hover {
+  background-color: #ccc
+}
+
+.hamburger--bar {
+  float: left;
+  display: inline-block;
+  height: 4px;
+  width: 30px;
+  background-color: #333;
+  border-radius: $default-border-radius
+}
+
+.hamburger--bar:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+@media only screen and (max-width: $tablet) {
+  .hamburger {
+    display: inline-block;
+  }
+}

@@ -58,7 +58,40 @@ a.navigation__link {
   }
 
   .navigation {
-    display: none // TODO
+    height: auto;
+    max-height: 0;
+    position: fixed;
+    background-color: #fff;
+    margin-top: $header-height--mobile;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    left: 0;
+    right: 0;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+    overflow: hidden;
+    transition: max-height 0.3s;
+  }
+
+  .navigation > li {
+    float: none;
+    height: initial;
+  }
+
+  .navigation .navigation__link {
+    margin: 0;
+    padding: 12px 0;
+    width: 100%;
+  }
+
+  .navigation__image {
+    padding: 8px;
+    margin: 0;
+  }
+
+  .navigation.navigation--open {
+    max-height: 350px;
   }
 }
 
