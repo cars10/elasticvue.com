@@ -66,7 +66,8 @@
   user-select: none;
 }
 
-.gallery__modal:hover .gallery__modal__controls__prev, .gallery__modal:hover .gallery__modal__controls__next {
+.gallery.gallery--visible .gallery__modal:hover .gallery__modal__controls__prev,
+.gallery.gallery--visible .gallery__modal:hover .gallery__modal__controls__next {
   opacity: 1;
   visibility: visible;
 }
