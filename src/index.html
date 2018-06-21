@@ -240,20 +240,5 @@ http.cors.allow-origin: /chrome-extension:\\/\\/[a-z]+/</code></pre>
 ${require('./components/footer.html')}
 
 <div class="back_to_top">Back to top</div>
-
-<script>
-    if (window.outerWidth > 1024) {
-        const height = window.outerHeight
-        const initialHeight = 800
-        const maxHeight = 1080
-        if (height > initialHeight) {
-            const heightToSet = height < maxHeight ? height : maxHeight
-            document.querySelectorAll('.content').forEach(function (content) {
-                content.style.height = heightToSet - 80 + 'px'
-            })
-        }
-    }
-</script>
 </body>
-
 </html>
