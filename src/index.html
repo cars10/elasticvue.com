@@ -150,8 +150,7 @@ ${require('./components/header.html')}
                         To enable CORS add the following to your
                         <a class="link--white" target="_blank" rel="noopener"
                            href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html">
-                            elasticsearch configuration
-                        </a>, based on how you run elasticvue:
+                            elasticsearch configuration</a>, based on how you run elasticvue:
                     </p>
                     <ul class="ul--default mb-1">
                         <li><code class="code-inline">http.cors.enabled: true</code></li>
@@ -169,11 +168,11 @@ http.cors.enabled: true
 <span class="comment"># Then set the allowed origins based on how you run elasticvue:</span>
 
 <span class="comment"># for docker / running locally</span>
-http.cors.allow-origin: /https?:\/\/localhost(:[0-9]+)?/
+http.cors.allow-origin: /https?:\\/\\/localhost(:[0-9]+)?/
 <span class="comment"># online version</span>
-http.cors.allow-origin: /https?:\/\/app.elasticvue.com/
+http.cors.allow-origin: /https?:\\/\\/app.elasticvue.com/
 <span class="comment"># chrome extension</span>
-http.cors.allow-origin: /chrome-extension:\/\/[a-z]+/</code></pre>
+http.cors.allow-origin: /chrome-extension:\\/\\/[a-z]+/</code></pre>
                     </div>
                 </div>
             </div>
