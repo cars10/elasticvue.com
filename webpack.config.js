@@ -1,5 +1,6 @@
 const glob = require('glob-all');
 const path = require('path');
+var webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -52,6 +53,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html'
