@@ -68,7 +68,7 @@ a.navigation__link {
     padding: 0;
     left: 0;
     right: 0;
-    border-radius: $default-border-radius;
+    border-radius: 0 0 $default-border-radius $default-border-radius;
     box-shadow: $default-box-shadow;
     overflow: hidden;
     transition: max-height 0.3s;
