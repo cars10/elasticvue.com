@@ -32,7 +32,7 @@
 a.navigation__link {
   font-size: 1.1rem;
   text-decoration: none;
-  color: #333;
+  color: $default-text-color;
   margin-top: 28px;
   display: inline-block;
 }
@@ -57,7 +57,7 @@ a.navigation__link {
   }
 
   .title > a:hover {
-    color: #ccc;
+    color: $grey;
   }
 
   a.navigation__link {
@@ -68,7 +68,7 @@ a.navigation__link {
   }
 
   .navigation > li > a:hover {
-    color: #ccc;
+    color: $grey;
   }
 }
 

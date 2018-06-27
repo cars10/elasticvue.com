@@ -10,6 +10,8 @@ $default-text-color: #222;
 $default-color: #33447d;
 $default-color--dark: darken(#33447d, 20%);
 $link-hover-color: #1e91ff;
+$light-grey: #eee;
+$grey: #ccc;
 
 /** grid **/
 $grid-padding: 15px;
@@ -24,4 +26,4 @@ $header-height--tablet: $header-height - 10px;
 $content-padding: 90px;
 $content-padding--mobile: $content-padding/4;
 $content-padding--tablet: $content-padding/2;
-$transition-duration: 0.3s;
+$transition-duration: 0.3s ease-in;

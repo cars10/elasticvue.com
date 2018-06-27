@@ -1,5 +1,5 @@
 .code-block {
-  background-color: #eee;
+  background-color: $light-grey;
   padding: 8px;
   word-break: break-all;
   text-align: left;
@@ -14,7 +14,7 @@
 
 .code-inline {
   font-size: 0.9em;
-  background-color: #eee;
+  background-color: $light-grey;
   padding: 2px 4px;
   color: $default-text-color;
   border-radius: $default-border-radius;

@@ -4,12 +4,12 @@
   color: $default-text-color;
   border-radius: $default-border-radius;
   display: inline-block;
-  background-color: #ddd;
+  background-color: $light-grey;
   box-shadow: $default-box-shadow;
 }
 
 .button:hover, .button:focus {
-  background-color: #ccc;
+  background-color: $grey;
 }
 
 .button--primary, .button--primary:visited {

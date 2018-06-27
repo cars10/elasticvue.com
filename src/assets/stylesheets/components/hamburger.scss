@@ -8,7 +8,7 @@
 }
 
 .hamburger:hover {
-  background-color: #ccc
+  background-color: $grey
 }
 
 .hamburger--bar {
@@ -16,7 +16,7 @@
   display: inline-block;
   height: 4px;
   width: 30px;
-  background-color: #333;
+  background-color: $default-text-color;
   border-radius: $default-border-radius
 }
 
