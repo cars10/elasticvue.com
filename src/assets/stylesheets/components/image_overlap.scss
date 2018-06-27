@@ -14,7 +14,7 @@
 .image_overlap__base {
   top: 0;
   left: 0;
-  transition: top 0.3s, left 0.3s;
+  transition: top $transition-duration, left $transition-duration;
 }
 
 .image_overlap__overlap {

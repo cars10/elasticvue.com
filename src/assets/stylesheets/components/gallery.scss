@@ -57,7 +57,7 @@
   top: 45%;
   bottom: 45%;
   z-index: 6;
-  transition: 0.3s visibility, 0.3s opacity;
+  transition: visibility $transition-duration, opacity $transition-duration;
   cursor: pointer;
   color: #fff;
   text-align: center;

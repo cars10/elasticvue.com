@@ -9,6 +9,17 @@
   top: 0;
 }
 
+.header.header--fancy {
+  background-color: $default-color;
+  color: #fff;
+  box-shadow: none;
+  border-bottom: 2px solid $default-color;
+}
+
+.header.header--animated {
+  transition: background-color $transition-duration, border-bottom-color $transition-duration, color $transition-duration;
+}
+
 @media only screen and (max-width: $tablet) {
   .header {
     height: $header-height--mobile;

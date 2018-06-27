@@ -3,7 +3,7 @@
   text-align: center;
   margin: 10px;
   box-shadow: $default-box-shadow;
-  transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  transition: box-shadow $transition-duration;
   border-radius: $default-border-radius;
 }
 

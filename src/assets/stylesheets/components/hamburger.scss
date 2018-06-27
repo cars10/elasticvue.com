@@ -24,6 +24,15 @@
   margin-bottom: 4px;
 }
 
+.header--fancy {
+  .hamburger:hover {
+    background-color: $default-color--dark
+  }
+  .hamburger--bar {
+    background-color: #fff
+  }
+}
+
 @media only screen and (max-width: $tablet) {
   .hamburger {
     display: inline-block;

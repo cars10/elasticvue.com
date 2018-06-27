@@ -23,6 +23,7 @@ import Screenshot7Thumb from '../static/images/screenshots/screenshot_7_utilitie
 // Scripts
 import './assets/scripts/resize_content'
 import './assets/scripts/back_to_top'
+import './assets/scripts/fancy_header'
 import SimpleGallery from './assets/scripts/gallery'
 // Styles
 import './assets/stylesheets/style.scss'

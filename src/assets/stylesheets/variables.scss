@@ -2,11 +2,13 @@
 $font-size: 16px;
 $default-border-radius: 2px;
 $default-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+$default-box-shadow--bottom: 0 2px 2px rgba(0, 0, 0, 0.3);
 $default-box-shadow-hover: 0 0 10px rgba(0, 0, 0, 0.4);
 
 /** colors **/
 $default-text-color: #222;
 $default-color: #33447d;
+$default-color--dark: darken(#33447d, 20%);
 $link-hover-color: #1e91ff;
 
 /** grid **/
@@ -22,3 +24,4 @@ $header-height--tablet: $header-height - 10px;
 $content-padding: 90px;
 $content-padding--mobile: $content-padding/4;
 $content-padding--tablet: $content-padding/2;
+$transition-duration: 0.3s;
