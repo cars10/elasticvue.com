@@ -7,12 +7,37 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const CompressionPlugin = require("compression-webpack-plugin")
 const PurifyCSSPlugin = require('purifycss-webpack');
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 const dev = process.env.NODE_ENV !== 'production'
 
+
+const HtmlWebpackHelper = function (filename) {
+    return new HtmlWebpackPlugin({
+        template: './src/' + filename,
+        filename: filename
+    })
+}
+
+const HtmlWebpackCriticalCssHelper = function (filename) {
+    return new HtmlCriticalWebpackPlugin({
+        base: path.resolve(__dirname, 'dist'),
+        src: filename,
+        dest: filename,
+        inline: true,
+        minify: true,
+        extract: true,
+        width: 1920,
+        height: 1080,
+        penthouse: {
+            blockJSRequests: false,
+        }
+    })
+}
+
 module.exports = {
     output: {
-        filename: dev ? '[name].js' : '[name].[chunkhash].js'
+        filename: dev ? '[name].js' : 'js/[name].[chunkhash].js'
     },
     optimization: {
         minimizer: [
@@ -28,7 +53,12 @@ module.exports = {
         rules: [
             {
                 test: /\.(png|jpg|svg)$/,
-                use: ["file-loader"]
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'static/'
+                    }
+                }
             },
             {
                 test: /\.html$/,
@@ -56,21 +86,12 @@ module.exports = {
         new webpack.DefinePlugin({
             'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
         }),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
-            filename: 'index.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/legals.html',
-            filename: 'legals.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/privacy.html',
-            filename: 'privacy.html'
-        }),
+        HtmlWebpackHelper('index.html'),
+        HtmlWebpackHelper('legals.html'),
+        HtmlWebpackHelper('privacy.html'),
         new MiniCssExtractPlugin({
-            filename: dev ? '[name].css' : 'style.[hash].css',
-            chunkFilename: dev ? '[id].css' : '[id].[hash].css',
+            filename: dev ? '[name].css' : 'css/style.[hash].css',
+            chunkFilename: dev ? '[id].css' : 'css/[id].[hash].css',
         }),
         new PurifyCSSPlugin({
             paths: glob.sync([
@@ -81,6 +102,9 @@ module.exports = {
             ]),
             minimize: true
         }),
+        HtmlWebpackCriticalCssHelper('index.html'),
+        HtmlWebpackCriticalCssHelper('legals.html'),
+        HtmlWebpackCriticalCssHelper('privacy.html'),
         new CompressionPlugin({
             test: /\.(js|css)/
         })
