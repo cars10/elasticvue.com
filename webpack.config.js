@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const CompressionPlugin = require("compression-webpack-plugin")
 const PurifyCSSPlugin = require('purifycss-webpack');
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
@@ -104,9 +103,6 @@ module.exports = {
         }),
         HtmlWebpackCriticalCssHelper('index.html'),
         HtmlWebpackCriticalCssHelper('legals.html'),
-        HtmlWebpackCriticalCssHelper('privacy.html'),
-        new CompressionPlugin({
-            test: /\.(js|css)/
-        })
+        HtmlWebpackCriticalCssHelper('privacy.html')
     ]
 }
