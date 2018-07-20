@@ -14,13 +14,9 @@
   color: $default-text-color;
 }
 
-.content .subheading {
+.content:not(.content--white) .subheading {
   color: #fff;
   opacity: .8;
-}
-
-.content--white .subheading {
-  color: #666
 }
 
 @media only screen and (max-width: $tablet) {
