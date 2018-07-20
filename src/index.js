@@ -24,6 +24,7 @@ import Screenshot7Thumb from '../static/images/screenshots/screenshot_7_utilitie
 import './assets/scripts/resize_content'
 import './assets/scripts/back_to_top'
 import './assets/scripts/fancy_header'
+import './assets/scripts/copyable'
 import SimpleGallery from './assets/scripts/gallery'
 // Styles
 import './assets/stylesheets/style.scss'
