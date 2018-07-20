@@ -13,12 +13,12 @@ function getPreviousIndex (length, index) {
  *
  * @param options:
  *  gallerySelector: '#some_id'
+ *  thumbnailClasses: ['class1', 'class2']
  *  images: [
  *      {
  *          src: 'path/image.png',
  *          fullSizeSrc: 'path/image_full.png',
  *          alt: 'My image',
- *          classes: ['class1', 'class2'],
  *          wrapperClasses: ['wrapperClass1', 'wrapperClass2']
  *      }
  *  ]
@@ -28,6 +28,8 @@ export default function SimpleGallery (options) {
     this.currentImageIndex = 0
     this.gallery = document.querySelector(options.gallerySelector)
     this.images = options.images
+    this.thumbnailClasses = options.thumbnailClasses
+
     this.galleryModal = null
     this.galleryModalBackdrop = null
     this.galleryImage = null
@@ -64,8 +66,8 @@ SimpleGallery.prototype.setupGalleryTransitions = function () {
 
 SimpleGallery.prototype.buildImageHtml = function (image) {
     let imgHtml = document.createElement('img')
-    if (image.classes) {
-        image.classes.forEach(function (className) {
+    if (this.thumbnailClasses) {
+        this.thumbnailClasses.forEach(function (className) {
             imgHtml.classList.add(className)
         })
     }
@@ -164,6 +166,7 @@ SimpleGallery.prototype.loadImage = function (index) {
     this.currentImageIndex = index
     let src = image.fullSizeSrc || image.src
     this.galleryImage.setAttribute('src', src)
+    this.galleryImage.setAttribute('alt', image.alt)
 }
 
 SimpleGallery.prototype.addBackdropEventListener = function () {

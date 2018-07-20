@@ -31,19 +31,18 @@ import './assets/stylesheets/style.scss'
 
 new SimpleGallery({
     gallerySelector: '#lead_gallery',
+    thumbnailClasses: ['gallery__thumb'],
     images: [
         {
             src: LightThumb,
             fullSizeSrc: LightFullsize,
             alt: 'Light screenshot',
-            classes: ['gallery__thumb'],
             wrapperClasses: ['image_overlap__base']
         },
         {
             src: DarkThumb,
             fullSizeSrc: DarkFullsize,
             alt: 'Dark screenshot',
-            classes: ['gallery__thumb'],
             wrapperClasses: ['image_overlap__overlap']
         }
     ]
@@ -51,53 +50,54 @@ new SimpleGallery({
 
 new SimpleGallery({
     gallerySelector: '#screenshot_gallery',
+    thumbnailClasses: ['gallery__thumb'],
     images: [
         {
             src: Screenshot0Thumb,
             fullSizeSrc: Screenshot0,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 0',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot1Thumb,
             fullSizeSrc: Screenshot1,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 1',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot2Thumb,
             fullSizeSrc: Screenshot2,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 2',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot3Thumb,
             fullSizeSrc: Screenshot3,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 3',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot4Thumb,
             fullSizeSrc: Screenshot4,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 4',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot5Thumb,
             fullSizeSrc: Screenshot5,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 5',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot6Thumb,
             fullSizeSrc: Screenshot6,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 6',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         },
         {
             src: Screenshot7Thumb,
             fullSizeSrc: Screenshot7,
-            classes: ['gallery__thumb'],
+            alt: 'screenshot 7',
             wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
         }
     ]
