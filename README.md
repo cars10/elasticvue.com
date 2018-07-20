@@ -16,3 +16,8 @@ Build for production:
 yarn build
 ```
 
+
+## TODO
+
+* Better quality screenshots
+* Smooth scrolling for anchors
