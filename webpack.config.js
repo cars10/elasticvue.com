@@ -34,6 +34,34 @@ const HtmlWebpackCriticalCssHelper = function (filename) {
     })
 }
 
+const plugins = [
+    new webpack.DefinePlugin({
+        'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
+    }),
+    HtmlWebpackHelper('index.html'),
+    HtmlWebpackHelper('legals.html'),
+    HtmlWebpackHelper('privacy.html'),
+    new MiniCssExtractPlugin({
+        filename: dev ? '[name].css' : 'css/style.[hash].css',
+        chunkFilename: dev ? '[id].css' : 'css/[id].[hash].css',
+    }),
+    new PurifyCSSPlugin({
+        paths: glob.sync([
+            path.join(__dirname, 'src/index.js'),
+            path.join(__dirname, 'src/*.html'),
+            path.join(__dirname, 'src/components/*.html'),
+            path.join(__dirname, 'src/assets/scripts/*.js'),
+        ]),
+        minimize: true
+    }),
+]
+
+const prodPlugins = plugins.concat([
+    HtmlWebpackCriticalCssHelper('index.html'),
+    HtmlWebpackCriticalCssHelper('legals.html'),
+    HtmlWebpackCriticalCssHelper('privacy.html')
+])
+
 module.exports = {
     output: {
         filename: dev ? '[name].js' : 'js/[name].[chunkhash].js'
@@ -81,28 +109,5 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
-        }),
-        HtmlWebpackHelper('index.html'),
-        HtmlWebpackHelper('legals.html'),
-        HtmlWebpackHelper('privacy.html'),
-        new MiniCssExtractPlugin({
-            filename: dev ? '[name].css' : 'css/style.[hash].css',
-            chunkFilename: dev ? '[id].css' : 'css/[id].[hash].css',
-        }),
-        new PurifyCSSPlugin({
-            paths: glob.sync([
-                path.join(__dirname, 'src/index.js'),
-                path.join(__dirname, 'src/*.html'),
-                path.join(__dirname, 'src/components/*.html'),
-                path.join(__dirname, 'src/assets/scripts/*.js'),
-            ]),
-            minimize: true
-        }),
-        HtmlWebpackCriticalCssHelper('index.html'),
-        HtmlWebpackCriticalCssHelper('legals.html'),
-        HtmlWebpackCriticalCssHelper('privacy.html')
-    ]
+    plugins: dev ? plugins : prodPlugins
 }
