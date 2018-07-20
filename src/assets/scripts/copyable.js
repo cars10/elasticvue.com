@@ -3,7 +3,7 @@ document.querySelectorAll('.copyable').forEach(element => {
         try {
             copyToClipboard(element)
             showToast(e, 'Copied to clipboard')
-        } catch {
+        } catch (e) {
             showToast(e, 'Could not copy', 'error')
         }
     })
@@ -17,8 +17,8 @@ function copyToClipboard (element) {
     range.selectNodeContents(element)
     selection.removeAllRanges()
     selection.addRange(range)
-    document.execCommand('copy');
-    selection.removeAllRanges();
+    document.execCommand('copy')
+    selection.removeAllRanges()
 }
 
 function showToast (e, msg, type) {
