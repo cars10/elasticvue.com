@@ -4,12 +4,27 @@
   box-sizing: border-box;
 }
 
-/** https://www.svgbackgrounds.com/#rainbow-vortex **/
 body {
   color: $default-text-color;
   font-size: $font-size;
   background-color: $default-color;
   font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 300;
+  src: local('Roboto'), local('Roboto-Regular'),
+  url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 500;
+  src: local('Roboto Light'), local('Roboto-Light'),
+  url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  font-display: optional;
 }
 
 h1 {
