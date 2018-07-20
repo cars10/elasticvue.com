@@ -18,8 +18,7 @@
   text-align: center;
 }
 
-@media only screen and (max-width: $desktop) {
-  .overflow--scroll--tablet {
-    overflow-x: scroll;
-  }
+.overflow-x-scroll {
+  overflow-x: scroll;
+  max-width: 100%;
 }
