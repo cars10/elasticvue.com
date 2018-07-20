@@ -37,6 +37,7 @@ export default function SimpleGallery (options) {
     this.nextImageCtrl = null
     this.galleryOpen = false
 
+    if (!this.gallery) return
     this.setup()
 }
 

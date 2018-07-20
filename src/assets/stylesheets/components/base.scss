@@ -38,22 +38,3 @@ h2 {
 h3 {
   font-size: 1.25rem;
 }
-
-:target {
-  display: block;
-  position: relative;
-  top: -($header-height+$content-padding);
-  visibility: hidden;
-}
-
-@media only screen and (max-width: $tablet) {
-  :target {
-    top: -($header-height--mobile+$content-padding--mobile)+2px; // +2px offset because it does not fit exactly
-  }
-}
-
-@media only screen and (min-width: $tablet) and (max-width: $desktop) {
-  :target {
-    top: -($header-height--mobile+$content-padding--tablet);
-  }
-}

@@ -7,9 +7,9 @@
         <nav class="pull-right">
             <ul class="navigation" id="navigation">
                 <li><a class="navigation__link" href="${BASE_URI}">Home</a></li>
-                <li><a class="navigation__link" href="${BASE_URI}#usage">Usage</a></li>
-                <li><a class="navigation__link" href="${BASE_URI}#configuration">Configuration</a></li>
-                <li><a class="navigation__link" href="${BASE_URI}#screenshots">Screenshots</a></li>
+                <li><a class="navigation__link" href="#usage">Usage</a></li>
+                <li><a class="navigation__link" href="#configuration">Configuration</a></li>
+                <li><a class="navigation__link" href="#screenshots">Screenshots</a></li>
                 <li>
                     <a class="navigation__image" href="https://github.com/cars10/elasticvue"
                        target="_blank" rel="noopener">
@@ -23,7 +23,14 @@
                 <div class="hamburger--bar"></div>
                 <div class="hamburger--bar"></div>
             </a>
-
         </nav>
     </div>
 </header>
+
+<script>
+    if (window.location.pathname !== '/') {
+        document.querySelectorAll('.navigation__link').forEach(link => {
+            link.parentNode.removeChild(link)
+        })
+    }
+</script>

@@ -25,6 +25,7 @@ import './assets/scripts/resize_content'
 import './assets/scripts/back_to_top'
 import './assets/scripts/fancy_header'
 import './assets/scripts/copyable'
+import './assets/scripts/smooth_anchor'
 import SimpleGallery from './assets/scripts/gallery'
 // Styles
 import './assets/stylesheets/style.scss'
@@ -114,7 +115,6 @@ document.querySelector('#navbar_toggle').addEventListener('click', function () {
 })
 document.querySelectorAll('.navigation__link').forEach(function (link) {
     link.addEventListener('click', function () {
-        console.log('click')
         nav.classList.remove('navigation--open')
     })
 })
