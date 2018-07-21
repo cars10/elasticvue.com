@@ -5,6 +5,7 @@
   box-shadow: $default-box-shadow;
   transition: box-shadow $transition-duration;
   border-radius: $default-border-radius;
+  height: 100%;
 }
 
 .feature--docker {
