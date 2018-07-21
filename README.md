@@ -20,5 +20,4 @@ yarn build
 ## TODO
 
 * Better quality screenshots
-* Smooth scrolling for anchors
 * Call-to-action button in navbar to app.elasticvue.com
