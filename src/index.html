@@ -148,7 +148,7 @@ ${require('./components/navbar.html')}
                     <div class="mb-2 subheading">Configuration example</div>
                     <div class="overflow-x-scroll inline-block mb-2">
 <pre class="inline-block code-block copyable"><code><span
-        class="comment"># Enable 'Access-Control-Allow-Origin' header</span>
+        class="comment"># Enable CORS</span>
 http.cors.enabled: true
 
 <span class="comment"># Then set the allowed origins based on how you run elasticvue.</span>
@@ -159,7 +159,10 @@ http.cors.allow-origin: /https?:\\/\\/localhost(:[0-9]+)?/
 <span class="comment"># online version</span>
 http.cors.allow-origin: /https?:\\/\\/app.elasticvue.com/
 <span class="comment"># chrome extension</span>
-http.cors.allow-origin: /chrome-extension:\\/\\/[a-z]+/</code></pre>
+http.cors.allow-origin: /chrome-extension:\\/\\/[a-z]+/
+
+<span class="comment"># and if your cluster uses authorization you also have to add:</span>
+http.cors.allow-headers : X-Requested-With,Content-Type,Content-Length,Authorization</code></pre>
                     </div>
                 </div>
             </div>
