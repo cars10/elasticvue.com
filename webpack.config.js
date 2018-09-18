@@ -36,6 +36,21 @@ const HtmlWebpackCriticalCssHelper = function (filename) {
 }
 
 const plugins = [
+    new FaviconsWebpackPlugin({
+        logo: './static/icons/logo/logo_high_blue.png',
+        icons: {
+            android: false,
+            appleIcon: false,
+            appleStartup: false,
+            coast: false,
+            favicons: true,
+            firefox: false,
+            opengraph: false,
+            twitter: false,
+            yandex: false,
+            windows: false
+        }
+    }),
     new webpack.DefinePlugin({
         'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
     }),
@@ -54,8 +69,7 @@ const plugins = [
             path.join(__dirname, 'src/assets/scripts/*.js'),
         ]),
         minimize: true
-    }),
-    new FaviconsWebpackPlugin('./static/icons/logo/logo_high_blue.png')
+    })
 ]
 
 const prodPlugins = plugins.concat([
