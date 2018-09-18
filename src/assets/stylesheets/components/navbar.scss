@@ -1,3 +1,10 @@
+.brand-logo {
+  width: 52px;
+  margin-top: 14px;
+  margin-right: 8px;
+  float: left;
+}
+
 .title {
   font-size: 36px;
   font-weight: normal;
@@ -5,13 +12,13 @@
   padding: 18px 0;
 }
 
-.title > a, .title > a:visited {
+a > .title, a:visited > .title {
   color: $default-text-color;
   text-decoration: none;
 }
 
-.title > a:hover {
-  color: $link-hover-color;
+a:hover > .title {
+  color: $default-color;
 }
 
 .navigation {
@@ -51,12 +58,28 @@ a.navigation__link {
   color: $link-hover-color;
 }
 
+.header--fancy--visible {
+  display: none
+}
+
+.header--fancy--hidden {
+  display: block;
+}
+
 .header--fancy {
-  .title > a, .title > a:visited {
+  .header--fancy--visible {
+    display: block;
+  }
+
+  .header--fancy--hidden {
+    display: none;
+  }
+
+  a > .title, a:visited > .title {
     color: #fff;
   }
 
-  .title > a:hover {
+  a:hover .title {
     color: $grey;
   }
 

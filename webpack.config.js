@@ -2,6 +2,7 @@ const glob = require('glob-all');
 const path = require('path');
 var webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
@@ -54,6 +55,7 @@ const plugins = [
         ]),
         minimize: true
     }),
+    new FaviconsWebpackPlugin('./static/icons/logo/logo_high_blue.png')
 ]
 
 const prodPlugins = plugins.concat([
