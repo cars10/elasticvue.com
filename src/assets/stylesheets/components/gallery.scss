@@ -83,6 +83,10 @@
 }
 
 @media only screen and (max-width: $tablet) {
+  .gallery__thumb {
+    max-width: 100% !important;
+  }
+
   .gallery__modal__controls__prev, .gallery__modal__controls__next {
     font-size: 2rem;
     line-height: 2rem;
