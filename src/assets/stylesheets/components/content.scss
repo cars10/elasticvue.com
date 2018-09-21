@@ -21,22 +21,22 @@
 
 @media only screen and (max-width: $tablet) {
   .content {
-    padding-top: $content-padding--mobile;
-    padding-bottom: $content-padding--mobile;
+    padding-top: $content-padding--mobile !important;
+    padding-bottom: $content-padding--mobile !important;
   }
 
   .content--lead {
-    min-height: 0;
+    min-height: 0 !important;
   }
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $desktop) {
   .content {
-    padding-top: $content-padding--tablet;
-    padding-bottom: $content-padding--tablet;
+    padding-top: $content-padding--tablet !important;
+    padding-bottom: $content-padding--tablet !important;
   }
 
   .content--lead {
-    min-height: 0;
+    min-height: 0 !important;
   }
 }

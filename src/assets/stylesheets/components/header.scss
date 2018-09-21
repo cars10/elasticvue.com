@@ -22,12 +22,12 @@
 
 @media only screen and (max-width: $tablet) {
   .header {
-    height: $header-height--mobile;
+    height: $header-height--mobile !important;
   }
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $desktop) {
   .header {
-    height: $header-height--tablet;
+    height: $header-height--tablet !important;
   }
 }

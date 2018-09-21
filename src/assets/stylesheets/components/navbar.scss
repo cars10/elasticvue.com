@@ -97,79 +97,79 @@ a.navigation__link {
 
 @media only screen and (max-width: $tablet) {
   .title {
-    font-size: 24px;
-    padding: 15px 0;
+    font-size: 24px !important;
+    padding: 15px 0 !important;
   }
 
   .navigation {
-    height: auto;
-    max-height: 0;
-    position: fixed;
-    background-color: #fff;
-    margin-top: $header-height--mobile;
-    width: 100%;
-    text-align: center;
-    padding: 0;
-    left: 0;
-    right: 0;
-    border-radius: 0 0 $default-border-radius $default-border-radius;
-    box-shadow: $default-box-shadow--bottom;
-    overflow: hidden;
-    transition: max-height $transition-duration;
+    height: auto !important;
+    max-height: 0 !important;
+    position: fixed !important;
+    background-color: #fff !important;
+    margin-top: $header-height--mobile !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    border-radius: 0 0 $default-border-radius $default-border-radius !important;
+    box-shadow: $default-box-shadow--bottom !important;
+    overflow: hidden !important;
+    transition: max-height $transition-duration !important;
   }
 
   .navigation > li {
-    float: none;
-    height: initial;
+    float: none !important;
+    height: initial !important;
   }
 
   .navigation .navigation__link {
-    margin: 0;
-    padding: 12px 0;
-    width: 100%;
+    margin: 0 !important;
+    padding: 12px 0 !important;
+    width: 100% !important;
   }
 
   .navigation__image {
-    padding: 8px;
-    margin: 0;
+    padding: 8px !important;
+    margin: 0 !important;
   }
 
   .navigation.navigation--open {
-    max-height: 350px;
+    max-height: 350px !important;
   }
 
   .header--fancy {
     .navigation {
-      background-color: $default-color;
+      background-color: $default-color !important;
     }
   }
 
   .brand-logo {
-    width: 32px;
+    width: 32px !important;
   }
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $desktop) {
   .title {
-    padding: 18px 0;
-    font-size: 28px;
+    padding: 18px 0 !important;
+    font-size: 28px !important;
   }
 
   .navigation .navigation__link {
-    margin-left: 20px;
+    margin-left: 20px !important;
   }
 
   .navigation__image {
-    padding: 14px 10px;
-    margin-left: 10px;
+    padding: 14px 10px !important;
+    margin-left: 10px !important;
   }
 
   a.navigation__link {
-    font-size: 1rem;
-    margin-top: 26px;
+    font-size: 1rem !important;
+    margin-top: 26px !important;
   }
 
   .brand-logo {
-    width: 40px;
+    width: 40px !important;
   }
 }

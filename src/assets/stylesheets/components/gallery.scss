@@ -88,36 +88,36 @@
   }
 
   .gallery__modal__controls__prev, .gallery__modal__controls__next {
-    font-size: 2rem;
-    line-height: 2rem;
-    width: 10%;
-    height: 20%;
-    top: 40%;
-    bottom: 40%;
+    font-size: 2rem !important;
+    line-height: 2rem !important;
+    width: 10% !important;
+    height: 20% !important;
+    top: 40% !important;
+    bottom: 40% !important;
   }
 
   .gallery__modal {
-    top: 10px;
-    left: 5px;
-    right: 5px;
-    margin: auto;
+    top: 10px !important;
+    left: 5px !important;
+    right: 5px !important;
+    margin: auto !important;
   }
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $desktop) {
   .gallery__modal__controls__prev, .gallery__modal__controls__next {
-    font-size: 3rem;
-    padding-top: 14px;
-    width: 10%;
-    height: 20%;
-    top: 40%;
-    bottom: 40%;
+    font-size: 3rem !important;
+    padding-top: 14px !important;
+    width: 10% !important;
+    height: 20% !important;
+    top: 40% !important;
+    bottom: 40% !important;
   }
 
   .gallery__modal {
-    top: 20px;
-    left: 15px;
-    right: 15px;
-    margin: auto;
+    top: 20px !important;
+    left: 15px !important;
+    right: 15px !important;
+    margin: auto !important;
   }
 }
