@@ -1,15 +1,17 @@
-document.querySelectorAll('.copyable').forEach(element => {
-    element.addEventListener('click', (e) => {
-        try {
-            copyToClipboard(element)
-            showToast(e, 'Copied to clipboard')
-        } catch (e) {
-            showToast(e, 'Could not copy', 'error')
-        }
-    })
+(() => {
+    document.querySelectorAll('.copyable').forEach(element => {
+        element.addEventListener('click', (e) => {
+            try {
+                copyToClipboard(element)
+                showToast(e, 'Copied to clipboard')
+            } catch (e) {
+                showToast(e, 'Could not copy', 'error')
+            }
+        })
 
-    element.setAttribute('title', 'Click to copy')
-})
+        element.setAttribute('title', 'Click to copy')
+    })
+})()
 
 function copyToClipboard (element) {
     const selection = window.getSelection()
