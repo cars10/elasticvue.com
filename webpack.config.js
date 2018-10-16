@@ -1,6 +1,6 @@
 const glob = require('glob-all');
 const path = require('path');
-var webpack = require('webpack')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
