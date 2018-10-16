@@ -1,4 +1,4 @@
-(() => {
+(window => {
     let scrollOffset = 50
     let header = document.getElementById('header')
 
@@ -11,4 +11,4 @@
             header.classList.add('header--fancy')
         }
     })
-})()
+})(window)
