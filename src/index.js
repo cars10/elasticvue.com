@@ -27,6 +27,7 @@ import './assets/scripts/fancy_header'
 import './assets/scripts/copyable'
 import './assets/scripts/smooth_anchor'
 import './assets/scripts/detect_ie'
+import './assets/scripts/hamburger'
 import SimpleGallery from './assets/scripts/gallery'
 // Styles
 import './assets/stylesheets/style.scss'
@@ -106,18 +107,4 @@ new SimpleGallery({
     ]
 })
 
-let nav = document.querySelector('#navigation')
-document.querySelector('#navbar_toggle').addEventListener('click', function () {
-    if (nav.classList.contains('navigation--open')) {
-        nav.classList.remove('navigation--open')
-    } else {
-        nav.classList.add('navigation--open')
-    }
-})
-document.querySelectorAll('.navigation__link').forEach(function (link) {
-    link.addEventListener('click', function () {
-        nav.classList.remove('navigation--open')
-    })
-})
-
-document.getElementById('current_year').innerHTML = new Date().getFullYear()
+document.getElementById('current_year').innerHTML = new Date().getFullYear().toString()
