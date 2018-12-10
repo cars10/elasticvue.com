@@ -13,25 +13,26 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "css-loader": "^0.28.11",
+    "css-loader": "^2.0.0",
     "favicons-webpack-plugin": "^0.0.9",
-    "file-loader": "^1.1.11",
+    "file-loader": "^2.0.0",
     "glob-all": "^3.1.0",
     "html-critical-webpack-plugin": "^2.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.0",
-    "node-sass": "^4.9.0",
-    "optimize-css-assets-webpack-plugin": "^4.0.2",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
-    "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "bulma": "^0.7.1"
+    "bulma": "^0.7.1",
+    "uglifyjs-webpack-plugin": "^2.0.1"
   }
 }
