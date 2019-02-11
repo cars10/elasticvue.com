@@ -1,24 +1,22 @@
 // Images for lead gallery
-import DarkThumb from '../static/images/dark.png'
-import DarkFullsize from '../static/images/dark_fullsize.png'
-import LightThumb from '../static/images/light.png'
-import LightFullsize from '../static/images/light_fullsize.png'
+import DarkFullsize from '../static/images/dark.jpg'
+import LightFullsize from '../static/images/light.jpg'
 // Images for screenshot gallery
-import Screenshot0 from '../static/images/screenshots/screenshot_0_connect_white.jpg'
-import Screenshot1 from '../static/images/screenshots/screenshot_1_home_white.jpg'
-import Screenshot2 from '../static/images/screenshots/screenshot_2_nodes.jpg'
-import Screenshot3 from '../static/images/screenshots/screenshot_3_indices.jpg'
-import Screenshot4 from '../static/images/screenshots/screenshot_4_index.jpg'
-import Screenshot5 from '../static/images/screenshots/screenshot_5_search_dark.jpg'
-import Screenshot6 from '../static/images/screenshots/screenshot_6_query_dark.jpg'
+import Screenshot0 from '../static/images/screenshots/screenshot_0_home_white.jpg'
+import Screenshot1 from '../static/images/screenshots/screenshot_1_nodes.jpg'
+import Screenshot2 from '../static/images/screenshots/screenshot_2_indices.jpg'
+import Screenshot3 from '../static/images/screenshots/screenshot_3_index.jpg'
+import Screenshot4 from '../static/images/screenshots/screenshot_4_search_dark.jpg'
+import Screenshot5 from '../static/images/screenshots/screenshot_5_query_dark.jpg'
+import Screenshot6 from '../static/images/screenshots/screenshot_6_snapshots_dark.jpg'
 import Screenshot7 from '../static/images/screenshots/screenshot_7_utilities_dark.jpg'
-import Screenshot0Thumb from '../static/images/screenshots/screenshot_0_connect_white_thumb.jpg'
-import Screenshot1Thumb from '../static/images/screenshots/screenshot_1_home_white_thumb.jpg'
-import Screenshot2Thumb from '../static/images/screenshots/screenshot_2_nodes_thumb.jpg'
-import Screenshot3Thumb from '../static/images/screenshots/screenshot_3_indices_thumb.jpg'
-import Screenshot4Thumb from '../static/images/screenshots/screenshot_4_index_thumb.jpg'
-import Screenshot5Thumb from '../static/images/screenshots/screenshot_5_search_dark_thumb.jpg'
-import Screenshot6Thumb from '../static/images/screenshots/screenshot_6_query_dark_thumb.jpg'
+import Screenshot0Thumb from '../static/images/screenshots/screenshot_0_home_white_thumb.jpg'
+import Screenshot1Thumb from '../static/images/screenshots/screenshot_1_nodes_thumb.jpg'
+import Screenshot2Thumb from '../static/images/screenshots/screenshot_2_indices_thumb.jpg'
+import Screenshot3Thumb from '../static/images/screenshots/screenshot_3_index_thumb.jpg'
+import Screenshot4Thumb from '../static/images/screenshots/screenshot_4_search_dark_thumb.jpg'
+import Screenshot5Thumb from '../static/images/screenshots/screenshot_5_query_dark_thumb.jpg'
+import Screenshot6Thumb from '../static/images/screenshots/screenshot_6_snapshots_dark_thumb.jpg'
 import Screenshot7Thumb from '../static/images/screenshots/screenshot_7_utilities_dark_thumb.jpg'
 // Scripts
 import './assets/scripts/resize_content'
@@ -38,13 +36,13 @@ new SimpleGallery({
     thumbnailClasses: ['gallery__thumb'],
     images: [
         {
-            src: LightThumb,
+            src: LightFullsize,
             fullSizeSrc: LightFullsize,
             alt: 'Light screenshot',
             wrapperClasses: ['image_overlap__base']
         },
         {
-            src: DarkThumb,
+            src: DarkFullsize,
             fullSizeSrc: DarkFullsize,
             alt: 'Dark screenshot',
             wrapperClasses: ['image_overlap__overlap']
