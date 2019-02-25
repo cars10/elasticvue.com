@@ -55,7 +55,6 @@ const plugins = [
         'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
     }),
     HtmlWebpackHelper('index.html'),
-    HtmlWebpackHelper('legals.html'),
     HtmlWebpackHelper('privacy.html'),
     new MiniCssExtractPlugin({
         filename: dev ? '[name].css' : 'css/style.[hash].css',
@@ -74,7 +73,6 @@ const plugins = [
 
 const prodPlugins = plugins.concat([
     HtmlWebpackCriticalCssHelper('index.html'),
-    HtmlWebpackCriticalCssHelper('legals.html'),
     HtmlWebpackCriticalCssHelper('privacy.html')
 ])
 
