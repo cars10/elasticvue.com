@@ -22,7 +22,8 @@ ${require('./components/navbar.html')}
                             <li>Cluster overview</li>
                             <li>Index management</li>
                             <li>Search interface</li>
-                            <li>Query interface</li>
+                            <li>Query interface (REST & API browser)</li>
+                            <li>Snapshot management</li>
                             <li>Utilities</li>
                         </ul>
                     </div>
@@ -39,11 +40,11 @@ ${require('./components/navbar.html')}
             </div>
 
             <div class="text-center">
-                <h3 class="mb-1">
-                    <a class="pb-1 link--white link--no-decoration" href="#usage">Usage</a>
+                <h3 class="mb-2">
+                    <a class="pb-2 link--white link--no-decoration" href="#usage">Usage</a>
                 </h3>
 
-                <a href="#usage">
+                <a href="#usage" class="inline-block">
                     <img src="../static/icons/caret/caret--white.svg" alt="down" width="50" height="28">
                 </a>
             </div>
@@ -54,11 +55,11 @@ ${require('./components/navbar.html')}
         <div class="container">
             <h2 class="text-center mb-2" id="usage">Usage</h2>
 
-            <div class="text-center subheading">
+            <div class="text-center subheading mb-2">
                 <p>There are several ways of running elasticvue, chose what works best for you:</p>
             </div>
 
-            <div class="columns is-multiline columns--ordered-tablet my-2">
+            <div class="columns is-multiline columns--ordered-tablet mb-6">
                 <div class="column is-one-third-desktop is-half-tablet column--order-tablet-1">
                     <div class="feature">
                         <h4 class="feature__title">Web app</h4>
@@ -102,19 +103,20 @@ ${require('./components/navbar.html')}
                 </div>
             </div>
 
+            <!--
             <div class="text-center mb-6 subheading">
                 Checkout the
                 <a href="https://github.com/cars10/elasticvue" target="_blank" rel="noopener">github repository</a>
                 if you want to build elasticvue by yourself.
             </div>
+            -->
 
             <div class="text-center">
-                <h3 class="mb-1">
-                    <a class="pb-1 text--dark link--no-decoration" href="#configuration">Then proceed to the
-                        configuration</a>
+                <h3 class="mb-2">
+                    <a class="pb-2 text--dark link--no-decoration" href="#configuration">Cluster configuration</a>
                 </h3>
 
-                <a href="#configuration">
+                <a href="#configuration" class="inline-block">
                     <img src="../static/icons/caret/caret--dark.svg" alt="down" width="50" height="28">
                 </a>
             </div>
@@ -140,7 +142,7 @@ ${require('./components/navbar.html')}
                     </p>
                     <ul class="ul--default mb-1">
                         <li><code class="code-inline">http.cors.enabled: true</code></li>
-                        <li><code class="code-inline">http.cors.allow-origin: *</code></li>
+                        <li><code class="code-inline">http.cors.allow-origin: &lt;your-elasticvue-origin&gt;</code></li>
                     </ul>
                     <p>After configuration restart elasticsearch and you should be able to connect.</p>
                 </div>
@@ -168,11 +170,11 @@ http.cors.allow-headers : X-Requested-With,Content-Type,Content-Length,Authoriza
             </div>
 
             <div class="text-center">
-                <h3 class="mb-1">
-                    <a class="pb-1 link--white link--no-decoration" href="#screenshots">Screenshots</a>
+                <h3 class="mb-2">
+                    <a class="pb-2 link--white link--no-decoration" href="#screenshots">Screenshots</a>
                 </h3>
 
-                <a href="#screenshots">
+                <a href="#screenshots" class="inline-block">
                     <img src="../static/icons/caret/caret--white.svg" alt="down" width="50" height="28">
                 </a>
             </div>
