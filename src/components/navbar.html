@@ -1,8 +1,8 @@
 <header class="header header--fancy" id="header">
     <div class="container">
         <a href="${BASE_URI}">
-            <img src="../../static/icons/logo/logo_high_white.png" alt="Logo" class="header--fancy--visible brand-logo">
-            <img src="../../static/icons/logo/logo_high_blue.png" alt="Logo" class="header--fancy--hidden brand-logo">
+            <img alt="Logo" class="header--fancy--visible brand-logo" src="../../static/icons/logo/logo_high_white.png">
+            <img alt="Logo" class="header--fancy--hidden brand-logo" src="../../static/icons/logo/logo_high_blue.png">
             <h1 class="title">Elasticvue</h1>
         </a>
 
@@ -14,14 +14,16 @@
                 <li><a class="navigation__link" href="#screenshots">Screenshots</a></li>
                 <li>
                     <a class="navigation__image" href="https://github.com/cars10/elasticvue"
-                       target="_blank" rel="noopener">
-                        <img src="../../static/icons/github/github_mark_dark.png" alt="Github" width="40px" height="40px" class="header--fancy--hidden">
-                        <img src="../../static/icons/github/github_mark_light.png" alt="Github" width="40px" height="40px" class="header--fancy--visible">
+                       rel="noopener" target="_blank">
+                        <img alt="Github" class="header--fancy--hidden" height="40px"
+                             src="../../static/icons/github/github_mark_dark.png" width="40px">
+                        <img alt="Github" class="header--fancy--visible" height="40px"
+                             src="../../static/icons/github/github_mark_light.png" width="40px">
                     </a>
                 </li>
             </ul>
 
-            <a href="javascript:void(0)" id="navbar_toggle" class="hamburger" aria-label="Menu">
+            <a aria-label="Menu" class="hamburger" href="javascript:void(0)" id="navbar_toggle">
                 <div class="hamburger--bar"></div>
                 <div class="hamburger--bar"></div>
                 <div class="hamburger--bar"></div>
@@ -31,9 +33,9 @@
 </header>
 
 <script>
-    if (window.location.pathname !== '/') {
-        document.querySelectorAll('.navigation__link').forEach(link => {
-            link.parentNode.removeChild(link)
-        })
-    }
+  if (window.location.pathname !== '/') {
+    document.querySelectorAll('.navigation__link').forEach(link => {
+      link.parentNode.removeChild(link)
+    })
+  }
 </script>

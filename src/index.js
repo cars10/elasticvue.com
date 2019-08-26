@@ -32,77 +32,77 @@ import './assets/stylesheets/style.scss'
 
 
 new SimpleGallery({
-    gallerySelector: '#lead_gallery',
-    thumbnailClasses: ['gallery__thumb'],
-    images: [
-        {
-            src: LightFullsize,
-            fullSizeSrc: LightFullsize,
-            alt: 'Light screenshot',
-            wrapperClasses: ['image_overlap__base']
-        },
-        {
-            src: DarkFullsize,
-            fullSizeSrc: DarkFullsize,
-            alt: 'Dark screenshot',
-            wrapperClasses: ['image_overlap__overlap']
-        }
-    ]
+  gallerySelector: '#lead_gallery',
+  thumbnailClasses: ['gallery__thumb'],
+  images: [
+    {
+      src: LightFullsize,
+      fullSizeSrc: LightFullsize,
+      alt: 'Light screenshot',
+      wrapperClasses: ['image_overlap__base']
+    },
+    {
+      src: DarkFullsize,
+      fullSizeSrc: DarkFullsize,
+      alt: 'Dark screenshot',
+      wrapperClasses: ['image_overlap__overlap']
+    }
+  ]
 })
 
 new SimpleGallery({
-    gallerySelector: '#screenshot_gallery',
-    thumbnailClasses: ['gallery__thumb'],
-    images: [
-        {
-            src: Screenshot0Thumb,
-            fullSizeSrc: Screenshot0,
-            alt: 'screenshot 0',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot1Thumb,
-            fullSizeSrc: Screenshot1,
-            alt: 'screenshot 1',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot2Thumb,
-            fullSizeSrc: Screenshot2,
-            alt: 'screenshot 2',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot3Thumb,
-            fullSizeSrc: Screenshot3,
-            alt: 'screenshot 3',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot4Thumb,
-            fullSizeSrc: Screenshot4,
-            alt: 'screenshot 4',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot5Thumb,
-            fullSizeSrc: Screenshot5,
-            alt: 'screenshot 5',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot6Thumb,
-            fullSizeSrc: Screenshot6,
-            alt: 'screenshot 6',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        },
-        {
-            src: Screenshot7Thumb,
-            fullSizeSrc: Screenshot7,
-            alt: 'screenshot 7',
-            wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
-        }
-    ]
+  gallerySelector: '#screenshot_gallery',
+  thumbnailClasses: ['gallery__thumb'],
+  images: [
+    {
+      src: Screenshot0Thumb,
+      fullSizeSrc: Screenshot0,
+      alt: 'screenshot 0',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot1Thumb,
+      fullSizeSrc: Screenshot1,
+      alt: 'screenshot 1',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot2Thumb,
+      fullSizeSrc: Screenshot2,
+      alt: 'screenshot 2',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot3Thumb,
+      fullSizeSrc: Screenshot3,
+      alt: 'screenshot 3',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot4Thumb,
+      fullSizeSrc: Screenshot4,
+      alt: 'screenshot 4',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot5Thumb,
+      fullSizeSrc: Screenshot5,
+      alt: 'screenshot 5',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot6Thumb,
+      fullSizeSrc: Screenshot6,
+      alt: 'screenshot 6',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    },
+    {
+      src: Screenshot7Thumb,
+      fullSizeSrc: Screenshot7,
+      alt: 'screenshot 7',
+      wrapperClasses: ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+    }
+  ]
 })
 
 document.getElementById('current_year').innerHTML = new Date().getFullYear().toString()
