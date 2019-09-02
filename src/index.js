@@ -19,7 +19,6 @@ import Screenshot5Thumb from '../static/images/screenshots/screenshot_5_query_da
 import Screenshot6Thumb from '../static/images/screenshots/screenshot_6_snapshots_dark_thumb.jpg'
 import Screenshot7Thumb from '../static/images/screenshots/screenshot_7_utilities_dark_thumb.jpg'
 // Scripts
-import './assets/scripts/resize_content'
 import './assets/scripts/back_to_top'
 import './assets/scripts/fancy_header'
 import './assets/scripts/copyable'

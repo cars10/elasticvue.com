@@ -59,6 +59,7 @@ const plugins = [
   }),
   HtmlWebpackHelper('index.html'),
   HtmlWebpackHelper('privacy.html'),
+  HtmlWebpackHelper('imprint.html'),
   new MiniCssExtractPlugin({
     filename: dev ? '[name].css' : 'css/style.[hash].css',
     chunkFilename: dev ? '[id].css' : 'css/[id].[hash].css',
@@ -76,7 +77,8 @@ const plugins = [
 
 const prodPlugins = plugins.concat([
   HtmlWebpackCriticalCssHelper('index.html'),
-  HtmlWebpackCriticalCssHelper('privacy.html')
+  HtmlWebpackCriticalCssHelper('privacy.html'),
+  HtmlWebpackCriticalCssHelper('imprint.html')
 ])
 
 module.exports = {
