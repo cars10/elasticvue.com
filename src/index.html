@@ -157,11 +157,11 @@ http.cors.enabled: true
 <span class="comment"># Chose only one:</span>
 
 <span class="comment"># for docker / running locally</span>
-http.cors.allow-origin: /https?:\\/\\/localhost(:[0-9]+)?/
+http.cors.allow-origin: "http://localhost:8080"
 <span class="comment"># online version</span>
 http.cors.allow-origin: /https?:\\/\\/app.elasticvue.com/
 <span class="comment"># chrome extension</span>
-http.cors.allow-origin: /chrome-extension:\\/\\/[a-z]+/
+http.cors.allow-origin: "chrome-extension://hkedbapjpblbodpgbajblpnlpenaebaa"
 
 <span class="comment"># and if your cluster uses authorization you also have to add:</span>
 http.cors.allow-headers : X-Requested-With,Content-Type,Content-Length,Authorization</code></pre>
