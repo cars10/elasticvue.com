@@ -89,27 +89,41 @@ ${require('./components/navbar.html')}
                     </div>
                 </div>
 
-                <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2">
+                <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2"
+                     id="feature_chrome_extension">
                     <div class="feature feature--chrome">
                         <h4 class="feature__title">Chrome extension</h4>
                         <div class="feature__body">
-                            <p class="mb-1">Elasticvue is available as chrome extension:</p>
+                            <p class="mb-1">Elasticvue is available as a chrome extension:</p>
                             <a class="button button--primary mb-1"
-                               href="https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa" rel="noopener" target="_blank">Open chrome
-                                webstore</a>
-                            <p>Start elasticvue by clicking on the icon in your toolbar.</p>
+                               href="https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa"
+                               rel="noopener" target="_blank">Open chrome webstore</a>
+                            <p class="mb-1">Start elasticvue by clicking on the icon in your toolbar.</p>
+
+                            <small class="subheading">
+                                Or use the <a href="javascript:void(0)" id="show_firefox_addon">firefox addon</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2"
+                     id="feature_firefox_addon">
+                    <div class="feature feature--firefox">
+                        <h4 class="feature__title">Firefox addon</h4>
+                        <div class="feature__body">
+                            <p class="mb-1">Elasticvue is available as a firefox addon:</p>
+                            <a class="button button--primary mb-1"
+                               href="https://addons.mozilla.org/en-US/firefox/addon/elasticvue/"
+                               rel="noopener" target="_blank">Open firefox addon</a>
+                            <p class="mb-1">Start elasticvue by clicking on the icon in your toolbar.</p>
+
+                            <small class="subheading">
+                                Or use the <a href="javascript:void(0)" id="show_chrome_extension">chrome extension</a>
+                            </small>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!--
-            <div class="text-center mb-6 subheading">
-                Checkout the
-                <a href="https://github.com/cars10/elasticvue" target="_blank" rel="noopener">github repository</a>
-                if you want to build elasticvue by yourself.
-            </div>
-            -->
 
             <div class="text-center">
                 <h3 class="mb-2">
@@ -136,7 +150,9 @@ ${require('./components/navbar.html')}
                     </p>
                     <p class="mb-1">
                         To enable CORS add the following to your
-                        <a class="link--white" href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html" rel="noopener"
+                        <a class="link--white"
+                           href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
+                           rel="noopener"
                            target="_blank">
                             elasticsearch configuration</a>, based on how you run elasticvue:
                     </p>

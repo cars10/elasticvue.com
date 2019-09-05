@@ -17,6 +17,11 @@
   border-image: linear-gradient(to right, #4285f4 25%, #0f9d58 25%, #0f9d58 50%, #f4b400 50%, #f4b400 75%, #db4437 75%) 4;
 }
 
+.feature--firefox {
+  border-top: 4px solid;
+  border-image: linear-gradient(to right, #F62336 20%, #FF6611 20%, #FF6611 40%, #FFEC4A 40%, #FFEC4A 60%, #203FB6 60%, #203FB6 80%, #008AFB 80%) 5;
+}
+
 .feature:hover {
   box-shadow: $default-box-shadow-hover;
 }
@@ -26,7 +31,7 @@
 }
 
 .feature__body {
-  padding: 16px;
+  padding: 16px 16px 4px 16px;
 }
 
 @media only screen and (max-width: $tablet) {

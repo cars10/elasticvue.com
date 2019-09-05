@@ -20,11 +20,12 @@ import Screenshot6Thumb from '../static/images/screenshots/screenshot_6_snapshot
 import Screenshot7Thumb from '../static/images/screenshots/screenshot_7_utilities_dark_thumb.jpg'
 // Scripts
 import './assets/scripts/back_to_top'
-import './assets/scripts/fancy_header'
 import './assets/scripts/copyable'
-import './assets/scripts/smooth_anchor'
 import './assets/scripts/detect_ie'
+import './assets/scripts/fancy_header'
+import './assets/scripts/feature_swap'
 import './assets/scripts/hamburger'
+import './assets/scripts/smooth_anchor'
 import SimpleGallery from './assets/scripts/gallery'
 // Styles
 import './assets/stylesheets/style.scss'
