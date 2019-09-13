@@ -8,9 +8,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const PurifyCSSPlugin = require('purifycss-webpack');
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const dev = process.env.NODE_ENV !== 'production'
-
 
 const HtmlWebpackHelper = function (filename) {
   return new HtmlWebpackPlugin({
@@ -72,6 +72,10 @@ const plugins = [
       path.join(__dirname, 'src/assets/scripts/*.js'),
     ]),
     minimize: true
+  }),
+  new WorkboxPlugin.GenerateSW({
+    clientsClaim: true,
+    skipWaiting: true
   })
 ]
 
