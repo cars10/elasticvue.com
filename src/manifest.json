@@ -1,0 +1,22 @@
+{
+  "name": "Elasticvue",
+  "short_name": "Elasticvue",
+  "description": "Elasticvue is a frontend for elasticsearch allowing you to search and filter your clusters data right in your browser.",
+  "start_url": "index.html",
+  "lang": "English",
+  "display": "standalone",
+  "background_color": "#33447d",
+  "theme_color": "#33447d",
+  "icons": [
+    {
+      "src": "/static/icons/manifest/logo_white_192px.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/icons/manifest/logo_white_256px.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ]
+}

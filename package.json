@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "elasticvue.com website",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open",
+    "dev": "webpack-dev-server --mode development",
     "build": "rm -rf dist && NODE_ENV=production webpack --mode production"
   },
   "author": "Carsten König <carstenkoenig92@gmail.com>",
@@ -13,6 +13,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
     "favicons-webpack-plugin": "^1.0.1",
     "file-loader": "^4.2.0",
@@ -29,7 +30,8 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "workbox-webpack-plugin": "^4.3.1"
   },
   "dependencies": {
     "bulma": "^0.7.1"
