@@ -38,7 +38,7 @@ const HtmlWebpackCriticalCssHelper = function (filename) {
 
 const plugins = [
   new FaviconsWebpackPlugin({
-    logo: './static/icons/logo/manifest/logo_blue_256px.png',
+    logo: './static/logo/blue_1024.png',
     prefix: 'favicons/[hash]/',
     favicons: {
       icons: {
@@ -80,7 +80,7 @@ const plugins = [
   }),
   new CopyPlugin([
     { from: 'src/manifest.json', to: 'manifest.json' },
-    { from: 'static/icons/logo/manifest', to: 'static/icons/manifest' }
+    { from: 'static/logo/manifest', to: 'static/logo/manifest' }
   ])
 ]
 
