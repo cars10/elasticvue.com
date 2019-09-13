@@ -9,6 +9,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const PurifyCSSPlugin = require('purifycss-webpack');
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const dev = process.env.NODE_ENV !== 'production'
 
@@ -37,12 +38,12 @@ const HtmlWebpackCriticalCssHelper = function (filename) {
 
 const plugins = [
   new FaviconsWebpackPlugin({
-    logo: './static/icons/logo/logo_high_blue.png',
+    logo: './static/icons/logo/manifest/logo_blue_256px.png',
     prefix: 'favicons/[hash]/',
     favicons: {
       icons: {
         android: false,
-        appleIcon: false,
+        appleIcon: true,
         appleStartup: false,
         coast: false,
         favicons: true,
@@ -76,7 +77,11 @@ const plugins = [
   new WorkboxPlugin.GenerateSW({
     clientsClaim: true,
     skipWaiting: true
-  })
+  }),
+  new CopyPlugin([
+    { from: 'src/manifest.json', to: 'manifest.json' },
+    { from: 'static/icons/logo/manifest', to: 'static/icons/manifest' }
+  ])
 ]
 
 const prodPlugins = plugins.concat([
