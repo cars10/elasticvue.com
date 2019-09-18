@@ -76,18 +76,13 @@ SimpleGallery.prototype.buildImageHtml = function (image) {
   if (image.alt) imgHtml.setAttribute('alt', image.alt)
   imgHtml.setAttribute('data-index', this.images.indexOf(image))
 
-  if (image.wrapperClasses) {
-    let wrapper = document.createElement('div')
-    if (image.wrapperClasses) {
-      image.wrapperClasses.forEach(function (className) {
-        wrapper.classList.add(className)
-      })
-    }
-    wrapper.appendChild(imgHtml)
-    this.gallery.appendChild(wrapper)
-  } else {
-    this.gallery.appendChild(imgHtml)
-  }
+  let wrapperClasses = ['column', 'is-one-quarter-desktop', 'is-one-third-tablet', 'is-half-mobile']
+  let wrapper = document.createElement('div')
+  wrapperClasses.forEach(function (className) {
+    wrapper.classList.add(className)
+  })
+  wrapper.appendChild(imgHtml)
+  this.gallery.appendChild(wrapper)
   return imgHtml
 }
 
@@ -111,17 +106,19 @@ SimpleGallery.prototype.buildGalleryModalHtml = function () {
   this.gallery.appendChild(galleryModalBackdrop)
   this.galleryModalBackdrop = galleryModalBackdrop
 
-  let prevImageCtrl = document.createElement('div')
-  prevImageCtrl.classList.add('gallery__modal__controls__prev')
-  prevImageCtrl.innerHTML = '&#8249;'
-  this.galleryModal.appendChild(prevImageCtrl)
-  this.prevImageCtrl = prevImageCtrl
+  if (this.images.length > 1) {
+    let prevImageCtrl = document.createElement('div')
+    prevImageCtrl.classList.add('gallery__modal__controls__prev')
+    prevImageCtrl.innerHTML = '&#8249;'
+    this.galleryModal.appendChild(prevImageCtrl)
+    this.prevImageCtrl = prevImageCtrl
 
-  let nextImageCtrl = document.createElement('div')
-  nextImageCtrl.classList.add('gallery__modal__controls__next')
-  nextImageCtrl.innerHTML = '&#8250;'
-  this.galleryModal.appendChild(nextImageCtrl)
-  this.nextImageCtrl = nextImageCtrl
+    let nextImageCtrl = document.createElement('div')
+    nextImageCtrl.classList.add('gallery__modal__controls__next')
+    nextImageCtrl.innerHTML = '&#8250;'
+    this.galleryModal.appendChild(nextImageCtrl)
+    this.nextImageCtrl = nextImageCtrl
+  }
 
   let galleryImage = document.createElement('img')
   this.galleryModal.appendChild(galleryImage)
@@ -129,13 +126,15 @@ SimpleGallery.prototype.buildGalleryModalHtml = function () {
 }
 
 SimpleGallery.prototype.addControlEventListeners = function () {
-  this.prevImageCtrl.addEventListener('click', () => {
-    this.loadPreviousImage()
-  })
+  if (this.images.length > 1) {
+    this.prevImageCtrl.addEventListener('click', () => {
+      this.loadPreviousImage()
+    })
 
-  this.nextImageCtrl.addEventListener('click', () => {
-    this.loadNextImage()
-  })
+    this.nextImageCtrl.addEventListener('click', () => {
+      this.loadNextImage()
+    })
+  }
 }
 
 SimpleGallery.prototype.addGalleryModalImgEventListener = function () {
