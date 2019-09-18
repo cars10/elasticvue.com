@@ -74,10 +74,6 @@ const plugins = [
     ]),
     minimize: true
   }),
-  new WorkboxPlugin.GenerateSW({
-    clientsClaim: true,
-    skipWaiting: true
-  }),
   new CopyPlugin([
     { from: 'src/manifest.json', to: 'manifest.json' },
     { from: 'static/logo/manifest', to: 'static/logo/manifest' }
@@ -87,7 +83,11 @@ const plugins = [
 const prodPlugins = plugins.concat([
   HtmlWebpackCriticalCssHelper('index.html'),
   HtmlWebpackCriticalCssHelper('privacy.html'),
-  HtmlWebpackCriticalCssHelper('imprint.html')
+  HtmlWebpackCriticalCssHelper('imprint.html'),
+  new WorkboxPlugin.GenerateSW({
+    clientsClaim: true,
+    skipWaiting: true
+  })
 ])
 
 module.exports = {
