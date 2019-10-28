@@ -1,6 +1,5 @@
 FROM node:11.15-slim AS builder
 WORKDIR /usr/src/app
-COPY . .
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
@@ -19,7 +18,11 @@ RUN groupadd -r pptruser && useradd -r -g pptruser -G audio,video pptruser \
 # Run everything after as non-privileged user.
 USER pptruser
 
+COPY package.json .
+COPY yarn.lock .
+
 RUN yarn install
+COPY . .
 RUN yarn build
 
 FROM nginx:1.17.3-alpine

@@ -6,7 +6,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
-const PurifyCSSPlugin = require('purifycss-webpack');
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -65,13 +65,15 @@ const plugins = [
     filename: dev ? '[name].css' : 'css/style.[hash].css',
     chunkFilename: dev ? '[id].css' : 'css/[id].[hash].css',
   }),
-  new PurifyCSSPlugin({
+  new PurgecssPlugin({
     paths: glob.sync([
       path.join(__dirname, 'src/index.js'),
       path.join(__dirname, 'src/*.html'),
       path.join(__dirname, 'src/components/*.html'),
       path.join(__dirname, 'src/assets/scripts/*.js'),
     ]),
+    whitelistPatterns: [/baguette/],
+    whitelistPatternsChildren: [/baguette/],
     minimize: true
   }),
   new CopyPlugin([
