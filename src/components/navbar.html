@@ -34,7 +34,7 @@
 </header>
 
 <script>
-  if (window.location.pathname !== '/') {
+  if (window.location.pathname === '/imprint.html' || window.location.pathname === '/privacy.html.html') {
     document.querySelectorAll('.navigation__link').forEach(link => {
       link.parentNode.removeChild(link)
     })
