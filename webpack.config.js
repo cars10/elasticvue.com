@@ -1,17 +1,19 @@
-const glob = require('glob-all');
-const path = require('path');
+const glob = require('glob-all')
+const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const PurgecssPlugin = require('purgecss-webpack-plugin')
-const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
-const WorkboxPlugin = require('workbox-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin")
+const WorkboxPlugin = require('workbox-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const SitemapPlugin = require('sitemap-webpack-plugin').default
 
 const dev = process.env.NODE_ENV !== 'production'
+const BASE_URI = dev ? 'http://localhost:8080' : 'https://elasticvue.com'
 
 const HtmlWebpackHelper = function (filename) {
   return new HtmlWebpackPlugin({
@@ -56,7 +58,7 @@ const plugins = [
     }
   }),
   new webpack.DefinePlugin({
-    'BASE_URI': dev ? '"http://localhost:8080"' : '"https://elasticvue.com"'
+    'BASE_URI': '"' + BASE_URI + '"'
   }),
   HtmlWebpackHelper('index.html'),
   HtmlWebpackHelper('privacy.html'),
@@ -89,7 +91,27 @@ const prodPlugins = plugins.concat([
   new WorkboxPlugin.GenerateSW({
     clientsClaim: true,
     skipWaiting: true
-  })
+  }),
+  new SitemapPlugin(BASE_URI, [
+    {
+      path: '',
+      changeFreq: 'daily',
+      lastMod: new Date().toISOString(),
+      priority: 1
+    },
+    {
+      path: 'imprint.html',
+      changeFreq: 'monthly',
+      lastMod: new Date().toISOString(),
+      priority: 0.1
+    },
+    {
+      path: 'privacy.html',
+      changeFreq: 'monthly',
+      lastMod: new Date().toISOString(),
+      priority: 0.1
+    }
+  ])
 ])
 
 module.exports = {
