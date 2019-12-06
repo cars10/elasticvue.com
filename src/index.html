@@ -8,166 +8,167 @@ ${require('./components/head.html')}
 ${require('./components/navbar.html')}
 
 <main class="main">
-    <section class="content content--lead" id="main_content">
-        <div class="container">
-            <div class="mb-4">
-                <div class="columns">
-                    <div class="column">
-                        <blockquote class="quote mb-4">
-                            <strong>Elasticvue</strong> is a free and easy to use frontend for elasticsearch.
-                        </blockquote>
+  <section class="content content--lead" id="main_content">
+    <div class="container">
+      <div class="mb-4">
+        <div class="columns">
+          <div class="column">
+            <h1 class="quote mb-4">
+              <strong>Elasticvue</strong> is a free and easy to use frontend for elasticsearch.
+            </h1>
 
-                        <h2 class="mb-1">Features</h2>
-                        <ul class="ul--default">
-                            <li>Cluster overview</li>
-                            <li>Index management</li>
-                            <li>Search interface</li>
-                            <li>Query interface (REST & API browser)</li>
-                            <li>Snapshot management</li>
-                            <li>Utilities</li>
-                        </ul>
-                    </div>
+            <h2 class="mb-1">Features</h2>
+            <ul class="ul--default">
+              <li>Cluster overview</li>
+              <li>Index management</li>
+              <li>Search interface</li>
+              <li>Query interface (REST & API browser)</li>
+              <li>Snapshot management</li>
+              <li>Utilities</li>
+            </ul>
+          </div>
 
-                    <div class="column">
-                        <img src="../static/images/dark_thumb.jpg" alt="Main Screenshot" class="img-responsive" width="660" height="340">
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mb-8">
-                <a class="button button--big" href="https://github.com/cars10/elasticvue" rel="noopener"
-                   target="_blank">View on Github</a>
-            </div>
-
-            <div class="text-center">
-                <h3 class="mb-2">
-                    <a class="pb-2 link--white link--no-decoration" href="#usage">Usage</a>
-                </h3>
-
-                <a class="inline-block" href="#usage">
-                    <img alt="down" height="28" src="../static/caret/caret--white.svg" width="50">
-                </a>
-            </div>
+          <div class="column">
+            <img src="../static/images/dark_thumb.jpg" alt="Main Screenshot" class="img-responsive" width="660"
+                 height="340">
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="content content--white">
-        <div class="container">
-            <h2 class="text-center mb-2" id="usage">Usage</h2>
+      <div class="text-center mb-8">
+        <a class="button button--big" href="https://github.com/cars10/elasticvue" rel="noopener"
+           target="_blank">View on Github</a>
+      </div>
 
-            <div class="text-center subheading mb-2">
-                <p>There are several ways of running elasticvue, chose what works best for you:</p>
+      <div class="text-center">
+        <h3 class="mb-2">
+          <a class="pb-2 link--white link--no-decoration" href="#usage">Usage</a>
+        </h3>
+
+        <a class="inline-block" href="#usage">
+          <img alt="down" height="28" src="../static/caret/caret--white.svg" width="50">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content content--white">
+    <div class="container">
+      <h2 class="text-center mb-2" id="usage">Usage</h2>
+
+      <div class="text-center subheading mb-2">
+        <p>There are several ways of running elasticvue, chose what works best for you:</p>
+      </div>
+
+      <div class="columns is-multiline columns--ordered-tablet mb-6">
+        <div class="column is-one-third-desktop is-half-tablet column--order-tablet-1">
+          <div class="feature">
+            <h3 class="feature__title">Web app</h3>
+            <div class="feature__body">
+              <p class="mb-1">Elasticvue is available online:</p>
+              <a class="button button--primary mb-1" href="https://app.elasticvue.com" rel="noopener"
+                 target="_blank">Open
+                app.elasticvue.com</a>
+              <p>This is the easiest way to use elasticvue.</p>
             </div>
+          </div>
+        </div>
 
-            <div class="columns is-multiline columns--ordered-tablet mb-6">
-                <div class="column is-one-third-desktop is-half-tablet column--order-tablet-1">
-                    <div class="feature">
-                        <h4 class="feature__title">Web app</h4>
-                        <div class="feature__body">
-                            <p class="mb-1">Elasticvue is available online:</p>
-                            <a class="button button--primary mb-1" href="https://app.elasticvue.com" rel="noopener"
-                               target="_blank">Open
-                                app.elasticvue.com</a>
-                            <p>This is the easiest way to use elasticvue.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column is-one-third-desktop column--order-tablet-3">
-                    <div class="feature feature--docker">
-                        <h4 class="feature__title">Docker image</h4>
-                        <div class="feature__body">
-                            <p class="mb-1">
-                                Download and run
-                                <a href="https://hub.docker.com/r/cars10/elasticvue" rel="noopener" target="_blank">
-                                    the image</a>:</p>
-                            <div class="overflow-x-scroll inline-block mb-1">
+        <div class="column is-one-third-desktop column--order-tablet-3">
+          <div class="feature feature--docker">
+            <h3 class="feature__title">Docker image</h3>
+            <div class="feature__body">
+              <p class="mb-1">
+                Download and run
+                <a href="https://hub.docker.com/r/cars10/elasticvue" rel="noopener" target="_blank">
+                  the image</a>:</p>
+              <div class="overflow-x-scroll inline-block mb-1">
                             <pre class="inline-block code-block copyable"><code>docker run -p 8080:8080 \\
            -d cars10/elasticvue</code></pre>
-                            </div>
-                            <p>Then open <a href="http://localhost:8080" rel="noopener" target="_blank">http://localhost:8080</a>
-                                in your browser.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2"
-                     id="feature_chrome_extension">
-                    <div class="feature feature--chrome">
-                        <h4 class="feature__title">Chrome extension</h4>
-                        <div class="feature__body">
-                            <p class="mb-1">Elasticvue is available as a chrome extension:</p>
-                            <a class="button button--primary mb-1"
-                               href="https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa"
-                               rel="noopener" target="_blank">Open chrome webstore</a>
-                            <p class="mb-1">Start elasticvue by clicking on the icon in your toolbar.</p>
-
-                            <small class="subheading">
-                                Or use the <a href="javascript:void(0)" id="show_firefox_addon">firefox addon</a>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2"
-                     id="feature_firefox_addon">
-                    <div class="feature feature--firefox">
-                        <h4 class="feature__title">Firefox addon</h4>
-                        <div class="feature__body">
-                            <p class="mb-1">Elasticvue is available as a firefox addon:</p>
-                            <a class="button button--primary mb-1"
-                               href="https://addons.mozilla.org/en-US/firefox/addon/elasticvue/"
-                               rel="noopener" target="_blank">Open firefox addon</a>
-                            <p class="mb-1">Start elasticvue by clicking on the icon in your toolbar.</p>
-
-                            <small class="subheading">
-                                Or use the <a href="javascript:void(0)" id="show_chrome_extension">chrome extension</a>
-                            </small>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <p>Then open <a href="http://localhost:8080" rel="noopener" target="_blank">http://localhost:8080</a>
+                in your browser.
+              </p>
             </div>
-
-            <div class="text-center">
-                <h3 class="mb-2">
-                    <a class="pb-2 text--dark link--no-decoration" href="#configuration">Cluster configuration</a>
-                </h3>
-
-                <a class="inline-block" href="#configuration">
-                    <img alt="down" height="28" src="../static/caret/caret--dark.svg" width="50">
-                </a>
-            </div>
+          </div>
         </div>
-    </section>
 
-    <section class="content">
-        <div class="container">
-            <h2 class="mb-2" id="configuration">Configuration</h2>
-            <div class="columns mb-6">
-                <div class="column is-half-tablet">
-                    <div class="mb-2 subheading">Configure your elasticsearch server</div>
-                    <p class="mb-1">
-                        To use elasticvue you have to enable CORS in your elasticsearch server. This will allow access
-                        across different origins, otherwise your browser will reject all requests because they are
-                        marked as insecure.
-                    </p>
-                    <p class="mb-1">
-                        To enable CORS add the following to your
-                        <a class="link--white"
-                           href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
-                           rel="noopener"
-                           target="_blank">
-                            elasticsearch configuration</a>, based on how you run elasticvue:
-                    </p>
-                    <ul class="ul--default mb-1">
-                        <li><code class="code-inline">http.cors.enabled: true</code></li>
-                        <li><code class="code-inline">http.cors.allow-origin: &lt;your-elasticvue-origin&gt;</code></li>
-                    </ul>
-                    <p>After configuration restart elasticsearch and you should be able to connect.</p>
-                </div>
-                <div class="column is-half-tablet">
-                    <div class="mb-2 subheading">Configuration example</div>
-                    <div class="overflow-x-scroll inline-block mb-2">
+        <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2"
+             id="feature_chrome_extension">
+          <div class="feature feature--chrome">
+            <h3 class="feature__title">Chrome extension</h3>
+            <div class="feature__body">
+              <p class="mb-1">Elasticvue is available as a chrome extension:</p>
+              <a class="button button--primary mb-1"
+                 href="https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa"
+                 rel="noopener" target="_blank">Open chrome webstore</a>
+              <p class="mb-1">Start elasticvue by clicking on the icon in your toolbar.</p>
+
+              <small class="subheading">
+                Or use the <a href="javascript:void(0)" id="show_firefox_addon">firefox addon</a>
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="column is-one-third-desktop is-half-tablet column--order-tablet-2"
+             id="feature_firefox_addon">
+          <div class="feature feature--firefox">
+            <h3 class="feature__title">Firefox addon</h3>
+            <div class="feature__body">
+              <p class="mb-1">Elasticvue is available as a firefox addon:</p>
+              <a class="button button--primary mb-1"
+                 href="https://addons.mozilla.org/en-US/firefox/addon/elasticvue/"
+                 rel="noopener" target="_blank">Open firefox addon</a>
+              <p class="mb-1">Start elasticvue by clicking on the icon in your toolbar.</p>
+
+              <small class="subheading">
+                Or use the <a href="javascript:void(0)" id="show_chrome_extension">chrome extension</a>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <h3 class="mb-2">
+          <a class="pb-2 text--dark link--no-decoration" href="#configuration">Cluster configuration</a>
+        </h3>
+
+        <a class="inline-block" href="#configuration">
+          <img alt="down" height="28" src="../static/caret/caret--dark.svg" width="50">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <h2 class="mb-2" id="configuration">Configuration</h2>
+      <div class="columns mb-6">
+        <div class="column is-half-tablet">
+          <div class="mb-2 subheading">Configure your elasticsearch server</div>
+          <p class="mb-1">
+            To use elasticvue you have to enable CORS in your elasticsearch server. This will allow access
+            across different origins, otherwise your browser will reject all requests because they are
+            marked as insecure.
+          </p>
+          <p class="mb-1">
+            To enable CORS add the following to your
+            <a class="link--white"
+               href="https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html"
+               rel="noopener"
+               target="_blank">
+              elasticsearch configuration</a>, based on how you run elasticvue:
+          </p>
+          <ul class="ul--default mb-1">
+            <li><code class="code-inline">http.cors.enabled: true</code></li>
+            <li><code class="code-inline">http.cors.allow-origin: &lt;your-elasticvue-origin&gt;</code></li>
+          </ul>
+          <p>After configuration restart elasticsearch and you should be able to connect.</p>
+        </div>
+        <div class="column is-half-tablet">
+          <div class="mb-2 subheading">Configuration example</div>
+          <div class="overflow-x-scroll inline-block mb-2">
 <pre class="inline-block code-block copyable"><code><span
         class="comment"># Enable CORS</span>
 http.cors.enabled: true
@@ -186,89 +187,89 @@ http.cors.allow-origin: "moz-extension://4b05c928-89bb-4a48-af52-b871f123a06b"
 
 <span class="comment"># and if your cluster uses authorization you also have to add:</span>
 http.cors.allow-headers: X-Requested-With,Content-Type,Content-Length,Authorization</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center">
-                <h3 class="mb-2">
-                    <a class="pb-2 link--white link--no-decoration" href="#screenshots">Screenshots</a>
-                </h3>
-
-                <a class="inline-block" href="#screenshots">
-                    <img alt="down" height="28" src="../static/caret/caret--white.svg" width="50">
-                </a>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <section class="content content--white">
-        <div class="container">
-            <h2 class="mb-2 text-center" id="screenshots">
-                Screenshots
-            </h2>
-            <div class="mb-2 text-center subheading">See elasticvue in action</div>
-            <div class="gallery columns is-mobile is-multiline">
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_0_home_white.jpg')}"
-                       data-caption="Homepage" aria-label="Homepage">
-                        <img src="../static/images/screenshots/screenshot_0_home_white_thumb.jpg" alt="Homepage">
-                    </a>
-                </div>
+      <div class="text-center">
+        <h3 class="mb-2">
+          <a class="pb-2 link--white link--no-decoration" href="#screenshots">Screenshots</a>
+        </h3>
 
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_1_nodes.jpg')}"
-                       data-caption="Cluster nodes" aria-label="Cluster nodes">
-                        <img src="../static/images/screenshots/screenshot_1_nodes_thumb.jpg" alt="Cluster nodes">
-                    </a>
-                </div>
+        <a class="inline-block" href="#screenshots">
+          <img alt="down" height="28" src="../static/caret/caret--white.svg" width="50">
+        </a>
+      </div>
+    </div>
+  </section>
 
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_2_indices.jpg')}"
-                       data-caption="Indices" aria-label="Indices">
-                        <img src="../static/images/screenshots/screenshot_2_indices_thumb.jpg" alt="Indices">
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_3_index.jpg')}"
-                       data-caption="Get index" aria-label="Get index">
-                        <img src="../static/images/screenshots/screenshot_3_index_thumb.jpg" alt="Get index">
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_4_search_dark.jpg')}"
-                       data-caption="Search documents" aria-label="Search documents">
-                        <img src="../static/images/screenshots/screenshot_4_search_dark_thumb.jpg"
-                             alt="Search documents">
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_5_query_dark.jpg')}"
-                       data-caption="REST" aria-label="REST">
-                        <img src="../static/images/screenshots/screenshot_5_query_dark.jpg" alt="REST">
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_6_snapshots_dark.jpg')}"
-                       data-caption="Snapshot management" aria-label="Snapshot management">
-                        <img src="../static/images/screenshots/screenshot_6_snapshots_dark_thumb.jpg"
-                             alt="Snapshot management">
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
-                    <a href="${require('../static/images/screenshots/screenshot_7_utilities_dark.jpg')}"
-                       data-caption="Utilities" aria-label="Utilities">
-                        <img src="../static/images/screenshots/screenshot_7_utilities_dark_thumb.jpg" alt="Utilities">
-                    </a>
-                </div>
-            </div>
+  <section class="content content--white">
+    <div class="container">
+      <h2 class="mb-2 text-center" id="screenshots">
+        Screenshots
+      </h2>
+      <div class="mb-2 text-center subheading">See elasticvue in action</div>
+      <div class="gallery columns is-mobile is-multiline">
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_0_home_white.jpg')}"
+             data-caption="Homepage" aria-label="Homepage">
+            <img src="../static/images/screenshots/screenshot_0_home_white_thumb.jpg" alt="Homepage">
+          </a>
         </div>
-    </section>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_1_nodes.jpg')}"
+             data-caption="Cluster nodes" aria-label="Cluster nodes">
+            <img src="../static/images/screenshots/screenshot_1_nodes_thumb.jpg" alt="Cluster nodes">
+          </a>
+        </div>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_2_indices.jpg')}"
+             data-caption="Indices" aria-label="Indices">
+            <img src="../static/images/screenshots/screenshot_2_indices_thumb.jpg" alt="Indices">
+          </a>
+        </div>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_3_index.jpg')}"
+             data-caption="Get index" aria-label="Get index">
+            <img src="../static/images/screenshots/screenshot_3_index_thumb.jpg" alt="Get index">
+          </a>
+        </div>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_4_search_dark.jpg')}"
+             data-caption="Search documents" aria-label="Search documents">
+            <img src="../static/images/screenshots/screenshot_4_search_dark_thumb.jpg"
+                 alt="Search documents">
+          </a>
+        </div>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_5_query_dark.jpg')}"
+             data-caption="REST" aria-label="REST">
+            <img src="../static/images/screenshots/screenshot_5_query_dark.jpg" alt="REST">
+          </a>
+        </div>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_6_snapshots_dark.jpg')}"
+             data-caption="Snapshot management" aria-label="Snapshot management">
+            <img src="../static/images/screenshots/screenshot_6_snapshots_dark_thumb.jpg"
+                 alt="Snapshot management">
+          </a>
+        </div>
+
+        <div class="column is-one-quarter-desktop is-one-third-tablet is-half-mobile gallery__thumb">
+          <a href="${require('../static/images/screenshots/screenshot_7_utilities_dark.jpg')}"
+             data-caption="Utilities" aria-label="Utilities">
+            <img src="../static/images/screenshots/screenshot_7_utilities_dark_thumb.jpg" alt="Utilities">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 ${require('./components/footer.html')}
