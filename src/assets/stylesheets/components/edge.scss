@@ -1,0 +1,36 @@
+svg.edge {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+
+  .edge--dark {
+    fill: $default-color;
+  }
+
+  .edge--light {
+    fill: #fff;
+  }
+}
+
+svg.edge-bottom {
+  bottom: -25px;
+}
+
+svg.edge-top {
+  top: -25px;
+}
+
+@media only screen and (max-width: $tablet) {
+  svg.edge {
+    height: 20px;
+  }
+
+  svg.edge-bottom {
+    bottom: -10px;
+  }
+
+  svg.edge-top {
+    top: -10px;
+  }
+}

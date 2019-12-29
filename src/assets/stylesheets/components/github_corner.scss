@@ -1,0 +1,32 @@
+.github-corner {
+  display: none;
+
+  &:hover {
+    .octo-arm {
+      animation: octocat-wave 750ms ease-in-out;
+      fill: $default-color--dark;
+    }
+
+    .octo-body {
+      fill: $default-color--dark;
+    }
+  }
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0)
+  }
+  20%, 60% {
+    transform: rotate(-25deg)
+  }
+  40%, 80% {
+    transform: rotate(10deg)
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  .github-corner {
+    display: block;
+  }
+}

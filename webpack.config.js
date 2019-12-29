@@ -14,6 +14,7 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default
 
 const dev = process.env.NODE_ENV !== 'production'
 const BASE_URI = dev ? 'http://localhost:8080' : 'https://elasticvue.com'
+const CURRENT_YEAR = new Date().getFullYear().toString()
 
 const HtmlWebpackHelper = function (filename) {
   return new HtmlWebpackPlugin({
@@ -58,9 +59,12 @@ const plugins = [
     }
   }),
   new webpack.DefinePlugin({
-    'BASE_URI': '"' + BASE_URI + '"'
+    'BASE_URI': '"' + BASE_URI + '"',
+    'CURRENT_YEAR': CURRENT_YEAR
   }),
   HtmlWebpackHelper('index.html'),
+  HtmlWebpackHelper('features.html'),
+  HtmlWebpackHelper('usage.html'),
   HtmlWebpackHelper('privacy.html'),
   HtmlWebpackHelper('imprint.html'),
   new MiniCssExtractPlugin({
@@ -86,6 +90,8 @@ const plugins = [
 
 const prodPlugins = plugins.concat([
   HtmlWebpackCriticalCssHelper('index.html'),
+  HtmlWebpackCriticalCssHelper('features.html'),
+  HtmlWebpackCriticalCssHelper('usage.html'),
   HtmlWebpackCriticalCssHelper('privacy.html'),
   HtmlWebpackCriticalCssHelper('imprint.html'),
   new WorkboxPlugin.GenerateSW({
@@ -100,13 +106,25 @@ const prodPlugins = plugins.concat([
       priority: 1
     },
     {
-      path: 'imprint.html',
+      path: 'features',
+      changeFreq: 'daily',
+      lastMod: new Date().toISOString(),
+      priority: 1
+    },
+    {
+      path: 'usage',
+      changeFreq: 'daily',
+      lastMod: new Date().toISOString(),
+      priority: 0.9
+    },
+    {
+      path: 'imprint',
       changeFreq: 'monthly',
       lastMod: new Date().toISOString(),
       priority: 0.1
     },
     {
-      path: 'privacy.html',
+      path: 'privacy',
       changeFreq: 'monthly',
       lastMod: new Date().toISOString(),
       priority: 0.1
@@ -160,6 +178,17 @@ module.exports = {
         ],
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        {
+          from: /^\//, to: function (context) {
+            return context.parsedUrl.pathname + '.html'
+          }
+        },
+      ]
+    }
   },
   plugins: dev ? plugins : prodPlugins
 }

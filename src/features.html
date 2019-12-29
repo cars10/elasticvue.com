@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  ${require('./components/meta.html')}
+  <title>Elasticvue - Elasticsearch gui features</title>
+</head>
+
+<body>
+
+${require('./components/navbar.html')}
+
+<main class="main">
+  <section class="content">
+    <div class="container">
+      <div class="has-text-centered">
+        <h1 class="title mb-2">Features</h1>
+        <p>See elasticvue in action.</p>
+      </div>
+    </div>
+
+    ${require('./components/edge_bottom_left.html')}
+  </section>
+
+  <section class="content content--white">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h2 class="mt-2 mb-2">Cluster overview</h2>
+          <p class="mb-1">Elasticvue displays the response of both endpoints for node information and the whole cluster
+            health.</p>
+        </div>
+        <div class="column gallery">
+          <div class="gallery__thumb">
+            <a aria-label="Homepage"
+               data-caption="Homepage" href="${require('../static/images/screenshots/screenshot_0_home_white.jpg')}">
+              <img alt="Homepage" src="${require('../static/images/screenshots/screenshot_0_home_white.jpg')}">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="columns reverse-columns-mobile">
+        <div class="column gallery">
+          <div class="gallery__thumb">
+            <a aria-label="Cluster nodes"
+               data-caption="Cluster nodes" href="${require('../static/images/screenshots/screenshot_1_nodes.jpg')}">
+              <img alt="Cluster nodes" src="${require('../static/images/screenshots/screenshot_1_nodes.jpg')}">
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <h2 class="mt-2 mb-2">Node overview</h2>
+          <p class="mb-1">You can view every node in your cluster in a table or grid view.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content content--white">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h2 class="mt-2 mb-2">Index management</h2>
+          <p class="mb-1">
+            You can manually create and manage your indices. This includes viewing index settings and stats or opening
+            or closing the index.
+          </p>
+        </div>
+        <div class="column gallery">
+          <div class="gallery__thumb">
+            <a aria-label="Indices"
+               data-caption="Indices" href="${require('../static/images/screenshots/screenshot_2_indices.jpg')}">
+              <img alt="Indices" src="${require('../static/images/screenshots/screenshot_2_indices.jpg')}">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="columns reverse-columns-mobile">
+        <div class="column gallery">
+          <div class="gallery__thumb">
+            <a aria-label="Search documents"
+               data-caption="Search documents"
+               href="${require('../static/images/screenshots/screenshot_4_search_dark.jpg')}">
+              <img alt="Search documents"
+                   src="${require('../static/images/screenshots/screenshot_4_search_dark.jpg')}">
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <h2 class="mt-2 mb-2">Document search</h2>
+          <p class="mb-1">
+            You can search documents and view the results in a fully featured table, including sorting, filtering and
+            pagination.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content content--white">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h2 class="mt-2 mb-2">REST gui</h2>
+          <p class="mb-1">
+            Elasticvue has a gui to query your cluster via direct HTTP requests.
+            <br>
+            Alternatively you can use the api browser and select every available elasticsearch api method directly.
+          </p>
+        </div>
+        <div class="column gallery">
+          <div class="gallery__thumb">
+            <a aria-label="REST"
+               data-caption="REST" href="${require('../static/images/screenshots/screenshot_5_query_dark.jpg')}">
+              <img alt="REST" src="${require('../static/images/screenshots/screenshot_5_query_dark.jpg')}">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <div class="columns reverse-columns-mobile">
+        <div class="column gallery">
+          <div class="gallery__thumb">
+            <a aria-label="Snapshot management"
+               data-caption="Snapshot management"
+               href="${require('../static/images/screenshots/screenshot_6_snapshots_dark.jpg')}">
+              <img alt="Snapshot management"
+                   src="${require('../static/images/screenshots/screenshot_6_snapshots_dark.jpg')}">
+            </a>
+          </div>
+        </div>
+        <div class="column">
+          <h2 class="mt-2 mb-2">Snapshot & repositories</h2>
+          <p class="mb-1">
+            Manage repositories and snapshots right in your browser.
+            <br>
+            You can create, delete and restore snapshots based on index patterns.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+${require('./components/footer.html')}
+</body>
+</html>

@@ -1,18 +1,18 @@
 /** base **/
 $font-size: 16px;
 $default-border-radius: 2px;
-$default-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+$default-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 $default-box-shadow--bottom: 0 2px 2px rgba(0, 0, 0, 0.3);
-$default-box-shadow-hover: 0 0 10px rgba(0, 0, 0, 0.4);
+$default-box-shadow-hover: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
 /** colors **/
 $default-text-color: #222;
 $default-text-color-light: #444;
-$default-color: #33447d;
+$default-color: #25315a;
 $default-color--dark: darken(#33447d, 20%);
 $link-hover-color: #1e91ff;
 $light-grey: #eee;
-$grey: #ccc;
+$grey: #cecece;
 
 /** grid **/
 $grid-padding: 15px;
@@ -24,7 +24,7 @@ $header-height--mobile: $header-height - 20px;
 $header-height--tablet: $header-height - 10px;
 
 /** misc **/
-$content-padding: 90px;
-$content-padding--mobile: $content-padding/4;
+$content-padding: 110px;
+$content-padding--mobile: $content-padding/3;
 $content-padding--tablet: $content-padding/2;
 $transition-duration: 0.2s ease-in;

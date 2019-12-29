@@ -1,7 +1,3 @@
-.main {
-  margin-top: $header-height;
-}
-
 .container {
   width: 70%;
   margin: auto;
@@ -9,37 +5,18 @@
 }
 
 @media only screen and (max-width: $tablet) {
-  .main {
-    margin-top: $header-height--mobile !important;
-  }
-
   .container {
     width: 92% !important;
+  }
+
+  .reverse-columns-mobile {
+    flex-direction: column-reverse;
+    display: flex;
   }
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $desktop) {
-  .main {
-    margin-top: $header-height--tablet !important;
-  }
-
   .container {
     width: 90% !important;
-  }
-
-  .columns--ordered-tablet {
-    display: flex !important;
-  }
-
-  .column--order-tablet-1 {
-    order: 1 !important
-  }
-
-  .column--order-tablet-2 {
-    order: 2 !important
-  }
-
-  .column--order-tablet-3 {
-    order: 3 !important
   }
 }

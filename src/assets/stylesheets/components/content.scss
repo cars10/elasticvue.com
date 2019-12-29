@@ -3,10 +3,11 @@
   padding-top: $content-padding;
   padding-bottom: $content-padding;
   height: 100%;
+  position: relative;
 }
 
 .content--lead {
-  min-height: 600px;
+  min-height: 400px;
 }
 
 .content--white {

@@ -1,5 +1,4 @@
 a, a:visited {
-  //text-decoration: none;
   color: $default-color;
 }
 
@@ -7,8 +6,28 @@ a, a:visited {
   color: #82a3c2;
 }
 
-a.link--white, a.link--white:visited {
-  color: #fff
+.link--white {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+
+  &:visited {
+    color: #fff
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 4px;
+    background: #fff;
+    transition: width .3s;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
 }
 
 a.link--no-decoration {

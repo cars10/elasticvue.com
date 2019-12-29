@@ -16,7 +16,7 @@
       window.scrollTo({
         top: y,
         behavior: "smooth"
-      });
+      })
     })
   })
 

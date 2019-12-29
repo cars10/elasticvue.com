@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  ${require('./components/meta.html')}
+  <title>Elasticvue - Elasticsearch gui usage</title>
+</head>
+
+<body>
+
+${require('./components/navbar.html')}
+
+<main class="main">
+  <section class="content">
+    <div class="container">
+      <div class="has-text-centered">
+        <h1 class="title mb-2">Usage</h1>
+        <p>
+          Before using elasticvue you have to configure your elasticsearch server according to how you want to use
+          elasticvue.
+        </p>
+      </div>
+    </div>
+
+    ${require('./components/edge_bottom_left.html')}
+  </section>
+
+  <section class="content content--white">
+    <div class="container">
+      <h2 class="has-text-centered mb-4">Elasticvue usage</h2>
+
+      <div class="has-text-centered subheading mb-4">
+        <p>There are several ways of running elasticvue, chose what works best for you.</p>
+      </div>
+
+      ${require('./components/usage.html')}
+    </div>
+  </section>
+
+  <section class="content">
+    ${require('./components/edge_top_right.html')}
+    <div class="container">
+      <h2 class="mb-2" id="configuration">Cluster configuration</h2>
+      <div class="columns">
+        <div class="column is-half-tablet">
+          <div class="mb-2 subheading">Configure your elasticsearch server</div>
+          <p class="mb-1">
+            To use elasticvue you have to enable CORS,
+            otherwise the browser will reject all requests.
+            To enable CORS add the following to your
+            elasticsearch configuration, based on how you run elasticvue:
+          </p>
+          <pre class="inline-block code-block selectable mb-1"><code><span class="comment"># /etc/elasticsearch/elasticsearch.yml</span>
+http.cors.enabled: true
+http.cors.allow-origin: &lt;origin-url&gt;</code></pre>
+        </div>
+        <div class="column is-half-tablet">
+          <div class="mb-2 subheading">Configuration example</div>
+          <div class="overflow-x-scroll inline-block mb-2">
+<pre class="inline-block code-block selectable">
+<code><span class="comment"># Enable CORS</span>
+http.cors.enabled: true
+
+<span class="comment"># then set one origin:</span>
+<span class="comment"># for docker / running locally</span>
+http.cors.allow-origin: "http://localhost:8080"
+<span class="comment"># web app</span>
+http.cors.allow-origin: /https?:\/\/app.elasticvue.com/
+<span class="comment"># chrome extension</span>
+http.cors.allow-origin: "chrome-extension://hkedbapjpblbodpgbajblpnlpenaebaa"
+<span class="comment"># firefox addon</span>
+http.cors.allow-origin: "moz-extension://&lt;addon-url&gt;"</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+${require('./components/footer.html')}
+</body>
+</html>

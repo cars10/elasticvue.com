@@ -14,12 +14,12 @@
   display: inline-block;
 }
 
-.text-center {
+.has-text-centered {
   text-align: center;
 }
 
 .overflow-x-scroll {
-  overflow-x: scroll;
+  overflow-x: auto;
   max-width: 100%;
 }
 

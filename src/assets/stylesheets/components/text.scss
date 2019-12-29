@@ -3,20 +3,14 @@
   color: $default-text-color-light;
 }
 
-.text--lead {
-  font-size: 1.2em;
+.title {
+  font-size: 2rem;
 }
 
 .quote {
   border-left: 3px solid #fff;
   padding: 10px 20px;
-  font-size: 1.6rem;
   font-weight: normal;
-}
-
-.next-section {
-  font-size: 1.5rem;
-  font-weight: bold;
 }
 
 @media only screen and (max-width: $tablet) {
@@ -25,7 +19,7 @@
     padding: 5px 10px !important;
   }
 
-  .text--lead {
+  .title {
     font-size: 1.1em !important;
   }
 }

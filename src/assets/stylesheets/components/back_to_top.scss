@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 34px;
   right: 34px;
-  background-color: $light-grey;
+  background-color: $grey;
   padding: 15px 20px;
   cursor: pointer;
   visibility: hidden;
@@ -10,6 +10,7 @@
   border-radius: $default-border-radius;
   box-shadow: $default-box-shadow;
   user-select: none;
+  z-index: 5;
 }
 
 @media only screen and (max-width: $tablet) {

@@ -1,7 +1,7 @@
-import baguetteBox from 'baguettebox.js';
+import baguetteBox from 'baguettebox.js'
 
-baguetteBox.run('.gallery', {
+baguetteBox.run('.main', {
   noScrollbars: true,
   titleTag: true,
   async: true
-});
+})

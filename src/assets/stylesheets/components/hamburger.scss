@@ -4,33 +4,23 @@
   margin-top: 8px;
   margin-right: 2px;
   padding: 10px 6px;
-  border-radius: $default-border-radius
-}
+  border-radius: $default-border-radius;
 
-.hamburger:hover {
-  background-color: $grey
-}
-
-.hamburger--bar {
-  float: left;
-  display: inline-block;
-  height: 4px;
-  width: 30px;
-  background-color: $default-text-color;
-  border-radius: $default-border-radius
-}
-
-.hamburger--bar:not(:last-child) {
-  margin-bottom: 4px;
-}
-
-.header--fancy {
-  .hamburger:hover {
+  &:hover {
     background-color: $default-color--dark
   }
 
   .hamburger--bar {
-    background-color: #fff
+    float: left;
+    display: inline-block;
+    height: 4px;
+    width: 30px;
+    background-color: #fff;
+    border-radius: $default-border-radius;
+  }
+
+  .hamburger--bar:not(:last-child) {
+    margin-bottom: 4px;
   }
 }
 
