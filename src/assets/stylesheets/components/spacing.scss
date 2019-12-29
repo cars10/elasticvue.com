@@ -32,8 +32,12 @@
 }
 
 @media only screen and (max-width: $tablet) {
+  .mt-0--mobile {
+    margin-top: 0 !important;
+  }
+
   .mb-4 {
-    margin-bottom: 1rem !important;
+    margin-bottom: 2rem !important;
   }
 
   .mb-6 {
