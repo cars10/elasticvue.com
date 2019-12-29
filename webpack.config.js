@@ -78,8 +78,8 @@ const plugins = [
       path.join(__dirname, 'src/components/*.html'),
       path.join(__dirname, 'src/assets/scripts/*.js'),
     ]),
-    whitelistPatterns: [/baguette/],
-    whitelistPatternsChildren: [/baguette/],
+    whitelistPatterns: [/baguette/, /icon/],
+    whitelistPatternsChildren: [/baguette/, /icon/],
     minimize: true
   }),
   new CopyPlugin([
