@@ -96,7 +96,8 @@ const prodPlugins = plugins.concat([
   HtmlWebpackCriticalCssHelper('imprint.html'),
   new WorkboxPlugin.GenerateSW({
     clientsClaim: true,
-    skipWaiting: true
+    skipWaiting: true,
+    swDest: 'serviceWorker.js'
   }),
   new SitemapPlugin(BASE_URI, [
     {
