@@ -97,8 +97,8 @@ const prodPlugins = plugins.concat([
   new WorkboxPlugin.GenerateSW({
     clientsClaim: true,
     skipWaiting: true,
-    exclude: [/index.html/],
-    swDest: 'serviceWorker.js'
+    exclude: [/.*\.html/],
+    swDest: 'service-worker.js'
   }),
   new SitemapPlugin(BASE_URI, [
     {
