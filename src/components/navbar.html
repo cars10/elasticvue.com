@@ -1,27 +1,38 @@
 <header class="header" id="header">
-  <div class="container">
-    <a class="brand" href="${BASE_URI}">
-      <img alt="Elasticvue logo" class="brand-logo" src="../../static/logo/white_104.png">
-      <span class="brand-title link--white">Elasticvue</span>
-    </a>
+    <div class="container">
+        <a class="brand" href="${BASE_URI}">
+            <img alt="Elasticvue logo" class="brand-logo" src="../../static/logo/white_104.png">
+            <span class="brand-title link--white link--hover">Elasticvue</span>
+        </a>
 
-    <nav class="pull-right">
-      <ul class="navigation" id="navigation">
-        <li><a class="navigation__link link--white" href="${BASE_URI}">home</a></li>
-        <li><a class="navigation__link link--white" href="${BASE_URI}/features">features</a></li>
-        <li><a class="navigation__link link--white" href="${BASE_URI}/usage">usage</a></li>
-        <li><a class="navigation__link link--white" href="https://github.com/cars10/elasticvue" rel="noopener"
-               target="_blank">${require('./icons/external.html')} code</a></li>
-      </ul>
+        <nav class="pull-right">
+            <ul class="navigation" id="navigation">
+                <li><a class="navigation__link link--white link--hover" id="home_link" href="${BASE_URI}">home</a></li>
+                <li><a class="navigation__link link--white link--hover" id="features_link" href="${BASE_URI}/features">features</a></li>
+                <li><a class="navigation__link link--white link--hover" id="usage_link" href="${BASE_URI}/usage">usage</a></li>
+                <li><a class="navigation__link link--white link--hover" href="https://github.com/cars10/elasticvue" rel="noopener"
+                       target="_blank">${require('./icons/external.html')} code</a></li>
+            </ul>
 
-      <a aria-label="Menu" class="hamburger" href="javascript:void(0)" id="navbar_toggle">
-        <span class="is-sr-only">Menu</span>
-        <div class="hamburger--bar"></div>
-        <div class="hamburger--bar"></div>
-        <div class="hamburger--bar"></div>
-      </a>
-    </nav>
-  </div>
+            <a aria-label="Menu" class="hamburger" href="javascript:void(0)" id="navbar_toggle">
+                <span class="is-sr-only">Menu</span>
+                <div class="hamburger--bar"></div>
+                <div class="hamburger--bar"></div>
+                <div class="hamburger--bar"></div>
+            </a>
+        </nav>
+    </div>
 </header>
 
 ${require('./github_corner.html')}
+
+<script>
+    const path = window.location.pathname;
+    if (/features/.test(path)) {
+        document.getElementById('features_link').classList.add('active')
+    } else if (/usage/.test(path)) {
+        document.getElementById('usage_link').classList.add('active')
+    } else {
+        document.getElementById('home_link').classList.add('active')
+    }
+</script>

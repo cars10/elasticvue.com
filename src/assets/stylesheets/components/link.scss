@@ -15,7 +15,7 @@ a, a:visited {
     color: #fff
   }
 
-  &:after {
+  &.link--hover:after {
     content: '';
     display: block;
     width: 0;
@@ -25,11 +25,17 @@ a, a:visited {
     transition: width .3s;
   }
 
-  &:hover:after {
+  &.link--hover:hover:after {
     width: 100%;
   }
-}
 
-a.link--no-decoration {
-  text-decoration: none;
+  &.link--hover.active {
+    &:after {
+      width: 100%
+    }
+  }
+
+  &.link--decorated {
+    text-decoration: underline;
+  }
 }

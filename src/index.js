@@ -3,7 +3,6 @@ import './assets/scripts/selectable'
 import './assets/scripts/detect_ie'
 import './assets/scripts/feature_swap'
 import './assets/scripts/hamburger'
-import './assets/scripts/smooth_anchor'
 import './assets/scripts/gallery'
 
 import './assets/stylesheets/style.scss'
