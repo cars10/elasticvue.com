@@ -16,6 +16,14 @@ Build for production:
 yarn build
 ```
 
+## Notes
+
+Main screenshot:
+* create 2 screenshots @ 1600x1076 responsive in chrome
+* paste into resources/main.xcf
+* image crop to content
+* resize to 1300px width
+* run trimage
 
 ## TODO
 
