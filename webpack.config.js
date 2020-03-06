@@ -41,7 +41,7 @@ const HtmlWebpackCriticalCssHelper = function (filename) {
 
 const plugins = [
   new FaviconsWebpackPlugin({
-    logo: './static/logo/blue_1024.png',
+    logo: './static/logo/favicon_1024.png',
     prefix: 'favicons/[hash]/',
     favicons: {
       icons: {
