@@ -6,6 +6,8 @@
   transition: box-shadow $transition-duration;
   border-radius: $default-border-radius;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 
   box-shadow: $default-box-shadow;
 
@@ -17,6 +19,17 @@
 .feature__title {
   padding: 16px 16px;
   font-size: 1.25rem;
+}
+
+.feature__badge {
+  position: absolute;
+  right: -32px;
+  background-color: #388e3c;
+  color: #fff;
+  font-size: 80%;
+  transform: rotate(45deg);
+  padding: 5px 30px;
+  top: 15px;
 }
 
 .feature__body {

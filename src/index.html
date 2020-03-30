@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  ${require('./components/meta.html')}
-  <meta content="Elasticvue is a simple and easy to use elasticsearch gui for the browser" property="og:description"/>
-  <meta content="Elasticvue is a simple and easy to use elasticsearch gui for the browser" name="description"/>
-  <title>Elasticvue - Elasticsearch gui for the browser</title>
+    ${require('./components/meta.html')}
+    <meta content="Elasticvue is a simple and easy to use elasticsearch gui for the browser" property="og:description"/>
+    <meta content="Elasticvue is a simple and easy to use elasticsearch gui for the browser" name="description"/>
+    <title>Elasticvue - Elasticsearch gui for the browser</title>
 </head>
 
 <body>
@@ -13,53 +13,50 @@
 ${require('./components/navbar.html')}
 
 <main class="main">
-  <section class="content content--lead" id="main_content">
-    <div class="container">
-      <div class="mb-6">
-        <div class="columns">
-          <div class="column">
-            <h1 class="quote mb-4 mt-2 mt-0--mobile">
-              <strong>Elasticvue</strong> is a free and simple elasticsearch gui for the browser.
-            </h1>
+    <section class="content content--lead" id="main_content">
+        <div class="container">
+            <div class="mb-6">
+                <div class="columns">
+                    <div class="column">
+                        <h1 class="quote mb-4 mt-2 mt-0--mobile">
+                            <strong>Elasticvue</strong> is a free and simple elasticsearch gui for the browser.
+                        </h1>
 
-            <h2 class="mb-1">
-              <a class="link--white link--hover" href="${BASE_URI}/features">Features</a>
-            </h2>
-            <ul class="ul--default">
-              <li>Cluster overview</li>
-              <li>Index management</li>
-              <li>Search interface</li>
-              <li>Query interface (REST & API browser)</li>
-              <li>Snapshot management</li>
-              <li>... <a class="link--white link--hover" href="${BASE_URI}/features">and more</a></li>
-            </ul>
-          </div>
+                        <h2 class="mb-1">
+                            <a class="link--white link--hover" href="${BASE_URI}/features">Features</a>
+                        </h2>
+                        <ul class="ul--default">
+                            <li>Cluster overview</li>
+                            <li>Index management</li>
+                            <li>Search interface</li>
+                            <li>Query interface (REST & API browser)</li>
+                            <li>Snapshot management</li>
+                            <li>... <a class="link--white link--hover" href="${BASE_URI}/features">and more</a></li>
+                        </ul>
+                    </div>
 
-          <div class="column">
-            <img alt="Screenshot" class="img-responsive" src="../static/images/main.jpg">
-          </div>
+                    <div class="column">
+                        <img alt="Screenshot" class="img-responsive" src="../static/images/main.jpg">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    ${require('./components/edge_bottom_left.html')}
-  </section>
+        ${require('./components/edge_bottom_left.html')}
+    </section>
 
-  <section class="content content--white">
-    <div class="container">
-      <h2 class="has-text-centered mb-4">Using elasticvue</h2>
+    <section class="content content--white">
+        <div class="container">
+            <h2 class="has-text-centered mb-4">Using elasticvue</h2>
 
-      <div class="has-text-centered subheading mb-4">
-        <p>There are several ways of running elasticvue, chose what works best for you.</p>
-      </div>
+            ${require('./components/usage.html')}
 
-      ${require('./components/usage.html')}
-
-      <p class="has-text-centered">
-        Checkout <a href="${BASE_URI}/usage">usage</a> for details on how to configure your cluster to use elasticvue.
-      </p>
-    </div>
-  </section>
+            <p class="has-text-centered">
+                Checkout <a href="${BASE_URI}/usage">usage</a> for details on how to configure your cluster to use
+                elasticvue.
+            </p>
+        </div>
+    </section>
 </main>
 
 ${require('./components/footer.html')}

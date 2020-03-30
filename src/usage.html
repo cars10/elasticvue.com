@@ -3,7 +3,8 @@
 
 <head>
     ${require('./components/meta.html')}
-    <meta content="Use elasticvue as web app, browser extension, docker container or self hosted." property="og:description"/>
+    <meta content="Use elasticvue as web app, browser extension, docker container or self hosted."
+          property="og:description"/>
     <meta content="Use elasticvue as web app, browser extension, docker container or self hosted." name="description"/>
     <title>Elasticvue - Elasticsearch gui usage</title>
 </head>
@@ -32,10 +33,6 @@ ${require('./components/navbar.html')}
         <div class="container">
             <h2 class="has-text-centered mb-4">Elasticvue usage</h2>
 
-            <div class="has-text-centered subheading mb-4">
-                <p>There are several ways of running elasticvue, chose what works best for you.</p>
-            </div>
-
             ${require('./components/usage.html')}
         </div>
     </section>
@@ -48,7 +45,7 @@ ${require('./components/navbar.html')}
                 <div class="column is-half-tablet">
                     <div class="mb-2 subheading">Configure your elasticsearch server</div>
                     <p class="mb-1">
-                        To use elasticvue you have to enable CORS,
+                        You have to enable CORS if you do <strong>not</strong> use the browser extension,
                         otherwise the browser will reject all requests.
                         To enable CORS add the following to your
                         elasticsearch configuration, based on how you run elasticvue:
@@ -69,13 +66,7 @@ http.cors.enabled: true
 <span class="comment"># for docker / running locally</span>
 http.cors.allow-origin: "http://localhost:8080"
 <span class="comment"># web app</span>
-http.cors.allow-origin: /https?:\/\/app.elasticvue.com/
-<span class="comment"># chrome extension</span>
-http.cors.allow-origin: "chrome-extension://hkedbapjpblbodpgbajblpnlpenaebaa"
-<span class="comment"># edge extension</span>
-http.cors.allow-origin: "chrome-extension://geifniocjfnfilcbeloeidajlfmhdlgo"
-<span class="comment"># firefox addon</span>
-http.cors.allow-origin: "moz-extension://&lt;addon-url&gt;"</code></pre>
+http.cors.allow-origin: /https?:\/\/app.elasticvue.com/</code></pre>
                     </div>
                 </div>
             </div>

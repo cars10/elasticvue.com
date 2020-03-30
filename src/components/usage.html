@@ -1,94 +1,113 @@
+<div class="has-text-centered subheading mb-4">
+    <p>
+        The browser extensions do not require you to do any kind of configuration (like CORS), <br>
+        but they need the browsers permission to "acces data for all websites" so they can access your cluster.
+    </p>
+</div>
+
 <div class="columns is-multiline mb-4">
-  <div class="column is-one-third-desktop feature-wrapper">
-    <div class="feature feature--chrome">
-      <h3 class="feature__title">
-        ${require('./icons/chrome.html')}
-        Chrome extension
-      </h3>
-      <div class="feature__body">
-        <p class="mb-1">Elasticvue is available as a chrome extension:</p>
-        <a class="button button--primary mb-1"
-           href="https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa"
-           rel="noopener" target="_blank">${require('./icons/external.html')} Chrome webstore</a>
-      </div>
+    <div class="column is-one-third-desktop feature-wrapper">
+        <div class="feature">
+            <div class="feature__badge">zero config</div>
+            <h3 class="feature__title">
+                ${require('./icons/chrome.html')}
+                Chrome extension
+            </h3>
+            <div class="feature__body">
+                <p class="mb-1">Elasticvue is available as a chrome extension:</p>
+                <a class="button button--primary mb-1"
+                   href="https://chrome.google.com/webstore/detail/elasticvue/hkedbapjpblbodpgbajblpnlpenaebaa"
+                   rel="noopener" target="_blank">${require('./icons/external.html')} Chrome webstore</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="column is-one-third-desktop feature-wrapper">
-    <div class="feature feature--chrome">
-      <h3 class="feature__title">
-        ${require('./icons/edge.html')}
-        Edge extension
-      </h3>
-      <div class="feature__body">
-        <p class="mb-1">Elasticvue is available as a edge (2020) extension:</p>
-        <a class="button button--primary mb-1"
-           href="https://microsoftedge.microsoft.com/addons/detail/geifniocjfnfilcbeloeidajlfmhdlgo"
-           rel="noopener" target="_blank">${require('./icons/external.html')} Edge webstore</a>
-      </div>
+    <div class="column is-one-third-desktop feature-wrapper">
+        <div class="feature">
+            <div class="feature__badge">zero config</div>
+            <h3 class="feature__title">
+                ${require('./icons/edge.html')}
+                Edge extension
+            </h3>
+            <div class="feature__body">
+                <p class="mb-1">Elasticvue is available as a edge (2020) extension:</p>
+                <a class="button button--primary mb-1"
+                   href="https://microsoftedge.microsoft.com/addons/detail/geifniocjfnfilcbeloeidajlfmhdlgo"
+                   rel="noopener" target="_blank">${require('./icons/external.html')} Edge webstore</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="column is-one-third-desktop feature-wrapper">
-    <div class="feature feature--firefox">
-      <h3 class="feature__title">
-        ${require('./icons/firefox.html')}
-        Firefox addon
-      </h3>
-      <div class="feature__body">
-        <p class="mb-1">Elasticvue is available as a firefox addon:</p>
-        <a class="button button--primary mb-1"
-           href="https://addons.mozilla.org/en-US/firefox/addon/elasticvue/"
-           rel="noopener" target="_blank">${require('./icons/external.html')} Firefox addon</a>
-      </div>
+    <div class="column is-one-third-desktop feature-wrapper">
+        <div class="feature">
+            <div class="feature__badge">zero config</div>
+            <h3 class="feature__title">
+                ${require('./icons/firefox.html')}
+                Firefox addon
+            </h3>
+            <div class="feature__body">
+                <p class="mb-1">Elasticvue is available as a firefox addon:</p>
+                <a class="button button--primary mb-1"
+                   href="https://addons.mozilla.org/en-US/firefox/addon/elasticvue/"
+                   rel="noopener" target="_blank">${require('./icons/external.html')} Firefox addon</a>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
 
-  <div class="column is-one-third-desktop feature-wrapper">
-    <div class="feature">
-      <h3 class="feature__title">Web app</h3>
-      <div class="feature__body">
-        <p class="mb-1">This is the easiest way to use elasticvue.</p>
-        <a class="button button--primary mb-1" href="https://app.elasticvue.com" rel="noopener"
-           target="_blank">${require('./icons/external.html')} app.elasticvue.com</a>
-      </div>
+<div class="has-text-centered subheading mb-4">
+    <p>
+        If you use elasticvue via one of the following ways you will have to configure CORS to grant the browser access
+        to your cluster.
+    </p>
+</div>
+
+<div class="columns is-multiline mb-4">
+    <div class="column is-one-third-desktop feature-wrapper">
+        <div class="feature">
+            <h3 class="feature__title">Web app</h3>
+            <div class="feature__body">
+                <p class="mb-1">You can use the hosted version of elasticvue to avoid installing anything.</p>
+                <a class="button button--primary mb-1" href="https://app.elasticvue.com" rel="noopener"
+                   target="_blank">${require('./icons/external.html')} app.elasticvue.com</a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="column column is-one-third-desktop feature-wrapper">
-    <div class="feature feature--docker">
-      <h3 class="feature__title">
-        ${require('./icons/docker.html')}
-        Docker image
-      </h3>
-      <div class="feature__body">
-        <p class="mb-1">
-          Download and run
-          <a href="https://hub.docker.com/r/cars10/elasticvue" rel="noopener" target="_blank">
-            the image</a>, then open
-          <a href="http://localhost:8080" rel="noopener" target="_blank">http://localhost:8080</a>:
-        </p>
-        <div class="overflow-x-scroll inline-block">
+    <div class="column is-one-third-desktop feature-wrapper">
+        <div class="feature feature--docker">
+            <h3 class="feature__title">
+                ${require('./icons/docker.html')}
+                Docker image
+            </h3>
+            <div class="feature__body">
+                <p class="mb-1">
+                    Download and run
+                    <a href="https://hub.docker.com/r/cars10/elasticvue" rel="noopener" target="_blank">
+                        the image</a>, then open
+                    <a href="http://localhost:8080" rel="noopener" target="_blank">http://localhost:8080</a>:
+                </p>
+                <div class="overflow-x-scroll inline-block">
                             <pre class="inline-block code-block selectable"><code>docker run -p 8080:8080 \\
            -d cars10/elasticvue</code></pre>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <div class="column is-one-third-desktop feature-wrapper">
-    <div class="feature">
-      <h3 class="feature__title">
-        ${require('./icons/github.html')}
-        Building manually
-      </h3>
-      <div class="feature__body">
-        <p class="mb-1">
-          Check the <a href="https://github.com/cars10/elasticvue" rel="noopener" target="_blank">readme</a>
-          for instructions on how to manually build elasticvue.
-        </p>
-      </div>
+    <div class="column is-one-third-desktop feature-wrapper">
+        <div class="feature">
+            <h3 class="feature__title">
+                ${require('./icons/github.html')}
+                Building manually
+            </h3>
+            <div class="feature__body">
+                <p class="mb-1">
+                    Check the <a href="https://github.com/cars10/elasticvue" rel="noopener" target="_blank">readme</a>
+                    for instructions on how to manually build elasticvue.
+                </p>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
