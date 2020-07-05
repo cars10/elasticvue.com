@@ -22,6 +22,6 @@
             }
         })
 
-        element.setAttribute('title', 'double click to select')
+        element.setAttribute('title', 'double-click to select')
     })
 })(window, document)
