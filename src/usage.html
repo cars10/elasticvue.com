@@ -47,9 +47,8 @@ ${require('./components/navbar.html')}
                             You have to enable CORS if you use elasticvue via
                             <a href="https://app.elasticvue.com" rel="noopener" target="_blank">
                                 app.elasticvue.com</a>.
-                            <br>
-                            Add the following to your elasticsearch configuration:
                         </p>
+                        <p class="mb-1">Add the following to your elasticsearch configuration:</p>
                         <pre class="overflow-x-scroll code-block selectable mb-1"><code>http.cors.enabled: true
 http.cors.allow-origin: /https?:\\/\\/app.elasticvue.com/
 
@@ -66,9 +65,8 @@ http.cors.allow-headers: X-Requested-With,Content-Type,Content-Length,Authorizat
                             You have to enable CORS if you use elasticvue via
                             <a href="https://hub.docker.com/r/cars10/elasticvue" rel="noopener" target="_blank">
                                 Docker</a>.
-                            <br>
-                            Add the following to your elasticsearch configuration:
                         </p>
+                        <p class="mb-1">Add the following to your elasticsearch configuration:</p>
                         <pre class="overflow-x-scroll code-block selectable mb-1"><code>http.cors.enabled: true
 http.cors.allow-origin: "http://localhost:8080"
 
@@ -86,7 +84,8 @@ http.cors.allow-headers: X-Requested-With,Content-Type,Content-Length,Authorizat
                             what to
                             do, simply add the origin of the host where elasticvue is running to your elasticsearch
                             config.
-                            <br>
+                        </p>
+                        <p class="mb-1">
                             For example if it is running on
                             <span class="code-inline selectable">http://localhost:8080</span>:
                         </p>
