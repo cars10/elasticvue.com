@@ -65,6 +65,10 @@ ${require('./components/navbar.html')}
                 <div class="column">
                     <h2 class="mt-2 mb-2">Node overview</h2>
                     <p class="mb-1">You can view every node in your cluster in a table or grid view.</p>
+
+                    <p>
+                        You can chose between table and grid views to display names, roles, utilization and more.
+                    </p>
                 </div>
             </div>
         </div>
@@ -97,7 +101,42 @@ ${require('./components/navbar.html')}
 
     <section class="content">
         <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="gallery__thumb">
+                        <a aria-label="Index alias management"
+                           data-caption="Index alias management"
+                           href="${require('../static/images/screenshots/screenshot_3_indices.webp')}">
+                            <img alt="Index alias management"
+                                 src="${require('../static/images/screenshots/screenshot_3_indices.webp')}">
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 class="mt-2 mb-2">Index alias management</h2>
+                    <p class="mb-1">
+                        Elasticvue provides a frontend for you to quickly add & remove aliases for you indices.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content content--white">
+        <div class="container">
             <div class="columns reverse-columns-mobile">
+                <div class="column">
+                    <h2 class="mt-2 mb-2">Document search</h2>
+                    <p class="mb-1">
+                        You can search documents and view the results in a fully featured table, including sorting,
+                        filtering and
+                        pagination.
+                    </p>
+
+                    <p>
+                        You can also adjust the generated query when you need additional control.
+                    </p>
+                </div>
                 <div class="column">
                     <div class="gallery__thumb">
                         <a aria-label="Search documents"
@@ -108,12 +147,27 @@ ${require('./components/navbar.html')}
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="columns">
                 <div class="column">
-                    <h2 class="mt-2 mb-2">Document search</h2>
+                    <div class="gallery__thumb">
+                        <a aria-label="REST"
+                           data-caption="REST"
+                           href="${require('../static/images/screenshots/screenshot_5_query_dark.webp')}">
+                            <img alt="REST"
+                                 src="${require('../static/images/screenshots/screenshot_5_query_dark.webp')}">
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 class="mt-2 mb-2">REST gui</h2>
                     <p class="mb-1">
-                        You can search documents and view the results in a fully featured table, including sorting,
-                        filtering and
-                        pagination.
+                        Elasticvue has a gui to query your cluster via direct HTTP requests.
                     </p>
                 </div>
             </div>
@@ -122,23 +176,22 @@ ${require('./components/navbar.html')}
 
     <section class="content content--white">
         <div class="container">
-            <div class="columns">
+            <div class="columns reverse-columns-mobile">
                 <div class="column">
-                    <h2 class="mt-2 mb-2">REST gui</h2>
+                    <h2 class="mt-2 mb-2">Snapshot & repositories</h2>
                     <p class="mb-1">
-                        Elasticvue has a gui to query your cluster via direct HTTP requests.
+                        Manage repositories and snapshots right in your browser.
                         <br>
-                        Alternatively you can use the api browser and select every available elasticsearch api method
-                        directly.
+                        You can create, delete and restore snapshots based on index patterns.
                     </p>
                 </div>
                 <div class="column">
                     <div class="gallery__thumb">
-                        <a aria-label="REST"
-                           data-caption="REST"
-                           href="${require('../static/images/screenshots/screenshot_5_query_dark.webp')}">
-                            <img alt="REST"
-                                 src="${require('../static/images/screenshots/screenshot_5_query_dark.webp')}">
+                        <a aria-label="Snapshot management"
+                           data-caption="Snapshot management"
+                           href="${require('../static/images/screenshots/screenshot_6_snapshots_dark.webp')}">
+                            <img alt="Snapshot management"
+                                 src="${require('../static/images/screenshots/screenshot_6_snapshots_dark.webp')}">
                         </a>
                     </div>
                 </div>
@@ -151,21 +204,46 @@ ${require('./components/navbar.html')}
             <div class="columns reverse-columns-mobile">
                 <div class="column">
                     <div class="gallery__thumb">
-                        <a aria-label="Snapshot management"
-                           data-caption="Snapshot management"
-                           href="${require('../static/images/screenshots/screenshot_6_snapshots_dark.webp')}">
-                            <img alt="Snapshot management"
-                                 src="${require('../static/images/screenshots/screenshot_6_snapshots_dark.webp')}">
+                        <a aria-label="Utilities"
+                           data-caption="Utilities"
+                           href="${require('../static/images/screenshots/screenshot_7_utilities_dark.webp')}">
+                            <img alt="Utilities"
+                                 src="${require('../static/images/screenshots/screenshot_7_utilities_dark.webp')}">
                         </a>
                     </div>
                 </div>
                 <div class="column">
-                    <h2 class="mt-2 mb-2">Snapshot & repositories</h2>
+                    <h2 class="mt-2 mb-2">Utilities</h2>
                     <p class="mb-1">
-                        Manage repositories and snapshots right in your browser.
-                        <br>
-                        You can create, delete and restore snapshots based on index patterns.
+                        The provided utilities help you to quickly clean your clusters data during development. You can
+                        also add some test data.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content content--white">
+        <div class="container">
+            <div class="columns reverse-columns-mobile">
+                <div class="column">
+                    <h2 class="mt-2 mb-2">Settings</h2>
+                    <p class="mb-1">
+                        You can configure a custom regex to hide indices that you don' usually need.
+                    </p>
+                    <p>
+                        You can also import & export your elasticvue data if you frequently switch devices or browsers.
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="gallery__thumb">
+                        <a aria-label="Settings"
+                           data-caption="Settings"
+                           href="${require('../static/images/screenshots/screenshot_8_settings.webp')}">
+                            <img alt="Settings"
+                                 src="${require('../static/images/screenshots/screenshot_8_settings.webp')}">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-FROM node:11.15-slim AS builder
+FROM node:12-slim AS builder
 WORKDIR /usr/src/app
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
