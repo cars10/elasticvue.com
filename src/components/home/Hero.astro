@@ -8,13 +8,14 @@ import card4 from '../../assets/images/pages/home/hero/card4.webp'
 import card5 from '../../assets/images/pages/home/hero/card5.webp'
 import card6 from '../../assets/images/pages/home/hero/card6.webp'
 
+// Single-column cards (1–4): ~14–22vw → ~210px max. Two-column cards (5–6): ~28–44vw → ~400px max.
 const heroCards = [
-  { name: 'card1' as const, img: card1, delay: '2.5s' },
-  { name: 'card2', img: card2, delay: '2.5s' },
-  { name: 'card3', img: card3, delay: '2.5s' },
-  { name: 'card4', img: card4, delay: '2.5s' },
-  { name: 'card5', img: card5, delay: '3s' },
-  { name: 'card6', img: card6, delay: '3s' },
+  { name: 'card1' as const, img: card1, delay: '2.5s', sizes: '(min-width: 1280px) 14vw, (min-width: 768px) 22vw, 35vw' },
+  { name: 'card2', img: card2, delay: '2.5s', sizes: '(min-width: 1280px) 14vw, (min-width: 768px) 22vw, 35vw' },
+  { name: 'card3', img: card3, delay: '2.5s', sizes: '(min-width: 1280px) 14vw, (min-width: 768px) 22vw, 35vw' },
+  { name: 'card4', img: card4, delay: '2.5s', sizes: '(min-width: 1280px) 14vw, (min-width: 768px) 22vw, 35vw' },
+  { name: 'card5', img: card5, delay: '3s', sizes: '(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 70vw' },
+  { name: 'card6', img: card6, delay: '3s', sizes: '(min-width: 1280px) 28vw, (min-width: 768px) 44vw, 70vw' },
 ]
 ---
 
@@ -29,6 +30,8 @@ const heroCards = [
           alt="Elasticvue header"
           width={960}
           height={540}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 1280px) 75vw, (min-width: 768px) 83vw, 100vw"
           class="fadeImg w-full"
           style="animation-delay: 2s"
           loading="eager"
@@ -36,13 +39,15 @@ const heroCards = [
         />
       </div>
       {
-        heroCards.map(({ name, img, delay }, i) => (
+        heroCards.map(({ name, img, delay, sizes }, i) => (
           <div class={`hero-grid-${name}`}>
             <Image
               src={img}
               alt={`Feature ${i + 1}`}
               width={400}
               height={250}
+              widths={[210, 320, 400]}
+              sizes={sizes}
               class="fadeImg w-full"
               style={`animation-delay: ${delay}`}
               loading="eager"
