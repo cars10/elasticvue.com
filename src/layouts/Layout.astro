@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets'
 import '../styles/global.css'
 import Header from '../components/Header.astro'
 import Head from './Head.astro'
@@ -14,6 +15,7 @@ const { title, description } = Astro.props
 <!doctype html>
 <html lang="en">
   <head>
+    <Font cssVariable="--font-inter" preload />
     <Head title={title} description={description} />
   </head>
   <body>
