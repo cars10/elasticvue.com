@@ -1,0 +1,17 @@
+# Astro image cache – provided by BuildKit cache mount during build
+.astro/
+# Dependencies – installed in image via npm ci
+node_modules/
+# Build output – produced during build
+dist/
+# Git and IDE
+.git
+.idea
+.vscode
+# Local dev
+.env
+.env.*
+*.log
+Dockerfile.dev
+compose.yml
+README.md
