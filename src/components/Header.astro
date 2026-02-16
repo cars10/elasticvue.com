@@ -11,7 +11,7 @@ const links = [
 
 <header class="flex w-full text-white">
   <div
-    class="mx-auto flex h-full max-w-[92%] flex-1 flex-row justify-between py-4 xl:max-w-3/4 2xl:max-w-1/2"
+    class="mx-auto flex h-full max-w-[92%] pl-2 flex-1 flex-row justify-between py-4 xl:max-w-3/4 2xl:max-w-1/2"
   >
     <div class="flex flex-1 items-center">
       <a href="/" class="mr-3">
@@ -27,7 +27,11 @@ const links = [
       </a>
     </div>
 
-    <nav id="nav-menu" class="mr-14 hidden py-3 md:flex xl:mr-0" aria-label="Main navigation">
+    <nav
+      id="nav-menu"
+      class="mr-14 hidden py-3 md:flex xl:mr-0"
+      aria-label="Main navigation"
+    >
       {
         links.map(({ label, href }) => (
           <a
@@ -38,7 +42,7 @@ const links = [
           </a>
         ))
       }
-    </div>
+    </nav>
 
     <button
       type="button"
