@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets'
+import githubLogo from '../assets/images/github/github_logo.webp'
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="py-8">
+  <div class="mx-auto w-[95%] max-w-[1640px] xl:w-[80%]">
+    <div class="flex flex-1 flex-row justify-between">
+      <div class="px-2">
+        <p class="mb-2">
+          <a
+            href="/imprint"
+            rel="nofollow"
+            class="text-primary underline visited:text-primary dark:text-white dark:visited:text-white"
+          >
+            Imprint
+          </a>
+        </p>
+        <p>
+          <a
+            href="/privacy"
+            rel="nofollow"
+            class="text-primary underline visited:text-primary dark:text-white dark:visited:text-white"
+          >
+            Privacy policy
+          </a>
+        </p>
+      </div>
+      <div class="px-2">
+        <div class="text-center">
+          <p>&copy; {currentYear}</p>
+          <p>Carsten König</p>
+        </div>
+      </div>
+      <div class="px-2">
+        <a
+          href="https://github.com/cars10/elasticvue"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Image
+            src={githubLogo}
+            alt="Github"
+            width={100}
+            class="rounded-xl bg-white"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

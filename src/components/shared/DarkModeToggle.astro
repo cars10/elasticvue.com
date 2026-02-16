@@ -1,0 +1,195 @@
+---
+interface Props {
+  darkLabel?: string
+  lightLabel?: string
+  initialDark?: boolean
+}
+const {
+  darkLabel = 'Dark mode',
+  lightLabel = 'Light mode',
+  initialDark = true,
+} = Astro.props
+---
+
+<div
+  class="dark-mode-toggle-root inline-flex items-center gap-1"
+  data-initial-dark={initialDark}
+  data-dark-mode={initialDark}
+  role="group"
+  aria-label="Toggle dark or light mode"
+>
+  <span
+    class="dark-label px-4 py-2 transition duration-300 cursor-pointer"
+    data-active={initialDark}
+    tabindex="0"
+    role="button"
+  >
+    {darkLabel}
+  </span>
+  <button
+    type="button"
+    class="toggle-wrapper"
+    data-dark={initialDark}
+    aria-pressed={!initialDark}
+    aria-label="Toggle theme"
+  >
+    <span class="toggle-indicator" data-dark={initialDark}></span>
+  </button>
+  <span
+    class="light-label px-4 py-2 transition duration-300 cursor-pointer"
+    data-active={!initialDark}
+    tabindex="0"
+    role="button"
+  >
+    {lightLabel}
+  </span>
+</div>
+
+<style>
+  .dark-mode-toggle-root {
+    --duration: 0.3s;
+  }
+
+  .dark-label[data-active='true'],
+  .light-label[data-active='true'] {
+    color: var(--color-neutral-300);
+  }
+
+  .dark-label[data-active='false'],
+  .light-label[data-active='false'] {
+    color: var(--color-neutral-500);
+  }
+
+  .dark-label:hover,
+  .light-label:hover {
+    cursor: pointer;
+  }
+
+  .toggle-wrapper {
+    border-radius: 20px;
+    height: 30px;
+    width: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0 1px 2px 0 #000;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-neutral-600);
+    outline: none;
+    transition: background-color var(--duration) ease-in-out;
+    position: relative;
+  }
+
+  .toggle-wrapper:hover {
+    cursor: pointer;
+  }
+
+  .toggle-wrapper[data-dark='true'] {
+    background-color: #040348;
+  }
+
+  .toggle-wrapper[data-dark='true']::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    height: 2px;
+    width: 2px;
+    box-shadow:
+      30px 12px 0 yellow,
+      36px 2px 0 yellow,
+      42px 8px 0 yellow;
+    border-radius: 50%;
+  }
+
+  .toggle-wrapper[data-dark='false'] {
+    background-color: #87ceeb;
+  }
+
+  .toggle-wrapper[data-dark='false']::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    box-shadow:
+      12px 1px 0 2px rgba(255, 255, 255, 0.8),
+      9px 4px 0 2px rgba(255, 255, 255, 0.8),
+      12px 4px 0 2px rgba(255, 255, 255, 0.8),
+      15px 4px 0 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .toggle-indicator {
+    z-index: 2;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    transition:
+      margin-left var(--duration) ease-in-out,
+      background-color var(--duration) ease-in-out;
+    box-shadow:
+      inset -5px -5px 10px rgba(0, 0, 0, 0.3),
+      inset 5px 5px 10px rgba(255, 255, 255, 0.2),
+      2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .toggle-indicator[data-dark='false'] {
+    background-color: #ffcc40;
+    margin-left: 32px;
+  }
+
+  .toggle-indicator[data-dark='true'] {
+    background-color: #f6f1d5;
+    margin-left: 3px;
+  }
+</style>
+
+<script>
+  function initDarkModeToggle(root: HTMLElement): void {
+    const darkLabel = root.querySelector('.dark-label')
+    const lightLabel = root.querySelector('.light-label')
+    const wrapper = root.querySelector('.toggle-wrapper')
+    const indicator = root.querySelector('.toggle-indicator')
+
+    let darkMode = root.dataset.initialDark === 'true'
+
+    function updateUI(): void {
+      root.dataset.darkMode = String(darkMode)
+      darkLabel?.setAttribute('data-active', String(darkMode))
+      lightLabel?.setAttribute('data-active', String(!darkMode))
+      wrapper?.setAttribute('data-dark', String(darkMode))
+      wrapper?.setAttribute('aria-pressed', String(!darkMode))
+      indicator?.setAttribute('data-dark', String(darkMode))
+    }
+
+    function toggle(): void {
+      darkMode = !darkMode
+      updateUI()
+      root.dispatchEvent(
+        new CustomEvent('dark-mode-change', {
+          detail: { darkMode },
+          bubbles: true,
+        }),
+      )
+    }
+
+    function handleKeydown(e: KeyboardEvent): void {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        toggle()
+      }
+    }
+
+    darkLabel?.addEventListener('click', toggle)
+    darkLabel?.addEventListener('keydown', handleKeydown as EventListener)
+    lightLabel?.addEventListener('click', toggle)
+    lightLabel?.addEventListener('keydown', handleKeydown as EventListener)
+    wrapper?.addEventListener('click', toggle)
+  }
+
+  document
+    .querySelectorAll<HTMLElement>('.dark-mode-toggle-root')
+    .forEach(initDarkModeToggle)
+</script>

@@ -1,0 +1,177 @@
+---
+interface Props {
+  label?: string
+  title?: string
+  href?: string
+  icon?: string
+  iconSize?: number
+  color?: 'white' | 'primary'
+  dropdownItems?: { label: string; href: string }[]
+  hideCaret?: boolean
+  target?: string
+  class?: string
+  umamiEvent?: string
+  umamiVariant?: string
+}
+const {
+  label,
+  title,
+  href,
+  icon,
+  iconSize = 14,
+  color = 'primary',
+  dropdownItems,
+  hideCaret = false,
+  target,
+  class: className = '',
+  umamiEvent,
+  umamiVariant,
+} = Astro.props
+const colorClass =
+  color === 'white'
+    ? 'bg-white text-black hover:shadow-primary hover:shadow-lg hover:bg-neutral-300 focus:bg-neutral-300'
+    : 'bg-transparent text-neutral-200 hover:bg-neutral-800 focus:bg-neutral-800 hover:text-white'
+const dropdownLinkClass =
+  color === 'white'
+    ? 'bg-white text-neutral-900 hover:bg-neutral-200 hover:text-neutral-900'
+    : 'bg-neutral-800 text-white hover:bg-neutral-900 hover:text-white'
+const baseClass = `relative text-nowrap px-4 py-2 shadow-sm inline-flex items-center cursor-pointer transition duration-300 zoom rounded-xl h-10`
+const umamiAttrs: Record<string, string> = {}
+if (umamiEvent) {
+  umamiAttrs['data-umami-event'] = umamiEvent
+  if (umamiVariant) umamiAttrs['data-umami-event-variant'] = umamiVariant
+}
+const iconClass = `inline-block ${label ? 'mr-2' : ''}`
+---
+
+{
+  dropdownItems && dropdownItems.length > 0 ? (
+    <div class="dropdown-button relative inline-flex">
+      <button
+        type="button"
+        class={`${baseClass} ${colorClass} ${className}`}
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-dropdown-toggle
+        title={title}
+        {...umamiAttrs}
+      >
+        {icon && (
+          <img
+            src={icon}
+            alt={title ?? ''}
+            width={iconSize}
+            height={iconSize}
+            class={iconClass}
+          />
+        )}
+        {label}
+        {!hideCaret && (
+          <span class="ml-1 text-xs" data-dropdown-caret>
+            ▼
+          </span>
+        )}
+      </button>
+      <div
+        class="dropdown-panel absolute top-full left-0 z-10 hidden min-w-max flex-col rounded-b-xl whitespace-nowrap"
+        data-dropdown-panel
+      >
+        {dropdownItems.map((item) => (
+          <a
+            href={item.href}
+            target="_blank"
+            class={`block overflow-hidden px-4 py-3 outline-none last-of-type:rounded-b-xl text-nowrap ${dropdownLinkClass}`}
+            data-umami-event={umamiEvent}
+            data-umami-event-variant={
+              umamiVariant
+                ? `${umamiVariant}-${item.label.toLowerCase().replace(/\s+/g, '-')}`
+                : undefined
+            }
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  ) : href ? (
+    <a
+      href={href}
+      target={target}
+      class={`${baseClass} ${colorClass} ${className}`}
+      title={title}
+      {...umamiAttrs}
+    >
+      {icon && (
+        <img
+          src={icon}
+          alt={title ?? ''}
+          width={iconSize}
+          height={iconSize}
+          class={iconClass}
+        />
+      )}
+      {label}
+    </a>
+  ) : (
+    <button
+      type="button"
+      class={`${baseClass} ${colorClass} ${className}`}
+      title={title}
+      {...umamiAttrs}
+    >
+      {icon && (
+        <img
+          src={icon}
+          alt={title ?? ''}
+          width={iconSize}
+          height={iconSize}
+          class={iconClass}
+        />
+      )}
+      {label}
+    </button>
+  )
+}
+
+<script>
+  document.addEventListener('click', (e) => {
+    const target = e.target
+    if (!target || !(target instanceof HTMLElement)) return
+    const insideDropdown = target.closest('.dropdown-button')
+    const toggleBtn = target.closest('[data-dropdown-toggle]')
+
+    if (toggleBtn && insideDropdown) {
+      e.preventDefault()
+      e.stopPropagation()
+      const panel = insideDropdown.querySelector('[data-dropdown-panel]')
+      const caret = toggleBtn.querySelector('[data-dropdown-caret]')
+      if (!panel || !(panel instanceof HTMLElement)) return
+      const isHidden = panel.classList.contains('hidden')
+      panel.classList.toggle('hidden', !isHidden)
+      panel.classList.toggle('flex', isHidden)
+      toggleBtn.setAttribute('aria-expanded', String(isHidden))
+      if (caret) caret.textContent = isHidden ? '▲' : '▼'
+      toggleBtn.classList.toggle('rounded-t-xl', isHidden)
+      toggleBtn.classList.toggle('rounded-b-none', isHidden)
+      return
+    }
+
+    if (!insideDropdown) {
+      document.querySelectorAll('[data-dropdown-panel]').forEach((p) => {
+        if (!p.classList.contains('hidden')) {
+          p.classList.add('hidden')
+          p.classList.remove('flex')
+          const btn = p
+            .closest('.dropdown-button')
+            ?.querySelector('[data-dropdown-toggle]')
+          const caret = btn?.querySelector('[data-dropdown-caret]')
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'false')
+            btn.classList.remove('rounded-t-xl', 'rounded-b-none')
+          }
+          if (caret) caret.textContent = '▼'
+        }
+      })
+    }
+  })
+</script>

@@ -1,0 +1,53 @@
+---
+interface Props {
+  title: string
+  description?: string
+  appendChildren?: boolean
+  buttonLabel?: string
+  buttonHref?: string
+  buttonColor?: 'white' | 'primary'
+}
+const {
+  title,
+  description = '',
+  appendChildren = false,
+  buttonLabel,
+  buttonHref,
+  buttonColor = 'primary',
+} = Astro.props
+const btnClass =
+  buttonColor === 'white'
+    ? 'bg-white text-black hover:shadow-primary hover:shadow-lg hover:bg-neutral-300 focus:bg-neutral-300'
+    : 'bg-transparent text-neutral-200 hover:bg-neutral-800 focus:bg-neutral-800 hover:text-white'
+---
+
+<div class="gradient px-6 py-10 md:p-16 lg:p-24 xl:py-30">
+  <div class="mx-auto xl:w-3/4 2xl:w-1/2">
+    <h1 class="mb-10 text-center text-3xl xl:mb-20 xl:text-5xl">{title}</h1>
+
+    {!appendChildren && <slot />}
+
+    {
+      description && (
+        <p class="mx-auto mb-4 text-justify text-muted text-xl xl:text-center xl:text-2xl">
+          {description}
+        </p>
+      )
+    }
+
+    {appendChildren && <slot />}
+
+    {
+      buttonLabel && buttonHref && (
+        <div class="mt-16 text-center">
+          <a
+            href={buttonHref}
+            class={`mt-4 inline-flex h-10 items-center justify-center rounded-xl px-4 py-2 text-nowrap shadow-sm transition duration-300 ${btnClass} zoom`}
+          >
+            {buttonLabel}
+          </a>
+        </div>
+      )
+    }
+  </div>
+</div>

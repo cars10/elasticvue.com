@@ -1,0 +1,58 @@
+---
+const titles = [
+  "The elasticsearch GUI that you've been waiting for.",
+  'The elasticsearch GUI that you deserve.',
+  'The smartest way to work with elasticsearch.',
+  'The best way to manage your cluster.',
+]
+const title = titles[0]
+const titleWords = title.split(' ')
+---
+
+<div class="mx-auto p-6 md:p-12 xl:w-3/4 xl:px-0 xl:pt-14 2xl:w-1/2">
+  <div class="xl:w-3/5">
+    <h1 class="mb-10 font-bold text-5xl xl:mb-12 xl:text-6xl">
+      <span class="fade" style="animation-delay: 0.1s">Elasticvue.</span>
+    </h1>
+    <h1
+      class="mb-10 min-h-[72px] text-3xl xl:min-h-[144px] xl:text-5xl xl:leading-18"
+      id="intro-subtitle"
+    >
+      {
+        titleWords.map((word, i) => (
+          <span class="fade" style={`animation-delay: ${i * 0.1 + 0.75}s`}>
+            {word}&nbsp;
+          </span>
+        ))
+      }
+    </h1>
+    <a
+      href="/installation"
+      class="fade mr-4 inline-flex h-10 items-center rounded-xl bg-white px-4 py-2 text-black shadow-sm transition duration-300 hover:bg-neutral-300 hover:shadow-lg hover:shadow-primary zoom"
+      style="animation-delay: 2s"
+    >
+      Installation
+    </a>
+    <a
+      href="/features"
+      class="fade inline-flex h-10 items-center rounded-xl bg-transparent px-4 py-2 text-neutral-200 shadow-sm transition duration-300 hover:bg-neutral-800 hover:text-white zoom"
+      style="animation-delay: 2s"
+    >
+      Screenshots
+    </a>
+  </div>
+</div>
+
+<script define:vars={{ titles: titles }}>
+  const el = document.getElementById('intro-subtitle')
+  if (el) {
+    const randomTitle = titles[Math.floor(Math.random() * titles.length)]
+    const words = randomTitle.split(' ')
+    el.innerHTML = words
+      .map(
+        (word, i) =>
+          `<span class="fade" style="animation-delay: ${i * 0.1 + 0.75}s">${word}&nbsp;</span>`,
+      )
+      .join('')
+  }
+</script>

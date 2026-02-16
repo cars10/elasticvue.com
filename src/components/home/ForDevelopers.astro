@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets'
+import Section from '../shared/Section.astro'
+import indicesScreenshot from '../../assets/images/screenshots/website_4_indices_dark.webp'
+---
+
+<Section
+  title="Built for developers."
+  description="Elasticvue helps streamline your daily tasks. Effortlessly manage indices, inspect documents, and update data whenever needed."
+  buttonLabel="Features"
+  buttonHref="/features"
+  buttonColor="white"
+  appendChildren
+>
+  <div class="mflex gap-8 overflow-hidden" data-for-developers-image-wrap>
+    <div class="mt-20 w-full">
+      <Image
+        src={indicesScreenshot}
+        alt="Indices view in Elasticvue"
+        width={1200}
+        height={800}
+        class="for-developers-img rounded-xl border border-[#454545] w-full invisible"
+      />
+    </div>
+  </div>
+</Section>
+
+<script>
+  const wrap = document.querySelector('[data-for-developers-image-wrap]')
+  if (wrap) {
+    const img = wrap.querySelector('img')
+    if (img) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              img.classList.remove('invisible')
+              img.classList.add('fadeImgFeature')
+            }
+          })
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' },
+      )
+      observer.observe(wrap)
+    }
+  }
+</script>

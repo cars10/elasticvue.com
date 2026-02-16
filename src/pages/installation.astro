@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Section from '../components/shared/Section.astro'
+import InstallationMethodSection from '../components/installation/InstallationMethodSection.astro'
+import { variants } from '../data/variants'
+---
+
+<Layout
+  title="Elasticvue - Elasticsearch gui installation"
+  description="Use elasticvue as desktop app, browser extension, docker container or self hosted."
+>
+  <Section
+    title="Installation"
+    description="You don't have to bend to make elasticvue work. Install it however you like! Elasticvue is designed to be flexible and easy to use, so you can choose the method that best fits your needs."
+  />
+
+  <InstallationMethodSection
+    title="Desktop app"
+    description="The desktop app is the easiest and recommended way to use elasticvue."
+    variants={[variants.windows, variants.mac, variants.linux]}
+    capabilities={[
+      'auto update',
+      'no cluster configuration required',
+      'self-signed ssl support',
+    ]}
+  />
+
+  <InstallationMethodSection
+    title="Browser extension"
+    description="Use the browser extension if you don't want to install the desktop app. You might need to take extra steps to trust your cluster's certificate."
+    variants={[variants.chrome, variants.edge, variants.firefox]}
+    capabilities={['auto update', 'no cluster configuration required']}
+  />
+
+  <InstallationMethodSection
+    title="Other installation methods"
+    description="If you're not using the desktop app or a browser extension, you'll need to configure CORS to allow browser access to your cluster. Elasticvue will provide guidance on configuring your cluster when you first use it. Additionally, you may need to take extra steps to trust your cluster's certificate."
+    variants={[variants.web, variants.docker, variants.selfhosted]}
+    capabilities={['custom deployment']}
+  />
+</Layout>

@@ -1,0 +1,115 @@
+---
+import { Image } from 'astro:assets'
+import headerImg from '../../assets/images/pages/home/hero/header.webp'
+import card1 from '../../assets/images/pages/home/hero/card1.webp'
+import card2 from '../../assets/images/pages/home/hero/card2.webp'
+import card3 from '../../assets/images/pages/home/hero/card3.webp'
+import card4 from '../../assets/images/pages/home/hero/card4.webp'
+import card5 from '../../assets/images/pages/home/hero/card5.webp'
+import card6 from '../../assets/images/pages/home/hero/card6.webp'
+
+const heroCards = [
+  { name: 'card1' as const, img: card1, delay: '2.5s' },
+  { name: 'card2', img: card2, delay: '2.5s' },
+  { name: 'card3', img: card3, delay: '2.5s' },
+  { name: 'card4', img: card4, delay: '2.5s' },
+  { name: 'card5', img: card5, delay: '3s' },
+  { name: 'card6', img: card6, delay: '3s' },
+]
+---
+
+<div class="hero-wrapper">
+  <div
+    class="hero-border mt-20 md:mt-18 md:w-5/6 lg:mt-26 xl:mt-42 xl:w-3/4 2xl:mt-56"
+  >
+    <div class="hero-grid">
+      <div class="hero-grid-header">
+        <Image
+          src={headerImg}
+          alt="Elasticvue header"
+          width={960}
+          height={540}
+          class="fadeImg w-full"
+          style="animation-delay: 2s"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      {
+        heroCards.map(({ name, img, delay }, i) => (
+          <div class={`hero-grid-${name}`}>
+            <Image
+              src={img}
+              alt={`Feature ${i + 1}`}
+              width={400}
+              height={250}
+              class="fadeImg w-full"
+              style={`animation-delay: ${delay}`}
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-wrapper {
+    overflow: hidden;
+    position: relative;
+    perspective: 4000px;
+    perspective-origin: 100% 0;
+  }
+  .hero-wrapper::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, #08090a 90%) 100%;
+  }
+  .hero-border {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    transform-style: preserve-3d;
+    border: 1px solid #454545;
+    outline: 1px solid transparent;
+    padding: 1px;
+    transform: scale(1.1) rotateX(47deg) rotateY(31deg) rotate(324deg);
+    transform-origin: top left;
+    border-radius: 12px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    grid-template-areas:
+      'header header header header header header'
+      '. card1 card2 card3 card4 .'
+      '. card5 card5 card6 card6 .';
+  }
+  .hero-grid-header {
+    grid-area: header;
+  }
+  .hero-grid-card1 {
+    grid-area: card1;
+  }
+  .hero-grid-card2 {
+    grid-area: card2;
+  }
+  .hero-grid-card3 {
+    grid-area: card3;
+  }
+  .hero-grid-card4 {
+    grid-area: card4;
+  }
+  .hero-grid-card5 {
+    grid-area: card5;
+  }
+  .hero-grid-card6 {
+    grid-area: card6;
+  }
+</style>

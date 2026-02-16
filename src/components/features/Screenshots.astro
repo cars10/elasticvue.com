@@ -1,0 +1,289 @@
+---
+import { Picture } from 'astro:assets'
+import DarkModeToggle from '../shared/DarkModeToggle.astro'
+
+const SLIDE_WIDTHS = [640, 828, 1080, 1280, 1668, 1920]
+const SLIDE_SIZES =
+  '(max-width: 640px) 100vw, (max-width: 1024px) calc(100vw - 2rem), 1600px'
+import homeDark from '../../assets/images/screenshots/website_1_home_dark.webp'
+import nodesDark from '../../assets/images/screenshots/website_2_nodes_dark.webp'
+import shardsDark from '../../assets/images/screenshots/website_3_shards_dark.webp'
+import indicesDark from '../../assets/images/screenshots/website_4_indices_dark.webp'
+import aliasesDark from '../../assets/images/screenshots/website_5_index-aliases_dark.webp'
+import searchDark from '../../assets/images/screenshots/website_6_search_dark.webp'
+import documentDark from '../../assets/images/screenshots/website_7_document_dark.webp'
+import restDark from '../../assets/images/screenshots/website_8_rest_dark.webp'
+import settingsDark from '../../assets/images/screenshots/website_9_settings_dark.webp'
+import homeLight from '../../assets/images/screenshots/website_1_home_light.webp'
+import nodesLight from '../../assets/images/screenshots/website_2_nodes_light.webp'
+import shardsLight from '../../assets/images/screenshots/website_3_shards_light.webp'
+import indicesLight from '../../assets/images/screenshots/website_4_indices_light.webp'
+import aliasesLight from '../../assets/images/screenshots/website_5_index-aliases_light.webp'
+import searchLight from '../../assets/images/screenshots/website_6_search_light.webp'
+import documentLight from '../../assets/images/screenshots/website_7_document_light.webp'
+import restLight from '../../assets/images/screenshots/website_8_rest_light.webp'
+import settingsLight from '../../assets/images/screenshots/website_9_settings_light.webp'
+
+const darkImages = [
+  { src: homeDark, alt: 'Home page dark mode screenshot' },
+  { src: nodesDark, alt: 'Nodes page dark mode screenshot' },
+  { src: shardsDark, alt: 'Shards page dark mode screenshot' },
+  { src: indicesDark, alt: 'Indices page dark mode screenshot' },
+  { src: aliasesDark, alt: 'Index Aliases page dark mode screenshot' },
+  { src: searchDark, alt: 'Search page dark mode screenshot' },
+  { src: documentDark, alt: 'Document page dark mode screenshot' },
+  { src: restDark, alt: 'REST API page dark mode screenshot' },
+  { src: settingsDark, alt: 'Settings page dark mode screenshot' },
+]
+const lightImages = [
+  { src: homeLight, alt: 'Home page light mode screenshot' },
+  { src: nodesLight, alt: 'Nodes page light mode screenshot' },
+  { src: shardsLight, alt: 'Shards page light mode screenshot' },
+  { src: indicesLight, alt: 'Indices page light mode screenshot' },
+  { src: aliasesLight, alt: 'Index Aliases page light mode screenshot' },
+  { src: searchLight, alt: 'Search page light mode screenshot' },
+  { src: documentLight, alt: 'Document page light mode screenshot' },
+  { src: restLight, alt: 'REST API page light mode screenshot' },
+  { src: settingsLight, alt: 'Settings page light mode screenshot' },
+]
+const slides = darkImages.map((d, i) => ({ dark: d, light: lightImages[i] }))
+const slideCount = slides.length
+---
+
+<div
+  class="mx-auto mb-20 w-full max-w-[1600px] px-4 md:px-8"
+  id="screenshots-section"
+  data-screenshot-theme="dark"
+>
+  <div class="my-20 text-center">
+    <DarkModeToggle darkLabel="Dark" lightLabel="Light" initialDark={true} />
+  </div>
+
+  <div class="slideshow-container">
+    <button
+      type="button"
+      class="slideshow-btn slideshow-prev"
+      aria-label="Previous screenshot"
+    >
+      ‹
+    </button>
+    <button
+      type="button"
+      class="slideshow-btn slideshow-next"
+      aria-label="Next screenshot"
+    >
+      ›
+    </button>
+
+    <div class="slideshow-slides">
+      {
+        slides.map((slide, index) => (
+          <div
+            class="slideshow-slide"
+            data-slide
+            data-index={index}
+            style={index === 0 ? '' : 'display: none;'}
+          >
+            <Picture
+              src={slide.dark.src}
+              alt={slide.dark.alt}
+              width={1920}
+              height={1080}
+              widths={SLIDE_WIDTHS}
+              sizes={SLIDE_SIZES}
+              formats={['avif', 'webp']}
+              fallbackFormat="webp"
+              quality="high"
+              priority={index === 0}
+              class="screenshot-dark rounded-xl block"
+            />
+            <Picture
+              src={slide.light.src}
+              alt={slide.light.alt}
+              width={1920}
+              height={1080}
+              widths={SLIDE_WIDTHS}
+              sizes={SLIDE_SIZES}
+              formats={['avif', 'webp']}
+              fallbackFormat="webp"
+              quality="high"
+              class="screenshot-light rounded-xl block hidden"
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <ul class="slideshow-dots" data-dots aria-label="Slide navigation">
+      {
+        Array.from({ length: slideCount }, (_, i) => (
+          <li>
+            <button
+              type="button"
+              class="slideshow-dot"
+              data-index={i}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-current={i === 0 ? 'true' : undefined}
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+  }
+  .slideshow-slides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1920 / 1080;
+  }
+  .slideshow-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slideshow-slide .screenshot-dark,
+  .slideshow-slide .screenshot-light {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+  .slideshow-slide .screenshot-dark {
+    display: block;
+  }
+  .slideshow-slide .screenshot-light {
+    display: none;
+  }
+  [data-screenshot-theme='light'] .slideshow-slide .screenshot-dark {
+    display: none;
+  }
+  [data-screenshot-theme='light'] .slideshow-slide .screenshot-light {
+    display: block;
+  }
+
+  .slideshow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition:
+      background 0.2s,
+      border-color 0.2s;
+  }
+  .slideshow-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .slideshow-prev {
+    left: 8px;
+  }
+  .slideshow-next {
+    right: 8px;
+  }
+
+  .slideshow-dots {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .slideshow-dot {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .slideshow-dot:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+  .slideshow-dot[aria-current='true'],
+  .slideshow-dot.active {
+    background: rgba(255, 255, 255, 0.95);
+  }
+</style>
+
+<script>
+  const section = document.getElementById('screenshots-section')
+  const slideElements = section?.querySelectorAll<HTMLElement>('[data-slide]')
+  const dots = section?.querySelectorAll<HTMLElement>(
+    '[data-dots] .slideshow-dot',
+  )
+  const prevFloating =
+    section?.querySelector<HTMLButtonElement>('.slideshow-prev')
+  const nextFloating =
+    section?.querySelector<HTMLButtonElement>('.slideshow-next')
+
+  const slideCount = slideElements?.length ?? 0
+  let slideIndex = 1
+
+  function showSlide(n: number): void {
+    if (!slideElements || slideCount === 0) return
+    if (n > slideCount) slideIndex = 1
+    else if (n < 1) slideIndex = slideCount
+    else slideIndex = n
+
+    slideElements.forEach((el, i) => {
+      ;(el as HTMLElement).style.display = i === slideIndex - 1 ? '' : 'none'
+    })
+    dots?.forEach((dot, i) => {
+      dot.setAttribute('aria-current', i === slideIndex - 1 ? 'true' : 'false')
+      dot.classList.toggle('active', i === slideIndex - 1)
+    })
+  }
+
+  function plusSlide(delta: number): void {
+    showSlide(slideIndex + delta)
+  }
+
+  function goToSlide(index: number): void {
+    showSlide(index + 1)
+  }
+
+  prevFloating?.addEventListener('click', () => plusSlide(-1))
+  nextFloating?.addEventListener('click', () => plusSlide(1))
+
+  dots?.forEach((dot, i) => {
+    dot.addEventListener('click', () => goToSlide(i))
+  })
+
+  showSlide(1)
+
+  section?.addEventListener('dark-mode-change', (e: Event) => {
+    const ev = e as CustomEvent<{ darkMode: boolean }>
+    const isDark = ev.detail.darkMode
+    if (section)
+      section.setAttribute('data-screenshot-theme', isDark ? 'dark' : 'light')
+  })
+</script>
