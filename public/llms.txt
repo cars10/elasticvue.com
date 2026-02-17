@@ -1,0 +1,46 @@
+# Elasticvue
+
+> Elasticvue is a free and open-source graphical user interface for Elasticsearch. It lets you manage cluster data, browse documents in a table view with filter, pagination and sorting, run REST queries, and work with indices, aliases, shards, snapshots and repositories — without requiring deep Elasticsearch expertise. It is document- and data-oriented rather than cluster-only, and is available as a desktop app, browser extension, Docker image, hosted web app, or self-hosted build.
+
+## Contact
+
+- Website: https://elasticvue.com
+- GitHub: https://github.com/cars10/elasticvue
+- General enquiries: carstenkoenig92@gmail.com (Carsten König)
+- Imprint: https://elasticvue.com/imprint
+- Privacy: https://elasticvue.com/privacy
+
+## Services
+
+- [Elasticvue application](https://app.elasticvue.com): Free hosted web version; no install required.
+- [Installation options](https://elasticvue.com/installation): Desktop (Windows, Mac, Linux), Chrome/Edge/Firefox extensions, Docker (cars10/elasticvue), self-hosted builds via GitHub wiki.
+- [Features and screenshots](https://elasticvue.com/features): Cluster overview, nodes, shards, indices, index aliases, document search and editing, REST/API browser, snapshot and repository management, settings.
+
+## What We Do Not Do
+
+Elasticvue does not provide:
+- Elasticsearch hosting or managed clusters
+- Legal advice, financial auditing, or recruitment
+- Commercial licensing or paid tiers (the project is free and open-source)
+- Guarantees about compatibility with every third-party Elasticsearch fork or plugin
+
+## Key Information
+
+- [Home](https://elasticvue.com): Project overview and value proposition
+- [Installation](https://elasticvue.com/installation): All ways to run Elasticvue (desktop, browser, Docker, web, self-hosted)
+- [Features](https://elasticvue.com/features): Screenshots and feature list
+- [GitHub repository](https://github.com/cars10/elasticvue): Source code, issues, contributions
+- [Wiki](https://github.com/cars10/elasticvue/wiki): FAQ, SSL, Elasticsearch 8, building, comparing to other frontends, hosting on a subdirectory, debugging
+
+## Differentiators
+
+- Document- and data-oriented: table view with filter, pagination and sorting for browsing documents; cluster overview, indices, aliases, shards, snapshots and REST/API browser in one interface.
+- Usable without deep Elasticsearch expertise; supports read-only access via Elasticsearch roles (e.g. monitor, read, view_index_metadata).
+- Multiple deployment options: desktop (Windows, Mac, Linux) with auto-updates; Chrome, Edge and Firefox extensions; Docker image; hosted web app; self-hosted build. Desktop and extensions do not require cluster CORS configuration; they support self-signed SSL.
+- Supports Elasticsearch 8.x and 7.x (and older with possible feature limits); documented for Elasticsearch 8 default SSL and authentication.
+- Free and open-source (MIT). UI in English, Chinese, French, Italian, Japanese, Russian.
+
+## AI Discovery Files
+
+- [Imprint](https://elasticvue.com/imprint): Legal responsibility and contact
+- [Privacy policy](https://elasticvue.com/privacy): Data protection and privacy
