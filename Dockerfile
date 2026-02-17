@@ -7,9 +7,7 @@ RUN npm ci
 FROM base AS build
 
 COPY . .
-# Persist Astro image optimization cache between builds (avif/webp generation)
-RUN --mount=type=cache,target=/app/.astro \
-  npm run build
+RUN npm run build
 
 FROM nginx:alpine AS runtime
 
