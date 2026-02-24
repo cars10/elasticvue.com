@@ -29,8 +29,6 @@ jobs:
           push: true
           tags: |
             ghcr.io/cars10/elasticvue.com:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
       - name: deploy
         run: |
