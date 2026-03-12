@@ -27,8 +27,13 @@ export const variants: Record<string, VariantItem> = {
   mac: {
     label: 'Mac',
     icon: '/images/icons/apple.svg',
-    description: 'Download the .dmg file for mac, depending on your cpu. You can also install elasticvue via homebrew.',
+    description:
+      'Download the .dmg file for mac, depending on your cpu. You can also install elasticvue via homebrew.',
     dropdownItems: [
+      {
+        label: 'Homebrew',
+        href: 'https://formulae.brew.sh/cask/elasticvue',
+      },
       {
         label: 'Intel Mac',
         href: 'https://update.elasticvue.com/download/darwin/x86_64',
@@ -41,9 +46,19 @@ export const variants: Record<string, VariantItem> = {
   },
   linux: {
     label: 'Linux',
-    description: 'Download the AppImage for linux. You can also install elasticvue-bin from the AUR on arch based systems.',
+    description:
+      'Download the AppImage for linux. You can also install elasticvue-bin from the AUR on arch based systems.',
     icon: '/images/icons/linux.svg',
-    href: 'https://update.elasticvue.com/download/linux/x86_64?file=elasticvue.AppImage',
+    dropdownItems: [
+      {
+        label: 'AUR',
+        href: 'https://aur.archlinux.org/packages/elasticvue-bin',
+      },
+      {
+        label: 'AppImage',
+        href: 'https://update.elasticvue.com/download/linux/x86_64?file=elasticvue.AppImage',
+      },
+    ],
   },
   chrome: {
     label: 'Chrome',

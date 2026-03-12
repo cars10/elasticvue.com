@@ -184,10 +184,14 @@ span.fade {
 #screenshots-section .slideshow-slide .screenshot-light {
   display: none;
 }
-#screenshots-section[data-screenshot-theme='light'] .slideshow-slide .screenshot-dark {
+#screenshots-section[data-screenshot-theme='light']
+  .slideshow-slide
+  .screenshot-dark {
   display: none;
 }
-#screenshots-section[data-screenshot-theme='light'] .slideshow-slide .screenshot-light {
+#screenshots-section[data-screenshot-theme='light']
+  .slideshow-slide
+  .screenshot-light {
   display: block;
 }
 #screenshots-section .slideshow-btn {
