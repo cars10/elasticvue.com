@@ -42,7 +42,7 @@ p {
 }
 
 .gradient {
-  background: linear-gradient(to bottom, hsl(210 11% 8% / 1), transparent 20%);
+  background: linear-gradient(to bottom, hsl(210 11% 5% / 1), transparent 50%);
 }
 
 /* animations */
