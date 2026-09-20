@@ -27,27 +27,23 @@ const btnClass =
 
     {!appendChildren && <slot />}
 
-    {
-      description && (
-        <p class="mx-auto mb-4 text-justify text-muted text-xl xl:text-center xl:text-2xl">
-          {description}
-        </p>
-      )
-    }
+    {description && (
+      <p class="mx-auto mb-4 text-justify text-muted text-xl xl:text-center xl:text-2xl">
+        {description}
+      </p>
+    )}
 
     {appendChildren && <slot />}
 
-    {
-      buttonLabel && buttonHref && (
-        <div class="mt-16 text-center">
-          <a
-            href={buttonHref}
-            class={`mt-4 inline-flex h-10 items-center justify-center rounded-xl px-4 py-2 text-nowrap shadow-sm transition duration-300 ${btnClass} zoom`}
-          >
-            {buttonLabel}
-          </a>
-        </div>
-      )
-    }
+    {buttonLabel && buttonHref && (
+      <div class="mt-16 text-center">
+        <a
+          href={buttonHref}
+          class={`mt-4 inline-flex h-10 items-center justify-center rounded-xl px-4 py-2 text-nowrap shadow-sm transition duration-300 ${btnClass} zoom`}
+        >
+          {buttonLabel}
+        </a>
+      </div>
+    )}
   </div>
 </div>

@@ -50,9 +50,7 @@ const heroCards = [
 ---
 
 <div class="hero-wrapper">
-  <div
-    class="hero-border mt-20 md:mt-18 md:w-5/6 lg:mt-26 xl:mt-42 xl:w-3/4 2xl:mt-56"
-  >
+  <div class="hero-border mt-20 md:mt-18 md:w-5/6 lg:mt-26 xl:mt-42 xl:w-3/4 2xl:mt-56">
     <div class="hero-grid">
       <div class="hero-grid-header">
         <Image
@@ -68,24 +66,22 @@ const heroCards = [
           fetchpriority="high"
         />
       </div>
-      {
-        heroCards.map(({ name, img, delay, sizes }, i) => (
-          <div class={`hero-grid-${name}`}>
-            <Image
-              src={img}
-              alt={`Feature ${i + 1}`}
-              width={400}
-              height={250}
-              widths={[210, 320, 400]}
-              sizes={sizes}
-              class="fadeImg w-full"
-              style={`animation-delay: ${delay}`}
-              loading="eager"
-              fetchpriority="high"
-            />
-          </div>
-        ))
-      }
+      {heroCards.map(({ name, img, delay, sizes }, i) => (
+        <div class={`hero-grid-${name}`}>
+          <Image
+            src={img}
+            alt={`Feature ${i + 1}`}
+            width={400}
+            height={250}
+            widths={[210, 320, 400]}
+            sizes={sizes}
+            class="fadeImg w-full"
+            style={`animation-delay: ${delay}`}
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      ))}
     </div>
   </div>
 </div>

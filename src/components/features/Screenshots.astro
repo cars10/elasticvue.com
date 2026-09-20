@@ -76,58 +76,54 @@ const slideCount = slides.length
     </button>
 
     <div class="slideshow-slides">
-      {
-        slides.map((slide, index) => (
-          <div
-            class="slideshow-slide"
-            data-slide
-            data-index={index}
-            style={index === 0 ? '' : 'display: none;'}
-          >
-            <Picture
-              src={slide.dark.src}
-              alt={slide.dark.alt}
-              width={1920}
-              height={1080}
-              widths={SLIDE_WIDTHS}
-              sizes={SLIDE_SIZES}
-              formats={['avif', 'webp']}
-              fallbackFormat="webp"
-              quality="high"
-              priority={index === 0}
-              class="screenshot-dark rounded-sm block"
-            />
-            <Picture
-              src={slide.light.src}
-              alt={slide.light.alt}
-              width={1920}
-              height={1080}
-              widths={SLIDE_WIDTHS}
-              sizes={SLIDE_SIZES}
-              formats={['avif', 'webp']}
-              fallbackFormat="webp"
-              quality="high"
-              class="screenshot-light rounded-sm block"
-            />
-          </div>
-        ))
-      }
+      {slides.map((slide, index) => (
+        <div
+          class="slideshow-slide"
+          data-slide
+          data-index={index}
+          style={index === 0 ? '' : 'display: none;'}
+        >
+          <Picture
+            src={slide.dark.src}
+            alt={slide.dark.alt}
+            width={1920}
+            height={1080}
+            widths={SLIDE_WIDTHS}
+            sizes={SLIDE_SIZES}
+            formats={['avif', 'webp']}
+            fallbackFormat="webp"
+            quality="high"
+            priority={index === 0}
+            class="screenshot-dark rounded-sm block"
+          />
+          <Picture
+            src={slide.light.src}
+            alt={slide.light.alt}
+            width={1920}
+            height={1080}
+            widths={SLIDE_WIDTHS}
+            sizes={SLIDE_SIZES}
+            formats={['avif', 'webp']}
+            fallbackFormat="webp"
+            quality="high"
+            class="screenshot-light rounded-sm block"
+          />
+        </div>
+      ))}
     </div>
 
     <ul class="slideshow-dots" data-dots aria-label="Slide navigation">
-      {
-        Array.from({ length: slideCount }, (_, i) => (
-          <li>
-            <button
-              type="button"
-              class="slideshow-dot"
-              data-index={i}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={i === 0 ? 'true' : undefined}
-            />
-          </li>
-        ))
-      }
+      {Array.from({ length: slideCount }, (_, i) => (
+        <li>
+          <button
+            type="button"
+            class="slideshow-dot"
+            data-index={i}
+            aria-label={`Go to slide ${i + 1}`}
+            aria-current={i === 0 ? 'true' : undefined}
+          />
+        </li>
+      ))}
     </ul>
   </div>
 </div>

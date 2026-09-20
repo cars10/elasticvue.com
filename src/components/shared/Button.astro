@@ -44,78 +44,14 @@ if (umamiEvent) {
 const iconClass = `inline-block ${label ? 'mr-2' : ''}`
 ---
 
-{
-  dropdownItems && dropdownItems.length > 0 ? (
-    <div class="dropdown-button relative inline-flex">
-      <button
-        type="button"
-        class={`${baseClass} ${colorClass} ${className}`}
-        aria-haspopup="true"
-        aria-expanded="false"
-        data-dropdown-toggle
-        title={title}
-        {...umamiAttrs}
-      >
-        {icon && (
-          <img
-            src={icon}
-            alt={title ?? ''}
-            width={iconSize}
-            height={iconSize}
-            class={iconClass}
-          />
-        )}
-        {label}
-        {!hideCaret && (
-          <span class="ml-1 text-xs" data-dropdown-caret>
-            ▼
-          </span>
-        )}
-      </button>
-      <div
-        class="dropdown-panel absolute top-full left-0 z-10 hidden min-w-max flex-col rounded-b-xl whitespace-nowrap"
-        data-dropdown-panel
-      >
-        {dropdownItems.map((item) => (
-          <a
-            href={item.href}
-            target="_blank"
-            class={`block overflow-hidden px-4 py-3 outline-none last-of-type:rounded-b-xl text-nowrap ${dropdownLinkClass}`}
-            data-umami-event={umamiEvent}
-            data-umami-event-variant={
-              umamiVariant
-                ? `${umamiVariant}-${item.label.toLowerCase().replace(/\s+/g, '-')}`
-                : undefined
-            }
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
-    </div>
-  ) : href ? (
-    <a
-      href={href}
-      target={target}
-      class={`${baseClass} ${colorClass} ${className}`}
-      title={title}
-      {...umamiAttrs}
-    >
-      {icon && (
-        <img
-          src={icon}
-          alt={title ?? ''}
-          width={iconSize}
-          height={iconSize}
-          class={iconClass}
-        />
-      )}
-      {label}
-    </a>
-  ) : (
+{dropdownItems && dropdownItems.length > 0 ? (
+  <div class="dropdown-button relative inline-flex">
     <button
       type="button"
       class={`${baseClass} ${colorClass} ${className}`}
+      aria-haspopup="true"
+      aria-expanded="false"
+      data-dropdown-toggle
       title={title}
       {...umamiAttrs}
     >
@@ -129,9 +65,71 @@ const iconClass = `inline-block ${label ? 'mr-2' : ''}`
         />
       )}
       {label}
+      {!hideCaret && (
+        <span class="ml-1 text-xs" data-dropdown-caret>
+          ▼
+        </span>
+      )}
     </button>
-  )
-}
+    <div
+      class="dropdown-panel absolute top-full left-0 z-10 hidden min-w-max flex-col rounded-b-xl whitespace-nowrap"
+      data-dropdown-panel
+    >
+      {dropdownItems.map((item) => (
+        <a
+          href={item.href}
+          target="_blank"
+          class={`block overflow-hidden px-4 py-3 outline-none last-of-type:rounded-b-xl text-nowrap ${dropdownLinkClass}`}
+          data-umami-event={umamiEvent}
+          data-umami-event-variant={
+            umamiVariant
+              ? `${umamiVariant}-${item.label.toLowerCase().replace(/\s+/g, '-')}`
+              : undefined
+          }
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+) : href ? (
+  <a
+    href={href}
+    target={target}
+    class={`${baseClass} ${colorClass} ${className}`}
+    title={title}
+    {...umamiAttrs}
+  >
+    {icon && (
+      <img
+        src={icon}
+        alt={title ?? ''}
+        width={iconSize}
+        height={iconSize}
+        class={iconClass}
+      />
+    )}
+    {label}
+  </a>
+) : (
+  <button
+    type="button"
+    class={`${baseClass} ${colorClass} ${className}`}
+    title={title}
+    {...umamiAttrs}
+  >
+    {icon && (
+      <img
+        src={icon}
+        alt={title ?? ''}
+        width={iconSize}
+        height={iconSize}
+        class={iconClass}
+      />
+    )}
+    {label}
+  </button>
+)}
 
 <script>
   document.addEventListener('click', (e) => {

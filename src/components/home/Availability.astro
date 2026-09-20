@@ -12,21 +12,19 @@ import { variants } from '../../data/variants'
   buttonColor="white"
 >
   <div class="mb-8 flex flex-wrap justify-evenly gap-4 text-white xl:mb-20">
-    {
-      Object.entries(variants).map(([variantKey, v]) => (
-        <Button
-          title={v.label}
-          href={v.href}
-          icon={v.icon}
-          dropdownItems={v.dropdownItems}
-          iconSize={30}
-          hideCaret
-          target="_blank"
-          class="zoom py-8"
-          umamiEvent="availability-button-click"
-          umamiVariant={variantKey}
-        />
-      ))
-    }
+    {Object.entries(variants).map(([variantKey, v]) => (
+      <Button
+        title={v.label}
+        href={v.href}
+        icon={v.icon}
+        dropdownItems={v.dropdownItems}
+        iconSize={30}
+        hideCaret
+        target="_blank"
+        class="zoom py-8"
+        umamiEvent="availability-button-click"
+        umamiVariant={variantKey}
+      />
+    ))}
   </div>
 </Section>
